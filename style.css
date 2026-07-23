@@ -397,7 +397,7 @@ html[data-theme="dark"] .icon--moon{ display:block; }
 
 .scroll-cue{
   position:absolute;
-  bottom:30px;
+  bottom:0px; /* more space from bottom */
   left:50%;
   transform:translateX(-50%);
   width:26px;
@@ -849,3 +849,19 @@ html[data-theme="dark"] .icon--moon{ display:block; }
   .pipeline__stage{ flex:1 1 100%; }
 }
 
+.project-card__media{
+  height: 180px;
+  background: var(--tint, var(--blue-dim));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.project-card__image{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
