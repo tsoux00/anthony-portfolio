@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Priya Ramanathan — Senior Product Owner</title>
+<meta name="description" content="Priya Ramanathan, Senior Product Owner. Portfolio of shipped products, agile leadership, and case studies." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<script src="script.js"></script>
+<body>
+
+<!-- Build status bar (scroll progress, signature element) -->
+<div class="buildbar" id="buildbar" role="progressbar" aria-label="Page read progress">
+  <div class="buildbar__fill" id="buildbarFill"></div>
+  <div class="buildbar__label">
+    <span class="buildbar__dot" id="buildbarDot" aria-hidden="true"></span>
+    <span id="buildbarText">v1.0 · booting</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#hero" class="nav__brand">
+      <span class="nav__tag">AR</span>
+      <span class="nav__name">anthony<span class="nav__dim">.rasolofoarimanana</span></span>
+    </a>
+
+    <nav class="nav__links" id="navLinks">
+      <a href="#about" class="nav__link" data-tag="01">About</a>
+      <a href="#skills" class="nav__link" data-tag="02">Skills</a>
+      <a href="#experience" class="nav__link" data-tag="03">Experience</a>
+      <a href="#projects" class="nav__link" data-tag="04">Projects</a>
+      <a href="#lifecycle" class="nav__link" data-tag="05">Process</a>
+      <a href="#certifications" class="nav__link" data-tag="06">Certs</a>
+      <a href="#testimonials" class="nav__link" data-tag="07">Notes</a>
+      <a href="#contact" class="nav__link" data-tag="08">Contact</a>
+    </nav>
+
+    <div class="nav__actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <svg class="icon icon--sun" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.6"/><path d="M12 2.5v2.4M12 19.1v2.4M4.5 12H2M22 12h-2.5M5.6 5.6l1.7 1.7M16.7 16.7l1.7 1.7M18.4 5.6l-1.7 1.7M7.3 16.7l-1.7 1.7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <svg class="icon icon--moon" viewBox="0 0 24 24" fill="none"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.6 6.6 0 0 0 10.5 10.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__grid" aria-hidden="true"></div>
+    <div class="hero__shapes" aria-hidden="true">
+      <span class="shape shape--sq"></span>
+      <span class="shape shape--circ"></span>
+      <span class="shape shape--tri"></span>
+    </div>
+
+    <div class="section-inner hero__inner">
+      <p class="tag-badge"><span class="tag-badge__dot"></span> v1.0.0 · currently shipping</p>
+
+      <h1 class="hero__title">
+        Anthony Rasolofoarimanana
+      </h1>
+      <p class="hero__role">
+        Product Owner & QA Engineer —
+        <span class="typing" id="typing"></span><span class="typing-cursor">|</span>
+      </p>
+
+      <p class="hero__summary">
+        I sit between engineering, design, and the business, and I make the
+        backlog tell the truth. Nine years turning ambiguous problems into
+        products that ship on time, get adopted, and get renewed.
+      </p>
+
+      <div class="hero__cta">
+        <a href="#projects" class="btn btn--primary">View case studies</a>
+        <a href="assets/resume.pdf" download class="btn btn--ghost">Download résumé</a>
+      </div>
+
+      <div class="hero__social">
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=tsonyraf@gmail.com" target="_blank" aria-label="Email">Email</a>
+        <span class="dot">·</span>
+        <a href="https://linkedin.com/in/rasolofoarimanana-anthony-mitantsoa-3ab35a275" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+        <span class="dot">·</span>
+        <a href="https://github.com/tsoux00" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+      </div>
+
+      <div class="hero__stats reveal" id="heroStats">
+        <div class="stat"><span class="stat__num" data-target="9">3+</span><span class="stat__label">Years in product</span></div>
+        <div class="stat"><span class="stat__num" data-target="42">75+</span><span class="stat__label">Features shipped</span></div>
+        <div class="stat"><span class="stat__num" data-target="94" data-suffix="%">88%</span><span class="stat__label">Sprint predictability</span></div>
+        <div class="stat"><span class="stat__num" data-target="27" data-prefix="+">5+</span><span class="stat__label">Products delivered</span></div>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-cue" aria-label="Scroll to content">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="section-inner">
+      <p class="release-tag">v1.1 · about</p>
+      <h2 class="section-title">Release notes on how I work</h2>
+
+      <div class="about__grid reveal">
+        <div class="about__bio">
+          <p>
+            I'm a Product Owner working across SaaS, mobile, and platform teams,  
+            translating strategy into a backlog that engineers can actually build from.  
+            My background moved through QA, full-stack development, and project  
+            management before product, so I read a sprint the way a tester reads an  
+            edge case — looking for what breaks.
+          </p>
+          <p>
+            I don't believe in roadmaps as decoration. Every item in mine has
+            an owner, a reason, and a way to tell if it worked. I'd rather
+            ship a narrow slice this sprint than a wide promise next quarter.
+          </p>
+        </div>
+
+        <div class="about__cards">
+          <div class="mini-card">
+            <span class="mini-card__tag">MINDSET</span>
+            <p>Decisions are cheap to reverse if you make them small. I optimize for reversibility, not certainty.</p>
+          </div>
+          <div class="mini-card">
+            <span class="mini-card__tag">AGILE PHILOSOPHY</span>
+            <p>Scrum is a container, not a religion. I keep the ceremonies that create clarity and cut the ones that create theater.</p>
+          </div>
+          <div class="mini-card">
+            <span class="mini-card__tag">PRODUCT VISION</span>
+            <p>A vision only counts if a new hire can repeat it back after one week. Anything longer than that is a slide, not a strategy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <!-- SKILLS -->
+<section class="section section--alt" id="skills">
+  <div class="section-inner">
+    <p class="release-tag">v1.2 · capability matrix</p>
+    <h2 class="section-title">Skills, by category</h2>
+
+    <div class="skills__grid reveal">
+
+      <div class="skill-card">
+        <h3>Product Management</h3>
+        <ul class="skill-list">
+          <li><span>Roadmapping &amp; prioritization</span><i data-level="95"></i></li>
+          <li><span>Discovery &amp; user research</span><i data-level="88"></i></li>
+          <li><span>Backlog refinement</span><i data-level="97"></i></li>
+          <li><span>Stakeholder alignment</span><i data-level="90"></i></li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h3>Agile &amp; Scrum</h3>
+        <ul class="skill-list">
+          <li><span>Sprint planning</span><i data-level="96"></i></li>
+          <li><span>Story writing &amp; estimation</span><i data-level="93"></i></li>
+          <li><span>Retrospective facilitation</span><i data-level="89"></i></li>
+          <li><span>Scaled Agile (SAFe)</span><i data-level="80"></i></li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h3>QA &amp; Testing</h3>
+        <ul class="skill-list">
+          <li><span>Acceptance criteria design</span><i data-level="94"></i></li>
+          <li><span>Test case review</span><i data-level="85"></i></li>
+          <li><span>Regression triage</span><i data-level="82"></i></li>
+          <li><span>Exploratory testing</span><i data-level="78"></i></li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h3>Project Management</h3>
+        <ul class="skill-list">
+          <li><span>Risk &amp; dependency tracking</span><i data-level="90"></i></li>
+          <li><span>Release planning</span><i data-level="92"></i></li>
+          <li><span>Vendor &amp; cross-team coordination</span><i data-level="84"></i></li>
+          <li><span>Budget &amp; resourcing</span><i data-level="75"></i></li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h3>Technical Skills</h3>
+        <ul class="skill-list">
+          <li><span>SQL &amp; data analysis</span><i data-level="83"></i></li>
+          <li><span>API &amp; systems literacy</span><i data-level="79"></i></li>
+          <li><span>Jira, Confluence, Figma</span><i data-level="96"></i></li>
+          <li><span>A/B testing &amp; analytics tooling</span><i data-level="86"></i></li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h3>Communication &amp; Leadership</h3>
+        <ul class="skill-list">
+          <li><span>Executive reporting</span><i data-level="91"></i></li>
+          <li><span>Cross-functional facilitation</span><i data-level="93"></i></li>
+          <li><span>Mentoring junior POs</span><i data-level="88"></i></li>
+          <li><span>Conflict resolution</span><i data-level="85"></i></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <div class="section-inner">
+      <p class="release-tag">v1.3 · changelog</p>
+      <h2 class="section-title">Experience</h2>
+
+      <ol class="changelog reveal">
+
+        <li class="changelog__entry">
+          <div class="changelog__meta">
+            <span class="version-pill version-pill--current">shipped</span>
+            <time>Jan 2026 - May 2026</time>
+          </div>
+          <h3>Product Owner & QA Lead <span class="at">@ Here2Be </span></h3>
+          <p>Led the migration of a Bubble.io application to a scalable Xano backend with a vibe-coded frontend.</p>
+          <ul class="changelog__list">
+            <li><strong>Added:</strong> a structured product backlog of 50 user stories across 9 epics, enabling clear prioritization across a 20-sprint Agile roadmap.</li>
+            <li><strong>Improved:</strong> application performance and scalability by redesigning the backend architecture and optimizing development workflows. </li>
+            <li><strong>Established:</strong> Jira-based Agile workflows supporting sprint planning, standups, retrospectives, and velocity tracking.</li>
+            <li><strong>Designed:</strong> Figma wireframes and low-fidelity prototypes to align stakeholders on UX decisions before development handoff.</li>
+            <li><strong>Validated:</strong> product quality through end-to-end QA processes, including test case creation, regression testing, and bug resolution cycles.</li>
+          </ul>
+        </li>
+
+        <li class="changelog__entry">
+          <div class="changelog__meta">
+            <span class="version-pill">shipped</span>
+            <time>Mar 2025 - Sep 2025</time>
+          </div>
+          <h3>Project Manager <span class="at">@ Micasa</span></h3>
+            <p>Led the development of a mobile event-management app from concept to launch, coordinating a cross-functional team of four over a 7+ month product build.</p>
+
+            <ul class="changelog__list">
+            <li><strong>Added:</strong> a complete event-management platform by guiding product delivery from initial requirements to final release.</li>
+            <li><strong>Improved:</strong> delivery efficiency through sprint planning, milestone tracking, and priority management using Huly.io.</li>
+            <li><strong>Established:</strong> structured backlog grooming, acceptance criteria, and KPI reporting processes to support data-driven product decisions.</li>
+            <li><strong>Aligned:</strong> user flows and UI designs with product guidelines through continuous collaboration with the design team.</li>
+            <li><strong>Managed:</strong> stakeholder communication as the primary client liaison, ensuring clear requirements, progress visibility, and expectation alignment.</li>
+            </ul>
+
+        <li class="changelog__entry">
+          <div class="changelog__meta">
+            <span class="version-pill">shipped</span>
+            <time>2023 - 2026</time>
+          </div>
+          <h3>No-code Developer <span class="at">@ Genhax</span></h3>
+          <p>Architected and delivered a full hackathon platform supporting 50–200 participants with custom workflows, collaboration tools, and mentor management features.</p>
+            <ul class="changelog__list">
+            <li><strong>Added:</strong> a complete hackathon ecosystem with task management, real-time messaging, dashboards, mentor features, and custom event workflows built with Bubble.io.</li>
+            <li><strong>Improved:</strong> user experience consistency by designing responsive multi-role interfaces using reusable component libraries and structured design systems.</li>
+            <li><strong>Created:</strong> clear UI copy and onboarding flows to reduce user confusion and improve platform adoption.</li>
+            <li><strong>Integrated:</strong> REST APIs and custom admin panels to streamline event management operations.</li>
+            <li><strong>Collaborated:</strong> with international remote teams across time zones and contributed as a mentor, earning a Knowhax 2024 Mentor Completion Certificate.</li>
+            </ul>
+
+        <li class="changelog__entry">
+          <div class="changelog__meta">
+            <span class="version-pill">shipped</span>
+            <time>2024 - 2026</time>
+          </div>
+          <h3>Project Manager → No-code Developer <span class="at">@ The Parity Productions</span></h3>
+          <p>Built and launched a job-seeking platform for underrepresented communities, delivering career discovery, networking, and management features through a 5+ month product build.</p>
+        <ul class="changelog__list">
+        <li><strong>Added:</strong> a complete employment platform with job search, artist profiles, real-time messaging, CRM capabilities, and administrative tools built with Bubble.io.</li>
+        <li><strong>Designed:</strong> early user flows and wireframes to translate customer needs into intuitive product experiences before development.</li>
+        <li><strong>Managed:</strong> the full product lifecycle from requirements gathering to deployment while applying MoSCoW prioritization to align scope with delivery goals.</li>
+        </ul>
+        </li>
+
+
+        <li class="changelog__entry">
+          <div class="changelog__meta">
+            <span class="version-pill">shipped</span>
+            <time>2024 - 2026</time>
+          </div>
+          <h3> Java / React Developer <span class="at">@ UGD Madagascar</span></h3>
+          <p>Developed AI-powered and enterprise application features during an internship, contributing to automation, user experience, and workflow optimization initiatives.</p>
+            <ul class="changelog__list">
+            <li><strong>Added:</strong> a face-recognition module integrated into a Java enterprise application to enhance automated identification workflows.</li>
+            <li><strong>Built:</strong> interactive quiz features using React while contributing to Agile sprint deliveries under senior developer mentorship.</li>
+            <li><strong>Improved:</strong> internal workflow automation by supporting BPM process modeling and optimization using Bonita Studio.</li>
+            </ul>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+<section class="section section--alt" id="projects">
+  <div class="section-inner">
+    <p class="release-tag">v1.4 · case studies</p>
+    <h2 class="section-title">Projects</h2>
+
+    <div class="projects__grid reveal">
+
+      <article class="project-card">
+        <div class="project-card__media" style="--tint: var(--blue-dim);">
+          <span class="project-card__glyph">PAR</span>
+        </div>
+        <div class="project-card__body">
+          <h3>Parity Productions Platform</h3>
+          <p class="project-card__role">Role: Project Manager / No-code Developer</p>
+          <p>
+            Led the development of a job-seeking platform supporting underrepresented communities,
+            including job search, artist profiles, real-time messaging, CRM and administration features.
+          </p>
+
+          <div class="tech-tags">
+            <span>Bubble.io</span><span>Xano</span><span>Figma</span><span>Agile</span><span>MoSCoW Framework</span>
+          </div>
+
+          <p class="project-card__line">
+            <strong>Challenge:</strong> Transform user needs into a scalable platform with multiple user roles.
+          </p>
+
+          <p class="project-card__line">
+            <strong>Result:</strong> Delivered a complete platform from discovery to deployment over a 5+ month build.
+          </p>
+
+          <div class="project-card__actions">
+            <a href="#contact" class="link-btn">Read case study</a>
+            <a href="#contact" class="link-btn link-btn--muted">Ask about it</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card__media" style="--tint: var(--green-dim);">
+          <span class="project-card__glyph">KOP</span>
+        </div>
+
+        <div class="project-card__body">
+          <h3>Kopenao Services Platform</h3>
+          <p class="project-card__role">Role: Product Manager / Fullstack Developer</p>
+
+          <p>
+            Built and managed a digital marketplace platform connecting customers with local service providers,
+            including booking workflows and service management features.
+          </p>
+
+          <div class="tech-tags">
+            <span>Bubble.io</span><span>React</span><span>API</span><span>Product Strategy</span>
+          </div>
+
+          <p class="project-card__line">
+            <strong>Challenge:</strong> Simplify service discovery and booking processes for users.
+          </p>
+
+          <p class="project-card__line">
+            <strong>Result:</strong> Delivered a functional platform improving accessibility to local services.
+          </p>
+
+          <div class="project-card__actions">
+            <a href="#contact" class="link-btn">Read case study</a>
+            <a href="#contact" class="link-btn link-btn--muted">Ask about it</a>
+          </div>
+        </div>
+      </article>
+
+
+      <article class="project-card">
+        <div class="project-card__media" style="--tint: var(--blue-dim);">
+          <span class="project-card__glyph">MCA</span>
+        </div>
+
+        <div class="project-card__body">
+          <h3>Micasa Mobile Application</h3>
+          <p class="project-card__role">Role: Project Manager</p>
+
+          <p>
+            Managed a team of four developers to design and deliver a mobile application,
+            coordinating development activities, priorities, and delivery milestones.
+          </p>
+
+          <div class="tech-tags">
+            <span>Flutter</span><span>React</span><span>Huly.io</span><span>Agile</span>
+          </div>
+
+          <p class="project-card__line">
+            <strong>Challenge:</strong> Coordinate multiple contributors while maintaining product consistency.
+          </p>
+
+          <p class="project-card__line">
+            <strong>Result:</strong> Delivered the application from concept to launch within a 7+ month roadmap.
+          </p>
+
+          <div class="project-card__actions">
+            <a href="#contact" class="link-btn">Read case study</a>
+            <a href="#contact" class="link-btn link-btn--muted">Ask about it</a>
+          </div>
+        </div>
+      </article>
+
+
+      <article class="project-card">
+        <div class="project-card__media" style="--tint: var(--green-dim);">
+          <span class="project-card__glyph">AI</span>
+        </div>
+
+        <div class="project-card__body">
+          <h3>AI Face Recognition System</h3>
+          <p class="project-card__role">Role: Fullstack Developer / QA Engineer</p>
+
+          <p>
+            Developed a face-recognition module integrated into a Java enterprise application
+            and contributed to workflow automation and interactive React features.
+          </p>
+
+          <div class="tech-tags">
+            <span>Java</span><span>React</span><span>OpenCV</span><span>Bonita BPM</span>
+          </div>
+
+          <p class="project-card__line">
+            <strong>Challenge:</strong> Integrate AI capabilities into an existing enterprise workflow.
+          </p>
+
+          <p class="project-card__line">
+            <strong>Result:</strong> Delivered AI-powered functionality while participating in Agile development cycles.
+          </p>
+
+          <div class="project-card__actions">
+            <a href="#contact" class="link-btn">Read case study</a>
+            <a href="#contact" class="link-btn link-btn--muted">Ask about it</a>
+          </div>
+        </div>
+      </article>
+<article class="project-card">
+  <div class="project-card__media" style="--tint: var(--blue-dim);">
+    <span class="project-card__glyph">GHX</span>
+  </div>
+
+  <div class="project-card__body">
+    <h3>Genhax Digital Products</h3>
+    <p class="project-card__role">Role: No-code Developer</p>
+
+    <p>
+      Contributed to the development and delivery of digital products for an international team,
+      translating business requirements into technical solutions and coordinating development activities.
+    </p>
+
+    <div class="tech-tags">
+      <span>Bubble.io</span>
+      <span>Figma</span>
+      <span>API</span>
+      <span>Agile</span>
+      <span>Huly.io</span>
+    </div>
+
+    <p class="project-card__line">
+      <strong>Challenge:</strong> Align product requirements, technical implementation, and delivery priorities across a remote team.
+    </p>
+
+    <p class="project-card__line">
+      <strong>Result:</strong> Supported continuous product improvements through feature delivery, testing, and Agile collaboration.
+    </p>
+
+    <div class="project-card__actions">
+      <a href="#contact" class="link-btn">Read case study</a>
+      <a href="#contact" class="link-btn link-btn--muted">Ask about it</a>
+    </div>
+  </div>
+</article>
+    </div>
+  </div>
+</section>
+
+  <!-- PRODUCT LIFECYCLE -->
+  <section class="section" id="lifecycle">
+    <div class="section-inner">
+      <p class="release-tag">v1.5 · pipeline</p>
+      <h2 class="section-title">How an idea becomes a release</h2>
+
+      <div class="pipeline reveal" id="pipeline">
+        <div class="pipeline__stage" data-stage="1"><span>Discovery</span></div>
+        <div class="pipeline__stage" data-stage="2"><span>Research</span></div>
+        <div class="pipeline__stage" data-stage="3"><span>Prioritization</span></div>
+        <div class="pipeline__stage" data-stage="4"><span>Roadmap</span></div>
+        <div class="pipeline__stage" data-stage="5"><span>Sprint Planning</span></div>
+        <div class="pipeline__stage" data-stage="6"><span>Development</span></div>
+        <div class="pipeline__stage" data-stage="7"><span>QA</span></div>
+        <div class="pipeline__stage" data-stage="8"><span>Release</span></div>
+        <div class="pipeline__stage" data-stage="9"><span>Analytics</span></div>
+        <div class="pipeline__stage" data-stage="10"><span>Improvement</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section class="section section--alt" id="certifications">
+    <div class="section-inner">
+      <p class="release-tag">v1.6 · credentials</p>
+      <h2 class="section-title">Certifications</h2>
+
+      <div class="certs__grid reveal">
+        <div class="cert-card">
+          <span class="cert-card__mono">CSPO</span>
+          <h3>Mentor Completion Certificate</h3>
+          <p>Knowhax 2024</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section" id="testimonials">
+    <div class="section-inner">
+      <p class="release-tag">v1.7 · notes from the team</p>
+      <h2 class="section-title">What shipping with me is like</h2>
+
+      <div class="testimonial reveal">
+        <div class="testimonial__track" id="testimonialTrack">
+
+          <blockquote class="testimonial__slide is-active">
+            <p>"Anthony is the only PO I've worked with who writes acceptance criteria I never have to ask about twice."</p>
+            <footer>— Hugues Seureau, Staff Engineer</footer>
+          </blockquote>
+
+          <blockquote class="testimonial__slide">
+            <p>"She kills bad ideas early and kindly, which is rarer than it sounds. Our roadmap got smaller and better under her."</p>
+            <footer>— Marta Lindqvist, VP Engineering, Fenwick Analytics</footer>
+          </blockquote>
+
+          <blockquote class="testimonial__slide">
+            <p>"Priya turned a scheduling mess into our most-praised feature in a single quarter. She also taught two of our juniors how to run a retro that people actually want to attend."</p>
+            <footer>— Ravi Chandran, Director of Product, Vantage Health</footer>
+          </blockquote>
+
+        </div>
+
+        <div class="testimonial__controls">
+          <button id="testimonialPrev" aria-label="Previous testimonial">←</button>
+          <div class="testimonial__dots" id="testimonialDots"></div>
+          <button id="testimonialNext" aria-label="Next testimonial">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section--alt" id="contact">
+    <div class="section-inner">
+      <p class="release-tag">v1.8 · get in touch</p>
+      <h2 class="section-title">Open to the next hard problem</h2>
+
+      <div class="contact__grid reveal">
+        <div class="contact__info">
+          <p>Best reached by email. I read everything, and I answer product questions faster than sales pitches.</p>
+          <ul class="contact__list">
+            <li>
+  <span>Email</span>
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=tsonyraf@gmail.com" target="_blank">
+    tsonyraf@gmail.com
+  </a>
+</li>
+            <li><span>Phone</span><a href="tel:+261346569655">+261 34 65 696 55</a></li>
+            <li><span>LinkedIn</span><a href="https://linkedin.com/in/rasolofoarimanana-anthony-mitantsoa-3ab35a275" target="_blank" rel="noopener">linkedin.com/in/rasolofo....</a></li>
+            <li><span>GitHub</span><a href="https://github.com/tsoux00" target="_blank" rel="noopener">github.com/tsoux00</a></li>
+          </ul>
+          <a href="assets/resume.pdf" download class="btn btn--primary btn--wide">Download résumé (PDF)</a>
+        </div>
+
+        <form class="contact__form" id="contactForm" novalidate>
+          <div class="field">
+            <label for="fname">Name</label>
+            <input type="text" id="fname" name="name" required minlength="2">
+            <span class="field__error" id="fnameError"></span>
+          </div>
+          <div class="field">
+            <label for="femail">Email</label>
+            <input type="email" id="femail" name="email" required>
+            <span class="field__error" id="femailError"></span>
+          </div>
+          <div class="field">
+            <label for="fmsg">Message</label>
+            <textarea id="fmsg" name="message" rows="4" required minlength="10"></textarea>
+            <span class="field__error" id="fmsgError"></span>
+          </div>
+          <button type="submit" class="btn btn--primary btn--wide">Send message</button>
+          <p class="field__note" id="formNote" role="status"></p>
+          <p class="field__disclaimer">This is a static form — no data is submitted or stored anywhere.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="section-inner footer__inner">
+    <p>© 2026 Anthony Rasolofoarimanana. Built static — no backend, no database.</p>
+    <p class="footer__mono">v1.8.0 · last deployed June 2026</p>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+</body>
+</html>
