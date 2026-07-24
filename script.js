@@ -191,6 +191,7 @@ if (!window.__thonyPortfolioScriptInit) {
     const EMAILJS_SERVICE_ID            = "service_4rpj484";
     const EMAILJS_TEMPLATE_ID           = "template_99mu3c5";
     const EMAILJS_VISITOR_TEMPLATE_ID   = "template_4h80gme";
+    const EMAILJS_DOWNLOAD_TEMPLATE_ID  = "template_4h80gme";
     const VISITOR_NOTIFICATION_FLAG     = "visitorNotificationSent";
 
     if (window.emailjs) {
@@ -280,6 +281,44 @@ if (!window.__thonyPortfolioScriptInit) {
         console.warn("Visitor notification failed", err);
       }
     }
+
+    async function sendDownloadNotification(fileName) {
+      if (!window.emailjs || !EMAILJS_SERVICE_ID || !EMAILJS_DOWNLOAD_TEMPLATE_ID) return;
+
+      const now = new Date();
+      const browserOs = detectBrowserAndOs(navigator.userAgent);
+      const deviceType = detectDeviceType(navigator.userAgent);
+
+      const templateParams = {
+        subject: "New Resume Download – Portfolio",
+        download_date: formatDateTime(now),
+        file_name: fileName,
+        browser_os: browserOs,
+        device_type: deviceType,
+        to_email: "tsonyraf@gmail.com",
+        message: `Resume download started for ${fileName} at ${formatDateTime(now)}.`
+      };
+
+      try {
+        await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_DOWNLOAD_TEMPLATE_ID, templateParams);
+      } catch (err) {
+        console.warn("Resume download notification failed", err);
+      }
+    }
+
+    function initResumeDownloadTracking() {
+      const resumeLinks = document.querySelectorAll('a[download][href$="resume.pdf"]');
+      if (!resumeLinks.length) return;
+
+      resumeLinks.forEach(link => {
+        const fileName = link.getAttribute("download") || link.getAttribute("href").split("/").pop() || "resume.pdf";
+        link.addEventListener("click", (event) => {
+          sendDownloadNotification(fileName);
+        });
+      });
+    }
+
+    initResumeDownloadTracking();
 
     if (sessionStorage.getItem(VISITOR_NOTIFICATION_FLAG) !== "true") {
       sendVisitorNotification();
