@@ -1,5 +1,5 @@
 /* =========================================================
-   PRIYA RAMANATHAN — PRODUCT OWNER PORTFOLIO
+   ANTHONY RASOLOFOARIMANANA — PRODUCT OWNER PORTFOLIO
    Design concept: the portfolio as a shipped product.
    Every section carries a semver release tag; the experience
    section reads like a real changelog; the top bar tracks
@@ -92,6 +92,8 @@ input,textarea{ font-family: inherit; }
   max-width: 1120px;
   margin: 0 auto;
   padding: 0 32px;
+  position: relative;
+  z-index: 2;
 }
 
 /* ---------- Build bar (signature element) ---------- */
@@ -151,14 +153,30 @@ input,textarea{ font-family: inherit; }
   gap: 24px;
 }
 .nav__brand{ display:flex; align-items:center; gap:10px; margin-right:auto; }
-.nav__tag{
-  font-family: var(--font-mono);
-  font-size:11px;
-  background: var(--blue);
-  color: #fff;
-  padding: 3px 6px;
-  border-radius: 4px;
-  letter-spacing: .04em;
+.nav__avatar{
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex: none;
+  border: 2px solid var(--blue);
+  box-shadow: var(--shadow-s);
+  animation: avatarDrift 5s ease-in-out infinite;
+}
+.nav__avatar img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes avatarDrift{
+  0%   { transform: translate(0, 0); }
+  20%  { transform: translate(-2px, -2px); }
+  40%  { transform: translate(2px, -1.5px); }
+  60%  { transform: translate(2px, 2px); }
+  80%  { transform: translate(-2px, 1.5px); }
+  100% { transform: translate(0, 0); }
 }
 .nav__name{ font-family: var(--font-display); font-weight:600; font-size: 15px; }
 .nav__dim{ color: var(--ink-dim); font-weight: 500; }
@@ -225,14 +243,27 @@ html[data-theme="dark"] .icon--moon{ display:block; }
   mask-image: radial-gradient(ellipse 60% 55% at 50% 40%, black 40%, transparent 90%);
 }
 .hero__shapes{ position:absolute; inset:0; pointer-events:none; }
-.shape{ position:absolute; border: 1.5px solid var(--blue); opacity:.35; animation: float 9s ease-in-out infinite; }
-.shape--sq{ width:64px; height:64px; top:18%; left:10%; border-radius: 12px; animation-delay: 0s; }
-.shape--circ{ width:90px; height:90px; border-radius:50%; bottom:16%; right:12%; border-color: var(--green); animation-delay: 1.4s; }
-.shape--tri{ width:0; height:0; border-left: 34px solid transparent; border-right: 34px solid transparent; border-bottom: 58px solid transparent; outline: none; top:62%; left:20%; border-bottom-color: var(--blue); opacity:.15; animation-delay: 2.6s; }
 
+/* ---------- Floating decorative shapes (shared, reused across every section) ---------- */
+.shape{
+  position:absolute;
+  border: 1.5px solid var(--blue);
+  opacity:.35;
+  animation: float 4s ease-in-out infinite;
+  will-change: transform;
+}
+.shape--sq{ width:64px; height:64px; top:18%; left:10%; border-radius: 12px; animation-delay: 0s; }
+.shape--circ{ width:90px; height:90px; border-radius:50%; bottom:16%; right:12%; border-color: var(--green); animation-delay: .6s; }
+.shape--tri{ width:0; height:0; border-left: 34px solid transparent; border-right: 34px solid transparent; border-bottom: 58px solid transparent; outline: none; top:62%; left:20%; border-bottom-color: var(--blue); opacity:.15; animation-delay: 1.2s; }
+.shape--dot{ width:14px; height:14px; border-radius:50%; border:none; background: var(--green); opacity:.5; animation-delay: .3s; }
+.shape--ring{ width:130px; height:130px; border-radius:50%; border:1.5px solid var(--blue); opacity:.16; animation-delay: .9s; }
+.shape--sq2{ width:46px; height:46px; border-radius: 10px; border-color: var(--green); opacity:.28; animation-delay: 1.5s; }
+.shape--circ2{ width:58px; height:58px; border-radius:50%; opacity:.25; animation-delay: .2s; }
+
+/* Faster, slightly larger float travel so the movement reads clearly */
 @keyframes float{
   0%,100%{ transform: translateY(0) rotate(0deg);}
-  50%{ transform: translateY(-18px) rotate(6deg);}
+  50%{ transform: translateY(-22px) rotate(7deg);}
 }
 
 .hero__inner{
@@ -397,7 +428,7 @@ html[data-theme="dark"] .icon--moon{ display:block; }
 
 .scroll-cue{
   position:absolute;
-  bottom:0px; /* more space from bottom */
+  bottom:24px;
   left:50%;
   transform:translateX(-50%);
   width:26px;
@@ -424,6 +455,35 @@ html[data-theme="dark"] .icon--moon{ display:block; }
 }
 
 /* ---------- Hero Responsive ---------- */
+
+/* Laptop range: the section previously inherited desktop's 100vh + fixed
+   90px top padding, which on shorter laptop viewports produced uneven,
+   sometimes cramped or oversized gaps between the title/role/summary/CTA
+   stack. This range gets its own predictable, non-vh-based padding and
+   tighter, tuned spacing instead of relying on viewport height. */
+@media (min-width:901px) and (max-width:1440px){
+
+  .hero{
+    min-height: auto;
+    padding: 150px 40px 96px;
+  }
+
+  .hero__inner{
+    max-width: 680px;
+  }
+
+  .hero__title{ margin-bottom: 16px; }
+  .hero__role{ margin-bottom: 20px; }
+  .hero__summary{ margin-bottom: 26px; }
+  .hero__cta{ margin-bottom: 22px; }
+  .hero__social{ margin-bottom: 6px; }
+
+  .hero__stats{
+    margin-top: 10px;
+    padding-top: 22px;
+    gap: 30px;
+  }
+}
 
 @media (max-width:900px){
 
@@ -510,7 +570,7 @@ html[data-theme="dark"] .icon--moon{ display:block; }
 
 }
 /* ---------- Sections ---------- */
-.section{ padding:110px 0; }
+.section{ padding:110px 0; position: relative; overflow: hidden; }
 .section--alt{ background:var(--bg-alt); }
 .release-tag{
   font-family:var(--font-mono);
@@ -531,6 +591,17 @@ html[data-theme="dark"] .icon--moon{ display:block; }
 
 .reveal{ opacity:1; transform:translateY(0); transition: opacity .7s var(--ease), transform .7s var(--ease); }
 .reveal.is-visible{ opacity:1; transform:translateY(0); }
+
+/* Per-section decorative shapes layer — sits behind .section-inner
+   (which is z-index:2) and above the section's own background, so every
+   section down the page gets its own bit of floating motion. */
+.bg-shapes{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  z-index:0;
+}
 
 /* ---------- About ---------- */
 .about__grid{ display:grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items:start; }
@@ -651,16 +722,25 @@ html[data-theme="dark"] .icon--moon{ display:block; }
 }
 .project-card:hover{ box-shadow: var(--shadow-l); }
 .project-card__media{
-  height: 130px;
+  height:180px;
   background: var(--tint, var(--blue-dim));
-  display:flex; align-items:center; justify-content:center;
-  position: relative;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
 }
 .project-card__media::before{
   content:'';
   position:absolute; inset:0;
   background-image: linear-gradient(45deg, transparent 48%, rgba(0,0,0,.04) 50%, transparent 52%);
   background-size: 18px 18px;
+}
+.project-card__image{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
 }
 .project-card__glyph{ font-family: var(--font-mono); font-size: 2rem; letter-spacing: .1em; color: var(--ink); opacity:.55; }
 .project-card__body{ padding: 24px 26px 26px; }
@@ -754,23 +834,154 @@ html[data-theme="dark"] .icon--moon{ display:block; }
 .testimonial__dots span{ width:7px; height:7px; border-radius:50%; background: var(--line); cursor:pointer; transition: background .2s, transform .2s; }
 .testimonial__dots span.is-active{ background: var(--blue); transform: scale(1.3); }
 
-/* ---------- Contact ---------- */
-.contact__grid{ display:grid; grid-template-columns: 1fr 1.15fr; gap: 56px; }
-.contact__info > p{ color: var(--ink-dim); margin-bottom: 24px; }
-.contact__list{ margin-bottom: 28px; }
-.contact__list li{ display:flex; justify-content:space-between; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: .95rem; }
-.contact__list li span{ color: var(--ink-dim); font-family: var(--font-mono); font-size: .82rem; }
-.contact__list li a:hover{ color: var(--blue); }
+/* ==========================================================
+   CONTACT — redesigned: availability badges, icon contact
+   list, floating-label modern form, animated accents.
+   ========================================================== */
+.contact__badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin: -22px 0 40px;
+}
+.mini-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--ink-dim);
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+  padding: 7px 13px;
+  border-radius: 999px;
+  transition: transform .25s var(--ease), border-color .25s, color .25s;
+}
+.mini-badge:hover{ transform: translateY(-2px); border-color: var(--blue); color: var(--ink); }
+.mini-badge__dot{
+  width:6px; height:6px; border-radius:50%;
+  background: var(--green);
+  animation: pulse 2s infinite;
+}
 
+.contact__grid{ display:grid; grid-template-columns: 1fr 1.15fr; gap: 56px; align-items:start; }
+
+.contact__info > p{ color: var(--ink-dim); margin-bottom: 26px; }
+
+.contact__list{ margin-bottom: 30px; display:flex; flex-direction:column; gap: 4px; }
+.contact__list li{
+  display:flex;
+  align-items:center;
+  gap: 14px;
+  padding: 13px 8px;
+  border-bottom: 1px solid var(--line);
+  border-radius: var(--radius-s);
+  transition: background .25s var(--ease), padding-left .25s var(--ease);
+}
+.contact__list li:hover{ background: var(--card-bg); padding-left: 14px; }
+.contact__list li:last-child{ border-bottom: none; }
+
+.contact__list .ic{
+  flex: none;
+  width: 38px; height: 38px;
+  border-radius: 11px;
+  display:flex; align-items:center; justify-content:center;
+  background: var(--blue-dim);
+  color: var(--blue);
+  transition: transform .3s var(--ease), background .3s var(--ease), color .3s var(--ease);
+}
+.contact__list .ic svg{ width:18px; height:18px; }
+.contact__list li:hover .ic{
+  transform: translateY(-3px) rotate(-6deg);
+  background: var(--blue);
+  color: #fff;
+}
+
+.contact__list .meta{ display:flex; flex-direction:column; gap: 2px; min-width:0; }
+.contact__list .meta > span{
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: .04em;
+  color: var(--ink-dim);
+  text-transform: uppercase;
+}
+.contact__list .meta a{
+  font-size: .96rem;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.contact__list .meta a:hover{ color: var(--blue); }
+
+/* ---------- Modern floating-label form ---------- */
 .contact__form{
+  position: relative;
   background: var(--card-bg);
   border: 1px solid var(--line);
   border-radius: var(--radius-l);
-  padding: 30px;
-  display:flex; flex-direction:column; gap: 18px;
+  padding: 34px 32px 30px;
+  display:flex; flex-direction:column; gap: 22px;
+  overflow: hidden;
+  transition: transform .35s var(--ease), box-shadow .35s var(--ease);
 }
+.contact__form::before{
+  content:'';
+  position:absolute; top:0; left:0; right:0; height:3px;
+  background: linear-gradient(90deg, var(--blue), var(--green));
+}
+.contact__form:hover{
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-l);
+}
+
 .field{ display:flex; flex-direction:column; gap:6px; }
-.field label{ font-size: .82rem; color: var(--ink-dim); font-family: var(--font-mono); }
+
+.field--float{
+  position: relative;
+  display: block;
+}
+.field--float input,
+.field--float textarea{
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-s);
+  padding: 18px 14px 8px;
+  color: var(--ink);
+  font-size: .95rem;
+  transition: border-color .25s var(--ease), box-shadow .25s var(--ease);
+  resize: vertical;
+}
+.field--float textarea{ padding-top: 20px; }
+.field--float input:focus,
+.field--float textarea:focus{
+  border-color: var(--blue);
+  box-shadow: 0 0 0 4px var(--blue-dim);
+  outline: none;
+}
+.field--float label{
+  position: absolute;
+  left: 14px;
+  top: 15px;
+  font-size: .92rem;
+  color: var(--ink-dim);
+  pointer-events: none;
+  transition: top .2s var(--ease), font-size .2s var(--ease), color .2s var(--ease);
+  background: transparent;
+}
+.field--float input:focus + label,
+.field--float input:not(:placeholder-shown) + label,
+.field--float textarea:focus + label,
+.field--float textarea:not(:placeholder-shown) + label{
+  top: 6px;
+  font-size: .68rem;
+  font-family: var(--font-mono);
+  letter-spacing: .04em;
+  color: var(--blue);
+  text-transform: uppercase;
+}
+
 .field input, .field textarea{
   background: var(--bg);
   border: 1px solid var(--line);
@@ -787,9 +998,19 @@ html[data-theme="dark"] .icon--moon{ display:block; }
 .field__note{ font-size: .88rem; color: var(--green); min-height: 18px; margin: 0; }
 .field__disclaimer{ font-size: .76rem; color: var(--ink-dim); margin: 0; }
 
+.btn--submit{
+  position: relative;
+  overflow: hidden;
+}
+.btn--submit .arrow{
+  display: inline-block;
+  transition: transform .3s var(--ease);
+}
+.btn--submit:hover .arrow{ transform: translateX(5px); }
+
 /* ---------- Footer ---------- */
-.footer{ padding: 34px 0; border-top: 1px solid var(--line); }
-.footer__inner{ display:flex; justify-content:space-between; flex-wrap: wrap; gap: 8px; font-size: .84rem; color: var(--ink-dim); }
+.footer{ padding: 34px 0; border-top: 1px solid var(--line); position: relative; overflow: hidden; }
+.footer__inner{ display:flex; justify-content:space-between; flex-wrap: wrap; gap: 8px; font-size: .84rem; color: var(--ink-dim); position: relative; z-index: 2; }
 .footer__mono{ font-family: var(--font-mono); }
 
 /* ---------- Back to top ---------- */
@@ -847,22 +1068,6 @@ html[data-theme="dark"] .icon--moon{ display:block; }
   .section-inner{ padding:0 20px; }
   .hero__cta{ flex-direction:column; align-items:stretch; }
   .pipeline__stage{ flex:1 1 100%; }
+  .contact__badges{ margin-top: -14px; }
+  .contact__form{ padding: 26px 22px 24px; }
 }
-
-.project-card__media{
-  height:180px;
-  background: var(--tint, var(--blue-dim));
-  display:flex;
-  align-items:flex-start;
-  justify-content:center;
-  position:relative;
-  overflow:hidden;
-}
-
-.project-card__image{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  display:block;
-}
-
