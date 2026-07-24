@@ -91,3 +91,141 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+/* ---------- Contact form: validation + real email sending (EmailJS, no backend/database) ---------- */
+document.addEventListener("DOMContentLoaded", () => {
+
+  // 1. Go to https://www.emailjs.com → sign up free
+  // 2. Add an Email Service (e.g. connect your Gmail) → copy its Service ID
+  // 3. Create an Email Template with variables {{from_name}}, {{reply_to}}, {{message}}
+  //    → copy its Template ID
+  // 4. Account → General → copy your Public Key
+  // 5. Paste all three below.
+  const EMAILJS_PUBLIC_KEY  = "QVeq3fbY08DUTt3EA";
+  const EMAILJS_SERVICE_ID  = "service_4rpj484";
+  const EMAILJS_TEMPLATE_ID = "template_99mu3c5";
+  const TO_EMAIL = "tsonyraf@gmail.com";
+
+  emailjs.init({
+    publicKey: EMAILJS_PUBLIC_KEY,
+  });
+
+  const form = document.getElementById("contactForm");
+  if (!form) return;
+
+  const nameInput = document.getElementById("fname");
+  const emailInput = document.getElementById("femail");
+  const msgInput = document.getElementById("fmsg");
+
+  const nameError = document.getElementById("fnameError");
+  const emailError = document.getElementById("femailError");
+  const msgError = document.getElementById("fmsgError");
+
+  const formNote = document.getElementById("formNote");
+  const submitBtn = form.querySelector("button[type='submit']");
+
+  let sending = false;
+
+  function setError(field, errorEl, message) {
+    const wrapper = field.closest(".field");
+
+    if (message) {
+      wrapper.classList.add("has-error");
+      errorEl.textContent = message;
+    } else {
+      wrapper.classList.remove("has-error");
+      errorEl.textContent = "";
+    }
+  }
+
+  function validate() {
+
+    let valid = true;
+
+    if (nameInput.value.trim().length < 2) {
+      setError(nameInput, nameError, "Please enter your name.");
+      valid = false;
+    } else {
+      setError(nameInput, nameError, "");
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(emailInput.value.trim())) {
+      setError(emailInput, emailError, "Please enter a valid email.");
+      valid = false;
+    } else {
+      setError(emailInput, emailError, "");
+    }
+
+    if (msgInput.value.trim().length < 10) {
+      setError(msgInput, msgError, "Please enter at least 10 characters.");
+      valid = false;
+    } else {
+      setError(msgInput, msgError, "");
+    }
+
+    return valid;
+  }
+
+  form.addEventListener("submit", async (e) => {
+
+    e.preventDefault();
+
+    if (sending) return;
+
+    if (!validate()) return;
+
+    sending = true;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+
+    formNote.textContent = "";
+
+    try {
+
+      console.log("Sending email...");
+
+      const response = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: nameInput.value.trim(),
+          reply_to: emailInput.value.trim(),
+          message: msgInput.value.trim()
+        }
+      );
+
+      console.log(response);
+
+      submitBtn.textContent = "Message Sent ✓";
+
+      formNote.textContent =
+        "Thank you! Your message has been sent.";
+
+      form.reset();
+
+    } catch (err) {
+
+      console.error(err);
+
+      submitBtn.textContent = "Send message";
+
+      formNote.textContent =
+        "Unable to send the message. Please try again.";
+
+    } finally {
+
+      sending = false;
+
+      setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Send message <span class="arrow">→</span>';
+      }, 1500);
+
+    }
+
+  });
+
+});
