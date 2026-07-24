@@ -303,7 +303,7 @@ html[data-theme="dark"] .icon--moon{ display:block; }
 .hero__title{
   font-family:var(--font-display);
   font-weight:700;
-  font-size:clamp(2.6rem, 6vw, 4.6rem);
+  font-size:clamp(1.8rem, 4.2vw, 3rem);
   letter-spacing:-0.02em;
   margin-bottom:14px;
 }
@@ -536,9 +536,9 @@ html[data-theme="dark"] .icon--moon{ display:block; }
   }
 
   .hero__title{
-    font-size:2.5rem;
-    line-height:1.1;
-    word-break:break-word;
+    font-size:2.1rem;
+    line-height:1.05;
+    word-break:normal;
   }
 
   .hero__role{
