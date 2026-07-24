@@ -935,68 +935,105 @@ html[data-theme="dark"] .icon--moon{ display:block; }
   box-shadow: var(--shadow-l);
 }
 
-.field{ display:flex; flex-direction:column; gap:6px; }
-
-.field--float{
-  position: relative;
-  display: block;
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
 }
+
+/* ---------- Floating Label Fields ---------- */
+.field--float{
+  position:relative;
+  display:block;
+}
+
 .field--float input,
 .field--float textarea{
-  width: 100%;
-  background: var(--bg);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-s);
-  padding: 18px 14px 8px;
-  color: var(--ink);
-  font-size: .95rem;
-  transition: border-color .25s var(--ease), box-shadow .25s var(--ease);
-  resize: vertical;
+  width:100%;
+  background:var(--bg);
+  border:1px solid var(--line);
+  border-radius:var(--radius-s);
+  padding:18px 14px;
+  color:var(--ink);
+  font-size:.95rem;
+  transition:
+    border-color .25s var(--ease),
+    box-shadow .25s var(--ease);
+  resize:vertical;
 }
-.field--float textarea{ padding-top: 20px; }
+
+.field--float textarea{
+  padding-top:20px;
+}
+
+/* Focus effect */
 .field--float input:focus,
 .field--float textarea:focus{
-  border-color: var(--blue);
-  box-shadow: 0 0 0 4px var(--blue-dim);
-  outline: none;
+  border-color:var(--blue);
+  box-shadow:0 0 0 4px var(--blue-dim);
+  outline:none;
 }
+
+/* Floating label default position */
 .field--float label{
-  position: absolute;
-  left: 14px;
-  top: 15px;
-  font-size: .92rem;
-  color: var(--ink-dim);
-  pointer-events: none;
-  transition: top .2s var(--ease), font-size .2s var(--ease), color .2s var(--ease);
-  background: transparent;
+  position:absolute;
+  left:14px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:.92rem;
+  color:var(--ink-dim);
+  pointer-events:none;
+  padding:0 5px;
+  background:var(--bg);
+
+  transition:
+    top .2s var(--ease),
+    transform .2s var(--ease),
+    font-size .2s var(--ease),
+    color .2s var(--ease);
 }
+
+
+/* Move label above input */
 .field--float input:focus + label,
 .field--float input:not(:placeholder-shown) + label,
 .field--float textarea:focus + label,
 .field--float textarea:not(:placeholder-shown) + label{
-  top: 6px;
-  font-size: .68rem;
-  font-family: var(--font-mono);
-  letter-spacing: .04em;
-  color: var(--blue);
-  text-transform: uppercase;
+
+  top:0;
+  transform:translateY(-50%);
+  font-size:.68rem;
+  font-family:var(--font-mono);
+  letter-spacing:.04em;
+  color:var(--blue);
+  text-transform:uppercase;
 }
 
-.field input, .field textarea{
-  background: var(--bg);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-s);
-  padding: 11px 13px;
-  color: var(--ink);
-  font-size: .95rem;
-  transition: border-color .2s;
-  resize: vertical;
+
+/* ---------- Error / Status Messages ---------- */
+.field.has-error input,
+.field.has-error textarea{
+  border-color:#C4483B;
 }
-.field input:focus, .field textarea:focus{ border-color: var(--blue); }
-.field.has-error input, .field.has-error textarea{ border-color: #C4483B; }
-.field__error{ font-size: .78rem; color: #C4483B; min-height: 14px; }
-.field__note{ font-size: .88rem; color: var(--green); min-height: 18px; margin: 0; }
-.field__disclaimer{ font-size: .76rem; color: var(--ink-dim); margin: 0; }
+
+.field__error{
+  font-size:.78rem;
+  color:#C4483B;
+  min-height:14px;
+}
+
+.field__note{
+  font-size:.88rem;
+  color:var(--green);
+  min-height:18px;
+  margin:0;
+}
+
+.field__disclaimer{
+  font-size:.76rem;
+  color:var(--ink-dim);
+  margin:0;
+}
 
 .btn--submit{
   position: relative;
