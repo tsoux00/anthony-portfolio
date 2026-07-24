@@ -319,6 +319,7 @@ html[data-theme="dark"] .icon--moon{ display:block; }
   align-items: center;
   gap: 0.7rem;
   text-align:center;
+  flex-wrap: wrap;
 }
 .hero__role--label{
   color: var(--ink-dim);
@@ -333,7 +334,8 @@ html[data-theme="dark"] .icon--moon{ display:block; }
 .typing{
   display:inline-block;
   min-width:1ch;
-  white-space:nowrap;
+  white-space:normal;
+  word-break: break-word;
 }
 
 .typing-cursor{
