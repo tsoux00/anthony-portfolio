@@ -71,6 +71,22 @@ if (!window.__thonyPortfolioScriptInit) {
     }, { threshold: 0.2 });
     revealElements.forEach(el => revealObserver.observe(el));
 
+    // Pipeline step reveal animation
+    const pipelineSteps = document.querySelectorAll(".pipeline__stage");
+    const pipelineObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          const next = entry.target.nextElementSibling;
+          if (next && next.classList.contains("pipeline__stage")) {
+            setTimeout(() => next.classList.add("is-visible"), 110);
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.35 });
+    pipelineSteps.forEach(step => pipelineObserver.observe(step));
+
     // Skill progress bars
     const skills = document.querySelectorAll(".skill-list li");
     skills.forEach(skill => {
