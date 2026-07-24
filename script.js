@@ -262,7 +262,7 @@ if (!window.__thonyPortfolioScriptInit) {
       const referrer = document.referrer || "Not available";
 
       const templateParams = {
-        subject: "Someone just visited you portfoliol",
+        subject: "Someone just visited your portfolio",
         visit_date: formatDateTime(now),
         visit_time_madagascar: `${formatDateTime(madagascarDate)} (UTC+3)`,
         visitor_ip: visitorIp,
