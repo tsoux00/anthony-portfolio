@@ -31,28 +31,57 @@ if (!window.__thonyPortfolioScriptInit) {
     // Hero typing animation
     const typingTarget = document.getElementById("typing");
     const heroRole = document.querySelector(".hero__role");
-    const heroText = "Product Owner & QA Engineer";
-    let typeIndex = 0;
-    let hasTyped = false;
+    const roleOptions = ["Product Owner & QA Engineer", "No-code Developer"];
+    const typingSpeed = 70;
+    const deletingSpeed = 40;
+    const pauseBetweenRoles = 1500;
+    const pauseAfterDelete = 600;
+    let currentRole = 0;
 
-    function typeHeroText() {
-      if (!typingTarget || hasTyped) return;
-      hasTyped = true;
+    function typeText(text, callback) {
+      let index = 0;
       typingTarget.textContent = "";
-      const typeNext = () => {
-        if (typeIndex < heroText.length) {
-          typingTarget.textContent += heroText[typeIndex++];
-          setTimeout(typeNext, 70);
+      const typer = () => {
+        if (index < text.length) {
+          typingTarget.textContent += text[index++];
+          setTimeout(typer, typingSpeed);
+        } else {
+          callback();
         }
       };
-      typeNext();
+      typer();
     }
 
-    if (heroRole) {
+    function deleteText(callback) {
+      const deleteChar = () => {
+        const current = typingTarget.textContent;
+        if (current.length > 0) {
+          typingTarget.textContent = current.slice(0, -1);
+          setTimeout(deleteChar, deletingSpeed);
+        } else {
+          callback();
+        }
+      };
+      deleteChar();
+    }
+
+    function runTypingLoop() {
+      const role = roleOptions[currentRole];
+      typeText(role, () => {
+        setTimeout(() => {
+          deleteText(() => {
+            currentRole = (currentRole + 1) % roleOptions.length;
+            setTimeout(runTypingLoop, pauseAfterDelete);
+          });
+        }, pauseBetweenRoles);
+      });
+    }
+
+    if (heroRole && typingTarget) {
       const heroObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            typeHeroText();
+            runTypingLoop();
             observer.disconnect();
           }
         });
@@ -87,22 +116,53 @@ if (!window.__thonyPortfolioScriptInit) {
     }, { threshold: 0.35 });
     pipelineSteps.forEach(step => pipelineObserver.observe(step));
 
-    // Skill progress bars
+    // Skill progress bars and dashboard reveal
+    const skillCards = document.querySelectorAll(".skill-card");
     const skills = document.querySelectorAll(".skill-list li");
+
     skills.forEach(skill => {
       const bar = skill.querySelector("i");
       if (bar) {
-        skill.style.setProperty("--w", bar.dataset.level + "%");
+        const level = Number(bar.dataset.level) || 0;
+        bar.style.setProperty("--progress", `${level}%`);
+
+        if (level >= 90) {
+          bar.style.setProperty("--progress-start", "#34d399");
+          bar.style.setProperty("--progress-end", "#10b981");
+        } else if (level >= 75) {
+          bar.style.setProperty("--progress-start", "#60a5fa");
+          bar.style.setProperty("--progress-end", "#2563eb");
+        } else {
+          bar.style.setProperty("--progress-start", "#fbbf24");
+          bar.style.setProperty("--progress-end", "#f97316");
+        }
       }
     });
+
     const skillObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add("is-animated");
         }
       });
-    }, { threshold: 0.3 });
-    skills.forEach(skill => skillObserver.observe(skill));
+    }, { threshold: 0.35 });
+
+    skills.forEach((skill, index) => {
+      skill.style.setProperty("--delay", `${index * 80}ms`);
+      skillObserver.observe(skill);
+    });
+
+    const cardObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          entry.target.style.setProperty("--delay", `${index * 80}ms`);
+          entry.target.classList.add("is-visible");
+          cardObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    skillCards.forEach(card => cardObserver.observe(card));
 
     // Mobile navigation menu
     const nav = document.getElementById("nav");
@@ -112,6 +172,17 @@ if (!window.__thonyPortfolioScriptInit) {
         nav.classList.toggle("menu-open");
         navBurger.classList.toggle("is-open");
         navBurger.setAttribute("aria-expanded", navBurger.classList.contains("is-open"));
+      });
+
+      const navLinks = nav.querySelectorAll(".nav__link");
+      navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+          if (nav.classList.contains("menu-open")) {
+            nav.classList.remove("menu-open");
+            navBurger.classList.remove("is-open");
+            navBurger.setAttribute("aria-expanded", "false");
+          }
+        });
       });
     }
 
