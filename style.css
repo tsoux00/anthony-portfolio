@@ -669,11 +669,17 @@ html[data-theme="dark"] .icon--moon{ display:block; }
   transition: opacity .35s var(--ease);
 }
 
-.skill-card:hover{
+..skill-card:hover{
   transform: translateY(-5px);
   box-shadow:0 32px 82px rgba(15,20,40,.08);
   border-color: rgba(100,144,255,.22);
   background: rgba(255,255,255,.98);
+}
+
+html[data-theme="dark"] .skill-card:hover{
+  background: rgba(255,255,255,.05);
+  border-color: rgba(100,144,255,.25);
+  box-shadow:0 32px 82px rgba(0,0,0,.4);
 }
 
 .skill-card:hover::before{
