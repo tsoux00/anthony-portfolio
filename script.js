@@ -187,12 +187,102 @@ if (!window.__thonyPortfolioScriptInit) {
     }
 
     /* ---------- Contact form: validation + real email sending (EmailJS, no backend/database) ---------- */
-    const EMAILJS_PUBLIC_KEY  = "QVeq3fbY08DUTt3EA";
-    const EMAILJS_SERVICE_ID  = "service_4rpj484";
-    const EMAILJS_TEMPLATE_ID = "template_99mu3c5";
+    const EMAILJS_PUBLIC_KEY            = "QVeq3fbY08DUTt3EA";
+    const EMAILJS_SERVICE_ID            = "service_4rpj484";
+    const EMAILJS_TEMPLATE_ID           = "template_99mu3c5";
+    const EMAILJS_VISITOR_TEMPLATE_ID   = "template_4h80gme";
+    const VISITOR_NOTIFICATION_FLAG     = "visitorNotificationSent";
 
     if (window.emailjs) {
       emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+    }
+
+    function formatDateTime(date) {
+      const pad = (value) => String(value).padStart(2, "0");
+      return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())} ${pad(date.getHours())}:${pad(date.getMinutes())}:${pad(date.getSeconds())}`;
+    }
+
+    function getMadagascarDate(date) {
+      const offsetMinutes = date.getTimezoneOffset();
+      const madagascarOffset = 180; // UTC+3
+      return new Date(date.getTime() + (offsetMinutes + madagascarOffset) * 60000);
+    }
+
+    function detectBrowserAndOs(userAgent) {
+      const ua = userAgent || navigator.userAgent || "";
+      let browser = "Unknown browser";
+      if (/Edg\//.test(ua)) browser = "Edge";
+      else if (/OPR\//.test(ua) || /Opera/.test(ua)) browser = "Opera";
+      else if (/Chrome\//.test(ua) && !/Edg\//.test(ua) && !/OPR\//.test(ua)) browser = "Chrome";
+      else if (/Firefox\//.test(ua)) browser = "Firefox";
+      else if (/Safari\//.test(ua) && !/Chrome\//.test(ua) && !/Chromium\//.test(ua)) browser = "Safari";
+      else if (/MSIE |Trident\//.test(ua)) browser = "Internet Explorer";
+
+      let os = "Unknown OS";
+      if (/Windows NT 10.0/.test(ua)) os = "Windows 10";
+      else if (/Windows NT 6.3/.test(ua)) os = "Windows 8.1";
+      else if (/Windows NT 6.2/.test(ua)) os = "Windows 8";
+      else if (/Windows NT 6.1/.test(ua)) os = "Windows 7";
+      else if (/Mac OS X/.test(ua) && !/Mobile/.test(ua)) os = "macOS";
+      else if (/Android/.test(ua)) os = "Android";
+      else if (/iPhone|iPad|iPod/.test(ua)) os = "iOS";
+      else if (/Linux/.test(ua)) os = "Linux";
+      else if (/CrOS/.test(ua)) os = "Chrome OS";
+
+      return `${browser} on ${os}`;
+    }
+
+    function detectDeviceType(userAgent) {
+      const ua = userAgent || navigator.userAgent || "";
+      if (/Tablet|iPad|PlayBook|Silk/.test(ua)) return "Tablet";
+      if (/Mobi|Android|iPhone|iPod|Mobile/.test(ua)) return "Mobile";
+      return "Desktop";
+    }
+
+    async function getVisitorIp() {
+      try {
+        const response = await fetch("https://api.ipify.org?format=json");
+        if (!response.ok) throw new Error("IP lookup failed");
+        const data = await response.json();
+        return data.ip || "Not available";
+      } catch (err) {
+        return "Not available";
+      }
+    }
+
+    async function sendVisitorNotification() {
+      if (!window.emailjs || !EMAILJS_SERVICE_ID || !EMAILJS_VISITOR_TEMPLATE_ID) return;
+      if (sessionStorage.getItem(VISITOR_NOTIFICATION_FLAG) === "true") return;
+
+      const now = new Date();
+      const madagascarDate = getMadagascarDate(now);
+      const visitorIp = await getVisitorIp();
+      const browserOs = detectBrowserAndOs(navigator.userAgent);
+      const deviceType = detectDeviceType(navigator.userAgent);
+      const referrer = document.referrer || "Not available";
+
+      const templateParams = {
+        subject: "Someone just visited you portfoliol",
+        visit_date: formatDateTime(now),
+        visit_time_madagascar: `${formatDateTime(madagascarDate)} (UTC+3)`,
+        visitor_ip: visitorIp,
+        browser_os: browserOs,
+        device_type: deviceType,
+        referrer,
+        to_email: "tsonyraf@gmail.com",
+        message: `A visitor opened the portfolio at ${formatDateTime(now)}.`
+      };
+
+      try {
+        await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_VISITOR_TEMPLATE_ID, templateParams);
+        sessionStorage.setItem(VISITOR_NOTIFICATION_FLAG, "true");
+      } catch (err) {
+        console.warn("Visitor notification failed", err);
+      }
+    }
+
+    if (sessionStorage.getItem(VISITOR_NOTIFICATION_FLAG) !== "true") {
+      sendVisitorNotification();
     }
 
     const form = document.getElementById("contactForm");
