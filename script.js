@@ -5,8 +5,12 @@ if (!window.__thonyPortfolioScriptInit) {
 
     /* ---------- Theme toggle ---------- */
     const themeToggle = document.getElementById("themeToggle");
+    const langSwitch = document.getElementById("langSwitch");
+    const langSwitchLabel = document.getElementById("langSwitchLabel");
+    const langSwitchIcon = document.getElementById("langSwitchIcon");
     const html = document.documentElement;
     const savedTheme = localStorage.getItem("theme");
+    let activeLanguage = localStorage.getItem("portfolioLanguage") || "en";
 
     if (savedTheme === "dark") {
       html.setAttribute("data-theme", "dark");
@@ -27,6 +31,177 @@ if (!window.__thonyPortfolioScriptInit) {
         }
       });
     }
+
+    const translations = {
+      en: {
+        "nav.about": "About",
+        "nav.skills": "Skills",
+        "nav.experience": "Experience",
+        "nav.projects": "Projects",
+        "nav.process": "Process",
+        "nav.education": "Education",
+        "nav.certs": "Certs",
+        "nav.notes": "Notes",
+        "nav.contact": "Contact",
+        "hero.badge": "v1.0.0 · currently shipping",
+        "hero.roleLabel": "I am a",
+        "hero.summary": "I sit between engineering, design, and the business, and I make the backlog tell the truth. Two years turning ambiguous problems into products that ship on time, get adopted, and get renewed.",
+        "hero.ctaProjects": "View case studies",
+        "hero.ctaResume": "Download résumé",
+        "hero.statYears": "Years in product",
+        "hero.statFeatures": "Features shipped",
+        "hero.statPredictability": "Sprint predictability",
+        "hero.statProducts": "Products delivered",
+        "about.release": "v1.1 · about",
+        "about.title": "Release notes on how I work",
+        "skills.release": "v1.2 · capability matrix",
+        "skills.title": "Skills, by category",
+        "experience.release": "v1.3 · changelog",
+        "experience.title": "Experience",
+        "projects.release": "v1.4 · case studies",
+        "projects.title": "Projects",
+        "process.release": "v1.5 · pipeline",
+        "process.title": "How an idea becomes a release",
+        "education.release": "v1.6 · education",
+        "education.title": "Education & continuous learning",
+        "education.intro": "A background built through formal study, language growth, and practical product work.",
+        "languages.release": "v1.6.1 · languages",
+        "languages.title": "Languages",
+        "languages.intro": "Communication is part of delivery. These are the languages I use to bridge teams, clients, and ideas.",
+        "certs.release": "v1.7 · credentials",
+        "certs.title": "Certifications",
+        "testimonials.release": "v1.8 · notes from the team",
+        "testimonials.title": "What shipping with me is like",
+        "testimonials.quote": "\"Anthony is the only PO I've worked with who writes acceptance criteria I never have to ask about twice.\"",
+        "testimonials.author": "— Hugues Seureau, Staff Engineer",
+        "contact.release": "v1.9 · get in touch",
+        "contact.title": "Open to the next hard problem",
+        "contact.badgeRoles": "Available for new roles",
+        "contact.badgeReply": "⏱ < 24h response time",
+        "contact.badgeRemote": "🌍 Remote-friendly",
+        "contact.intro": "Best reached by email. I read everything, and I answer product questions faster than sales pitches.",
+        "contact.emailLabel": "Email",
+        "contact.phoneLabel": "Phone",
+        "contact.linkedinLabel": "LinkedIn",
+        "contact.githubLabel": "GitHub",
+        "contact.downloadBtn": "Download résumé (PDF)",
+        "contact.nameLabel": "Name",
+        "contact.emailLabelField": "Email",
+        "contact.messageLabel": "Message",
+        "contact.submitBtn": "Send message",
+        "contact.disclaimer": "This is a static form — no data is submitted or stored anywhere.",
+        "footer.text": "© 2026 Anthony Rasolofoarimanana. Built static — no backend, no database.",
+        "footer.meta": "v1.9.0 · last deployed June 2026"
+      },
+      fr: {
+        "nav.about": "About",
+        "nav.skills": "Skills",
+        "nav.experience": "Experience",
+        "nav.projects": "Projects",
+        "nav.process": "Process",
+        "nav.education": "Education",
+        "nav.certs": "Certs",
+        "nav.notes": "Notes",
+        "nav.contact": "Contact",
+        "hero.badge": "v1.0.0 · currently shipping",
+        "hero.roleLabel": "I am a",
+        "hero.summary": "I sit between engineering, design, and the business, and I make the backlog tell the truth. Two years turning ambiguous problems into products that ship on time, get adopted, and get renewed.",
+        "hero.ctaProjects": "View case studies",
+        "hero.ctaResume": "Download résumé",
+        "hero.statYears": "Years in product",
+        "hero.statFeatures": "Features shipped",
+        "hero.statPredictability": "Sprint predictability",
+        "hero.statProducts": "Products delivered",
+        "about.release": "v1.1 · about",
+        "about.title": "Release notes on how I work",
+        "skills.release": "v1.2 · capability matrix",
+        "skills.title": "Skills, by category",
+        "experience.release": "v1.3 · changelog",
+        "experience.title": "Experience",
+        "projects.release": "v1.4 · case studies",
+        "projects.title": "Projects",
+        "process.release": "v1.5 · pipeline",
+        "process.title": "How an idea becomes a release",
+        "education.release": "v1.6 · education",
+        "education.title": "Education & continuous learning",
+        "education.intro": "A background built through formal study, language growth, and practical product work.",
+        "languages.release": "v1.6.1 · languages",
+        "languages.title": "Languages",
+        "languages.intro": "Communication is part of delivery. These are the languages I use to bridge teams, clients, and ideas.",
+        "certs.release": "v1.7 · credentials",
+        "certs.title": "Certifications",
+        "testimonials.release": "v1.8 · notes from the team",
+        "testimonials.title": "What shipping with me is like",
+        "testimonials.quote": "\"Anthony is the only PO I've worked with who writes acceptance criteria I never have to ask about twice.\"",
+        "testimonials.author": "— Hugues Seureau, Staff Engineer",
+        "contact.release": "v1.9 · get in touch",
+        "contact.title": "Open to the next hard problem",
+        "contact.badgeRoles": "Available for new roles",
+        "contact.badgeReply": "⏱ < 24h response time",
+        "contact.badgeRemote": "🌍 Remote-friendly",
+        "contact.intro": "Best reached by email. I read everything, and I answer product questions faster than sales pitches.",
+        "contact.emailLabel": "Email",
+        "contact.phoneLabel": "Phone",
+        "contact.linkedinLabel": "LinkedIn",
+        "contact.githubLabel": "GitHub",
+        "contact.downloadBtn": "Download résumé (PDF)",
+        "contact.nameLabel": "Name",
+        "contact.emailLabelField": "Email",
+        "contact.messageLabel": "Message",
+        "contact.submitBtn": "Send message",
+        "contact.disclaimer": "This is a static form — no data is submitted or stored anywhere.",
+        "footer.text": "© 2026 Anthony Rasolofoarimanana. Built static — no backend, no database.",
+        "footer.meta": "v1.9.0 · last deployed June 2026"
+      }
+    };
+
+    function applyLanguage(lang) {
+      const current = translations[lang] || translations.en;
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (current[key]) {
+          if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+            el.setAttribute("placeholder", current[key]);
+          } else {
+            el.textContent = current[key];
+          }
+        }
+      });
+      document.documentElement.lang = lang === "fr" ? "fr" : "en";
+      document.documentElement.setAttribute("data-language", lang === "fr" ? "fr" : "en");
+      localStorage.setItem("portfolioLanguage", lang);
+      if (langSwitchLabel) {
+        langSwitchLabel.textContent = lang === "fr" ? "EN" : "FR";
+      }
+      if (langSwitch) {
+        langSwitch.setAttribute("aria-pressed", String(lang === "fr"));
+        langSwitch.setAttribute("data-lang", lang === "fr" ? "fr" : "en");
+      }
+    }
+
+    function setLanguage(lang, { animate = true } = {}) {
+      const target = lang === "fr" ? "fr" : "en";
+      if (animate && langSwitch) {
+        langSwitch.classList.add("is-loading");
+        setTimeout(() => {
+          activeLanguage = target;
+          applyLanguage(target);
+          langSwitch.classList.remove("is-loading");
+        }, 700);
+      } else {
+        activeLanguage = target;
+        applyLanguage(target);
+      }
+    }
+
+    if (langSwitch) {
+      langSwitch.addEventListener("click", () => {
+        const nextLang = activeLanguage === "fr" ? "en" : "fr";
+        setLanguage(nextLang);
+      });
+    }
+
+    applyLanguage(activeLanguage);
 
     // Hero typing animation
     const typingTarget = document.getElementById("typing");
@@ -119,6 +294,8 @@ if (!window.__thonyPortfolioScriptInit) {
     // Skill progress bars and dashboard reveal
     const skillCards = document.querySelectorAll(".skill-card");
     const skills = document.querySelectorAll(".skill-list li");
+    const languageCards = document.querySelectorAll(".language-card");
+    const languageBars = document.querySelectorAll(".language-card__bar span");
 
     skills.forEach(skill => {
       const bar = skill.querySelector("i");
@@ -164,6 +341,22 @@ if (!window.__thonyPortfolioScriptInit) {
 
     skillCards.forEach(card => cardObserver.observe(card));
 
+    languageBars.forEach(bar => {
+      const level = Number(bar.dataset.level) || 0;
+      bar.style.setProperty("--level", `${level}%`);
+    });
+
+    const languageObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          languageObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.25 });
+
+    languageCards.forEach(card => languageObserver.observe(card));
+
     // Mobile navigation menu
     const nav = document.getElementById("nav");
     const navBurger = document.getElementById("navBurger");
@@ -193,6 +386,8 @@ if (!window.__thonyPortfolioScriptInit) {
     const EMAILJS_VISITOR_TEMPLATE_ID   = "template_4h80gme";
     const EMAILJS_DOWNLOAD_TEMPLATE_ID  = "template_4h80gme";
     const VISITOR_NOTIFICATION_FLAG     = "visitorNotificationSent";
+    const VISITOR_NOTIFICATION_STATE_KEY = "visitorNotificationState";
+    const VISITOR_NOTIFICATION_WINDOW_MS = 2 * 60 * 60 * 1000;
 
     if (window.emailjs) {
       emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
@@ -251,13 +446,82 @@ if (!window.__thonyPortfolioScriptInit) {
       }
     }
 
+    function getDeviceFingerprint() {
+      const parts = [
+        navigator.userAgent || "",
+        navigator.language || "",
+        navigator.platform || "",
+        window.screen?.width || "",
+        window.screen?.height || "",
+        window.screen?.colorDepth || ""
+      ];
+      return parts.join("|");
+    }
+
+    function readVisitorNotificationState() {
+      try {
+        const raw = localStorage.getItem(VISITOR_NOTIFICATION_STATE_KEY);
+        return raw ? JSON.parse(raw) : null;
+      } catch (err) {
+        return null;
+      }
+    }
+
+    function writeVisitorNotificationState(fingerprint, timestamp) {
+      try {
+        localStorage.setItem(VISITOR_NOTIFICATION_STATE_KEY, JSON.stringify({ fingerprint, lastSentAt: timestamp }));
+      } catch (err) {
+        // Ignore storage failures and still keep session-level throttling.
+      }
+    }
+
+    function shouldSendVisitorNotification(now) {
+      if (sessionStorage.getItem(VISITOR_NOTIFICATION_FLAG) === "true") return false;
+
+      const state = readVisitorNotificationState();
+      const fingerprint = getDeviceFingerprint();
+      if (!state) return true;
+      if (state.fingerprint !== fingerprint) return true;
+      return now.getTime() - Number(state.lastSentAt || 0) >= VISITOR_NOTIFICATION_WINDOW_MS;
+    }
+
+    async function getVisitorLocation() {
+      if (navigator.geolocation) {
+        try {
+          const position = await new Promise((resolve, reject) => {
+            navigator.geolocation.getCurrentPosition(resolve, reject, {
+              enableHighAccuracy: true,
+              timeout: 7000,
+              maximumAge: 0
+            });
+          });
+
+          return `Lat ${position.coords.latitude.toFixed(4)}, Lng ${position.coords.longitude.toFixed(4)}`;
+        } catch (err) {
+          // Fall back to IP-based lookup below.
+        }
+      }
+
+      try {
+        const response = await fetch("https://ipapi.co/json/");
+        if (!response.ok) throw new Error("Location lookup failed");
+        const data = await response.json();
+        const parts = [data.city, data.region, data.country_name].filter(Boolean);
+        return parts.length ? parts.join(", ") : "Location unavailable";
+      } catch (err) {
+        return "Location unavailable";
+      }
+    }
+
     async function sendVisitorNotification() {
       if (!window.emailjs || !EMAILJS_SERVICE_ID || !EMAILJS_VISITOR_TEMPLATE_ID) return;
-      if (sessionStorage.getItem(VISITOR_NOTIFICATION_FLAG) === "true") return;
 
       const now = new Date();
+      if (!shouldSendVisitorNotification(now)) return;
+
       const madagascarDate = getMadagascarDate(now);
       const visitorIp = await getVisitorIp();
+      const visitorLocation = await getVisitorLocation();
       const browserOs = detectBrowserAndOs(navigator.userAgent);
       const deviceType = detectDeviceType(navigator.userAgent);
       const referrer = document.referrer || "Not available";
@@ -267,16 +531,18 @@ if (!window.__thonyPortfolioScriptInit) {
         visit_date: formatDateTime(now),
         visit_time_madagascar: `${formatDateTime(madagascarDate)} (UTC+3)`,
         visitor_ip: visitorIp,
+        visitor_location: visitorLocation,
         browser_os: browserOs,
         device_type: deviceType,
         referrer,
         to_email: "tsonyraf@gmail.com",
-        message: `A visitor opened the portfolio at ${formatDateTime(now)}.`
+        message: `A visitor opened the portfolio at ${formatDateTime(now)}.\nLocation: ${visitorLocation}`
       };
 
       try {
         await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_VISITOR_TEMPLATE_ID, templateParams);
         sessionStorage.setItem(VISITOR_NOTIFICATION_FLAG, "true");
+        writeVisitorNotificationState(getDeviceFingerprint(), now.getTime());
       } catch (err) {
         console.warn("Visitor notification failed", err);
       }

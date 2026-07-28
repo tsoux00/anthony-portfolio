@@ -35,14 +35,15 @@
 </a>
 
     <nav class="nav__links" id="navLinks">
-      <a href="#about" class="nav__link" data-tag="01">About</a>
-      <a href="#skills" class="nav__link" data-tag="02">Skills</a>
-      <a href="#experience" class="nav__link" data-tag="03">Experience</a>
-      <a href="#projects" class="nav__link" data-tag="04">Projects</a>
-      <a href="#lifecycle" class="nav__link" data-tag="05">Process</a>
-      <a href="#certifications" class="nav__link" data-tag="06">Certs</a>
-      <a href="#testimonials" class="nav__link" data-tag="07">Notes</a>
-      <a href="#contact" class="nav__link" data-tag="08">Contact</a>
+      <a href="#about" class="nav__link" data-tag="01" data-i18n="nav.about">About</a>
+      <a href="#skills" class="nav__link" data-tag="02" data-i18n="nav.skills">Skills</a>
+      <a href="#experience" class="nav__link" data-tag="03" data-i18n="nav.experience">Experience</a>
+      <a href="#projects" class="nav__link" data-tag="04" data-i18n="nav.projects">Projects</a>
+      <a href="#lifecycle" class="nav__link" data-tag="05" data-i18n="nav.process">Process</a>
+      <a href="#education" class="nav__link" data-tag="06" data-i18n="nav.education">Education</a>
+      <a href="#certifications" class="nav__link" data-tag="07" data-i18n="nav.certs">Certs</a>
+      <a href="#testimonials" class="nav__link" data-tag="08" data-i18n="nav.notes">Notes</a>
+      <a href="#contact" class="nav__link" data-tag="09" data-i18n="nav.contact">Contact</a>
     </nav>
 
     <div class="nav__actions">
@@ -71,26 +72,26 @@
     </div>
 
     <div class="section-inner hero__inner">
-      <p class="tag-badge"><span class="tag-badge__dot"></span> v1.0.0 · currently shipping</p>
+      <p class="tag-badge" data-i18n="hero.badge"><span class="tag-badge__dot"></span> v1.0.0 · currently shipping</p>
 
       <h1 class="hero__title">
         Anthony<br>Rasolofoarimanana
       </h1>
       <p class="hero__role">
-        <span class="hero__role--label">I am a</span>
+        <span class="hero__role--label" data-i18n="hero.roleLabel">I am a</span>
         <span class="typing accent" id="typing"></span>
         <span class="typing-cursor">|</span>
       </p>
 
-      <p class="hero__summary">
+      <p class="hero__summary" data-i18n="hero.summary">
         I sit between engineering, design, and the business, and I make the
         backlog tell the truth. Two years turning ambiguous problems into
         products that ship on time, get adopted, and get renewed.
       </p>
 
       <div class="hero__cta">
-        <a href="#projects" class="btn btn--primary">View case studies</a>
-        <a href="assets/resume.pdf" download class="btn btn--ghost">Download résumé</a>
+        <a href="#projects" class="btn btn--primary" data-i18n="hero.ctaProjects">View case studies</a>
+        <a href="assets/resume.pdf" download class="btn btn--ghost" data-i18n="hero.ctaResume">Download résumé</a>
       </div>
 
       <div class="hero__social">
@@ -102,10 +103,10 @@
       </div>
 
       <div class="hero__stats reveal" id="heroStats">
-        <div class="stat"><span class="stat__num" data-target="9">3+</span><span class="stat__label">Years in product</span></div>
-        <div class="stat"><span class="stat__num" data-target="42">75+</span><span class="stat__label">Features shipped</span></div>
-        <div class="stat"><span class="stat__num" data-target="94" data-suffix="%">88%</span><span class="stat__label">Sprint predictability</span></div>
-        <div class="stat"><span class="stat__num" data-target="27" data-prefix="+">5+</span><span class="stat__label">Products delivered</span></div>
+        <div class="stat"><span class="stat__num" data-target="9">3+</span><span class="stat__label" data-i18n="hero.statYears">Years in product</span></div>
+        <div class="stat"><span class="stat__num" data-target="42">75+</span><span class="stat__label" data-i18n="hero.statFeatures">Features shipped</span></div>
+        <div class="stat"><span class="stat__num" data-target="94" data-suffix="%">88%</span><span class="stat__label" data-i18n="hero.statPredictability">Sprint predictability</span></div>
+        <div class="stat"><span class="stat__num" data-target="27" data-prefix="+">5+</span><span class="stat__label" data-i18n="hero.statProducts">Products delivered</span></div>
       </div>
 
       <a href="#about" class="scroll-cue" aria-label="Scroll to content">
@@ -121,8 +122,8 @@
       <span class="shape shape--dot" style="bottom:18%; right:14%;"></span>
     </div>
     <div class="section-inner">
-      <p class="release-tag">v1.1 · about</p>
-      <h2 class="section-title">Release notes on how I work</h2>
+      <p class="release-tag" data-i18n="about.release">v1.1 · about</p>
+      <h2 class="section-title" data-i18n="about.title">Release notes on how I work</h2>
 
       <div class="about__grid reveal">
         <div class="about__bio">
@@ -165,8 +166,8 @@
     <span class="shape shape--circ2" style="bottom:10%; left:5%;"></span>
   </div>
   <div class="section-inner">
-    <p class="release-tag">v1.2 · capability matrix</p>
-    <h2 class="section-title">Skills, by category</h2>
+<p class="release-tag" data-i18n="skills.release">v1.2 · capability matrix</p>
+      <h2 class="section-title" data-i18n="skills.title">Skills, by category</h2>
 
     <div class="skills__grid reveal">
 
@@ -241,8 +242,8 @@
       <span class="shape shape--dot" style="top:70%; left:8%;"></span>
     </div>
     <div class="section-inner">
-      <p class="release-tag">v1.3 · changelog</p>
-      <h2 class="section-title">Experience</h2>
+      <p class="release-tag" data-i18n="experience.release">v1.3 · changelog</p>
+      <h2 class="section-title" data-i18n="experience.title">Experience</h2>
 
       <ol class="changelog reveal">
 
@@ -333,8 +334,8 @@
     <span class="shape shape--ring" style="bottom:-6%; left:-4%; width:160px; height:160px;"></span>
   </div>
   <div class="section-inner">
-    <p class="release-tag">v1.4 · case studies</p>
-    <h2 class="section-title">Projects</h2>
+    <p class="release-tag" data-i18n="projects.release">v1.4 · case studies</p>
+    <h2 class="section-title" data-i18n="projects.title">Projects</h2>
 
     <div class="projects__grid reveal">
 
@@ -535,8 +536,8 @@
       <span class="shape shape--dot" style="bottom:14%; right:10%;"></span>
     </div>
     <div class="section-inner">
-      <p class="release-tag">v1.5 · pipeline</p>
-      <h2 class="section-title">How an idea becomes a release</h2>
+      <p class="release-tag" data-i18n="process.release">v1.5 · pipeline</p>
+      <h2 class="section-title" data-i18n="process.title">How an idea becomes a release</h2>
 
       <div class="pipeline reveal" id="pipeline">
         <div class="pipeline__stage" data-stage="1"><span>Discovery</span></div>
@@ -553,15 +554,126 @@
     </div>
   </section>
 
+  <!-- EDUCATION -->
+  <section class="section section--alt" id="education">
+    <div class="bg-shapes" aria-hidden="true">
+      <span class="shape shape--ring" style="top:-6%; left:6%; width:160px; height:160px;"></span>
+      <span class="shape shape--circ2" style="bottom:12%; right:8%;"></span>
+    </div>
+    <div class="section-inner">
+      <p class="release-tag" data-i18n="education.release">v1.6 · education</p>
+      <h2 class="section-title" data-i18n="education.title">Education &amp; continuous learning</h2>
+
+      <p class="education__intro reveal" data-i18n="education.intro">
+        A background built through formal study, language growth, and practical product work.
+      </p>
+
+      <div class="education__grid">
+        <article class="education-card reveal">
+          <div class="education-card__header">
+            <span class="education-card__tag">CURRENT</span>
+            <span class="education-card__badge">Purdue University</span>
+          </div>
+          <h3>AI Master</h3>
+          <p class="education-card__meta">United States · June 2026 – Present</p>
+          <p class="education-card__body">Exploring applied AI, intelligent systems, and product-led innovation with a focus on real-world impact.</p>
+        </article>
+
+        <article class="education-card reveal">
+          <div class="education-card__header">
+            <span class="education-card__tag">DEGREE</span>
+            <span class="education-card__badge">IT University</span>
+          </div>
+          <h3>Information Technology</h3>
+          <p class="education-card__meta">Madagascar · 2020 – 2023</p>
+          <p class="education-card__body">Built a strong foundation in digital systems, software thinking, and technology problem-solving.</p>
+        </article>
+
+        <article class="education-card reveal">
+          <div class="education-card__header">
+            <span class="education-card__tag">TRAINING</span>
+            <span class="education-card__badge">English Teaching Program</span>
+          </div>
+          <h3>English Course</h3>
+          <p class="education-card__meta">Madagascar · 2020 – 2021</p>
+          <p class="education-card__body">Developed communication, teaching, and cross-cultural collaboration skills in a language-focused program.</p>
+        </article>
+
+        <article class="education-card reveal">
+          <div class="education-card__header">
+            <span class="education-card__tag">LANGUAGE</span>
+            <span class="education-card__badge">English Language Institute</span>
+          </div>
+          <h3>English Course</h3>
+          <p class="education-card__meta">Madagascar · 2019 – 2020</p>
+          <p class="education-card__body">Strengthened academic English and professional communication for international collaboration.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- LANGUAGES -->
+  <section class="section" id="languages">
+    <div class="bg-shapes" aria-hidden="true">
+      <span class="shape shape--sq2" style="top:8%; left:8%;"></span>
+      <span class="shape shape--dot" style="bottom:16%; right:10%;"></span>
+    </div>
+    <div class="section-inner">
+      <p class="release-tag" data-i18n="languages.release">v1.6.1 · languages</p>
+      <h2 class="section-title" data-i18n="languages.title">Languages</h2>
+
+      <div class="languages__panel reveal">
+        <div class="languages__headline">
+          <p data-i18n="languages.intro">Communication is part of delivery. These are the languages I use to bridge teams, clients, and ideas.</p>
+        </div>
+
+        <div class="languages__list">
+          <article class="language-card">
+            <div class="language-card__top">
+              <div class="language-card__icon" aria-hidden="true">EN</div>
+              <div>
+                <h3>English</h3>
+                <p>C1</p>
+              </div>
+            </div>
+            <div class="language-card__bar"><span data-level="88"></span></div>
+          </article>
+
+          <article class="language-card">
+            <div class="language-card__top">
+              <div class="language-card__icon" aria-hidden="true">FR</div>
+              <div>
+                <h3>French</h3>
+                <p>B2</p>
+              </div>
+            </div>
+            <div class="language-card__bar"><span data-level="74"></span></div>
+          </article>
+
+          <article class="language-card">
+            <div class="language-card__top">
+              <div class="language-card__icon" aria-hidden="true">MG</div>
+              <div>
+                <h3>Malagasy</h3>
+                <p>Native</p>
+              </div>
+            </div>
+            <div class="language-card__bar"><span data-level="98"></span></div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CERTIFICATIONS -->
-  <section class="section section--alt" id="certifications">
+  <section class="section" id="certifications">
     <div class="bg-shapes" aria-hidden="true">
       <span class="shape shape--ring" style="top:-8%; right:6%; width:150px; height:150px;"></span>
       <span class="shape shape--sq2" style="bottom:10%; left:8%;"></span>
     </div>
     <div class="section-inner">
-      <p class="release-tag">v1.6 · credentials</p>
-      <h2 class="section-title">Certifications</h2>
+      <p class="release-tag" data-i18n="certs.release">v1.7 · credentials</p>
+      <h2 class="section-title" data-i18n="certs.title">Certifications</h2>
 
       <div class="certs__grid">
         <article class="cert-card reveal">
@@ -587,15 +699,15 @@
       <span class="shape shape--circ2" style="bottom:10%; right:14%;"></span>
     </div>
     <div class="section-inner">
-      <p class="release-tag">v1.7 · notes from the team</p>
-      <h2 class="section-title">What shipping with me is like</h2>
+      <p class="release-tag" data-i18n="testimonials.release">v1.8 · notes from the team</p>
+      <h2 class="section-title" data-i18n="testimonials.title">What shipping with me is like</h2>
 
       <div class="testimonial reveal">
         <div class="testimonial__track" id="testimonialTrack">
 
           <blockquote class="testimonial__slide is-active">
-            <p>"Anthony is the only PO I've worked with who writes acceptance criteria I never have to ask about twice."</p>
-            <footer>— Hugues Seureau, Staff Engineer</footer>
+            <p data-i18n="testimonials.quote">"Anthony is the only PO I've worked with who writes acceptance criteria I never have to ask about twice."</p>
+            <footer data-i18n="testimonials.author">— Hugues Seureau, Staff Engineer</footer>
           </blockquote>
 
         </div>
@@ -612,18 +724,18 @@
       <span class="shape shape--circ2" style="bottom:16%; left:10%;"></span>
     </div>
     <div class="section-inner">
-      <p class="release-tag">v1.8 · get in touch</p>
-      <h2 class="section-title">Open to the next hard problem</h2>
+      <p class="release-tag" data-i18n="contact.release">v1.9 · get in touch</p>
+      <h2 class="section-title" data-i18n="contact.title">Open to the next hard problem</h2>
 
       <div class="contact__badges reveal">
-        <span class="mini-badge"><span class="mini-badge__dot"></span> Available for new roles</span>
-        <span class="mini-badge">⏱ &lt; 24h response time</span>
-        <span class="mini-badge">🌍 Remote-friendly</span>
+        <span class="mini-badge"><span class="mini-badge__dot"></span><span data-i18n="contact.badgeRoles">Available for new roles</span></span>
+        <span class="mini-badge" data-i18n="contact.badgeReply">⏱ &lt; 24h response time</span>
+        <span class="mini-badge" data-i18n="contact.badgeRemote">🌍 Remote-friendly</span>
       </div>
 
       <div class="contact__grid reveal">
         <div class="contact__info">
-          <p>Best reached by email. I read everything, and I answer product questions faster than sales pitches.</p>
+          <p data-i18n="contact.intro">Best reached by email. I read everything, and I answer product questions faster than sales pitches.</p>
 
           <ul class="contact__list">
             <li>
@@ -631,7 +743,7 @@
                 <svg viewBox="0 0 24 24" fill="none"><path d="M3.5 6.5h17a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1h-17a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m3.5 7 8.5 6 8.5-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </span>
               <span class="meta">
-                <span>Email</span>
+                <span data-i18n="contact.emailLabel">Email</span>
                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=tsonyraf@gmail.com" target="_blank">tsonyraf@gmail.com</a>
               </span>
             </li>
@@ -640,7 +752,7 @@
                 <svg viewBox="0 0 24 24" fill="none"><path d="M7.3 3.5c.4 0 .8.3.9.7l1 3a1 1 0 0 1-.3 1L7.6 9.6a13 13 0 0 0 6.8 6.8l1.4-1.3a1 1 0 0 1 1-.3l3 1c.4.1.7.5.7.9v2.6a1.3 1.3 0 0 1-1.4 1.3A17 17 0 0 1 4 5.9a1.3 1.3 0 0 1 1.3-1.4h2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
               </span>
               <span class="meta">
-                <span>Phone</span>
+                <span data-i18n="contact.phoneLabel">Phone</span>
                 <a href="tel:+261346569655">+261 34 65 696 55</a>
               </span>
             </li>
@@ -649,7 +761,7 @@
                 <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="3.5" width="17" height="17" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M7.8 10.3v6.2M7.8 7.7v.01M11.6 16.5v-3.8c0-1.2.7-2 1.9-2s1.9.8 1.9 2v3.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </span>
               <span class="meta">
-                <span>LinkedIn</span>
+                <span data-i18n="contact.linkedinLabel">LinkedIn</span>
                 <a href="https://linkedin.com/in/rasolofoarimanana-anthony-mitantsoa-3ab35a275" target="_blank" rel="noopener">linkedin.com/in/rasolofo....</a>
               </span>
             </li>
@@ -658,36 +770,36 @@
                 <svg viewBox="0 0 24 24" fill="none"><path d="M12 3.5c-4.7 0-8.5 3.8-8.5 8.5 0 3.8 2.4 7 5.8 8.1.4.1.6-.2.6-.4v-1.6c-2.4.5-2.9-1.1-2.9-1.1-.4-1-1-1.3-1-1.3-.8-.6.1-.5.1-.5.9.1 1.4 1 1.4 1 .8 1.4 2.2 1 2.7.7.1-.6.3-1 .6-1.2-1.9-.2-3.9-1-3.9-4.3 0-.9.3-1.7.9-2.3-.1-.2-.4-1.1.1-2.3 0 0 .8-.2 2.5 1a8.6 8.6 0 0 1 4.5 0c1.7-1.2 2.5-1 2.5-1 .5 1.2.2 2.1.1 2.3.6.6.9 1.4.9 2.3 0 3.3-2 4.1-3.9 4.3.3.3.6.8.6 1.7v2.5c0 .2.2.5.6.4a8.5 8.5 0 0 0 5.8-8.1c0-4.7-3.8-8.5-8.5-8.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
               </span>
               <span class="meta">
-                <span>GitHub</span>
+                <span data-i18n="contact.githubLabel">GitHub</span>
                 <a href="https://github.com/tsoux00" target="_blank" rel="noopener">github.com/tsoux00</a>
               </span>
             </li>
           </ul>
 
-          <a href="assets/resume.pdf" download class="btn btn--primary btn--wide">Download résumé (PDF)</a>
+          <a href="assets/resume.pdf" download class="btn btn--primary btn--wide" data-i18n="contact.downloadBtn">Download résumé (PDF)</a>
         </div>
 
         <form class="contact__form" id="contactForm" novalidate>
           <div class="field field--float">
             <input type="text" id="fname" name="name" required minlength="2" placeholder=" ">
-            <label for="fname">Name</label>
+            <label for="fname" data-i18n="contact.nameLabel">Name</label>
             <span class="field__error" id="fnameError"></span>
           </div>
           <div class="field field--float">
             <input type="email" id="femail" name="email" required placeholder=" ">
-            <label for="femail">Email</label>
+            <label for="femail" data-i18n="contact.emailLabelField">Email</label>
             <span class="field__error" id="femailError"></span>
           </div>
           <div class="field field--float">
             <textarea id="fmsg" name="message" rows="4" required minlength="10" placeholder=" "></textarea>
-            <label for="fmsg">Message</label>
+            <label for="fmsg" data-i18n="contact.messageLabel">Message</label>
             <span class="field__error" id="fmsgError"></span>
           </div>
-          <button type="submit" class="btn btn--primary btn--wide btn--submit">
+          <button type="submit" class="btn btn--primary btn--wide btn--submit" data-i18n="contact.submitBtn">
             Send message <span class="arrow">→</span>
           </button>
           <p class="field__note" id="formNote" role="status"></p>
-          <p class="field__disclaimer">This is a static form — no data is submitted or stored anywhere.</p>
+          <p class="field__disclaimer" data-i18n="contact.disclaimer">This is a static form — no data is submitted or stored anywhere.</p>
         </form>
       </div>
     </div>
@@ -701,8 +813,8 @@
     <span class="shape shape--dot" style="top:40%; right:24%;"></span>
   </div>
   <div class="section-inner footer__inner">
-    <p>© 2026 Anthony Rasolofoarimanana. Built static — no backend, no database.</p>
-    <p class="footer__mono">v1.8.0 · last deployed June 2026</p>
+    <p data-i18n="footer.text">© 2026 Anthony Rasolofoarimanana. Built static — no backend, no database.</p>
+    <p class="footer__mono" data-i18n="footer.meta">v1.9.0 · last deployed June 2026</p>
   </div>
 </footer>
 
