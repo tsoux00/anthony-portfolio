@@ -206,7 +206,7 @@ if (!window.__thonyPortfolioScriptInit) {
     // Hero typing animation
     const typingTarget = document.getElementById("typing");
     const heroRole = document.querySelector(".hero__role");
-    const roleOptions = ["Product Owner", "QA Engineer", "No-code Developer"];
+    const roleOptions = ["Product Owner", "Project Manager", "QA Engineer", "No-code Developer"];
     const typingSpeed = 70;
     const deletingSpeed = 40;
     const pauseBetweenRoles = 1700;
