@@ -193,7 +193,7 @@ input,textarea{ font-family: inherit; }
   padding: 8px 10px;
   color: var(--ink-dim);
   border-radius: var(--radius-s);
-  transition: color .2s, background .2s;
+  transition: color .35s var(--ease), transform .35s var(--ease);
   display:flex; align-items:center; gap:6px;
 }
 .nav__link::before{
@@ -201,8 +201,23 @@ input,textarea{ font-family: inherit; }
   font-family: var(--font-mono);
   font-size: 10px;
   color: var(--line);
+  position: relative;
+  transition: color .35s var(--ease);
 }
-.nav__link:hover{ color: var(--ink); background: var(--bg-alt); }
+.nav__link::after{
+  content: '';
+  position: absolute;
+  inset: 2px;
+  z-index: -1;
+  border-radius: var(--radius-s);
+  background: var(--bg-alt);
+  opacity: 0;
+  transform: scale(.82);
+  transition: opacity .4s var(--ease), transform .4s var(--ease);
+}
+.nav__link:hover{ color: var(--ink); transform: translateY(-1px); }
+.nav__link:hover::before{ color: var(--blue); }
+.nav__link:hover::after{ opacity: 1; transform: scale(1); }
 .nav__link.is-active{ color: var(--blue); }
 .nav__link.is-active::before{ color: var(--blue); }
 
@@ -985,6 +1000,8 @@ html[data-theme="dark"] .skill-card:hover{
   overflow: hidden;
   display: grid;
   place-items: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
 .project-card__media::before{
   content:'';
@@ -994,10 +1011,8 @@ html[data-theme="dark"] .skill-card:hover{
   opacity: 0.16;
 }
 .project-card__image{
-  width: auto;
-  height: auto;
-  max-width: 85%;
-  max-height: 85%;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   object-position: center center;
   display:block;
@@ -1615,6 +1630,93 @@ html[data-theme="dark"] .skill-card:hover{
     opacity:1;
     transform:translateY(0);
     pointer-events:auto;
+  }
+}
+
+/* ---------- Signature effects (binary trail, split-text, clip-path, scramble) ---------- */
+/* Populated/toggled entirely from signature-effects.js; see that file for behavior. */
+/* Note: the OS default cursor is left untouched — only the "0"/"1" trail is added. */
+
+.sig-binary{
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9998;
+  font-family: var(--font-mono);
+  color: #fff;
+  mix-blend-mode: difference;
+  will-change: transform, opacity;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.sig-split-char{
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+.sig-horizontal-projects__track{
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 20px;
+  padding-right: 40px; /* breathing room so the last card doesn't end flush */
+  will-change: transform;
+}
+
+/* Compact card layout: every detail visible at once while scrubbing,
+   no internal scrollbar, on desktop and mobile alike. */
+.sig-horizontal-projects__track .project-card{
+  flex: 0 0 min(320px, 88%);
+}
+.sig-horizontal-projects__track .project-card__media{
+  aspect-ratio: auto;
+  height: 132px;
+  min-height: 0;
+  padding: 14px;
+}
+.sig-horizontal-projects__track .project-card__body{
+  padding: 16px 18px 18px;
+}
+.sig-horizontal-projects__track .project-card__body h3{
+  font-size: .95rem;
+  line-height: 1.3;
+  margin-bottom: 3px;
+}
+.sig-horizontal-projects__track .project-card__role{
+  font-size: 10px;
+  margin-bottom: 8px;
+}
+.sig-horizontal-projects__track .project-card__body > p{
+  font-size: .76rem;
+  line-height: 1.42;
+  margin-bottom: 8px;
+}
+.sig-horizontal-projects__track .tech-tags{
+  gap: 5px;
+  margin-bottom: 8px;
+}
+.sig-horizontal-projects__track .tech-tags span{
+  font-size: 8.5px;
+  padding: 2px 6px;
+}
+.sig-horizontal-projects__track .project-card__line{
+  font-size: .76rem;
+  line-height: 1.35;
+  margin-bottom: 5px;
+}
+.sig-horizontal-projects__track .project-card__actions{
+  margin-top: 6px;
+  gap: 12px;
+}
+.sig-horizontal-projects__track .project-card__actions .link-btn{
+  font-size: .78rem;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .sig-binary{
+    display: none !important;
   }
 }
 

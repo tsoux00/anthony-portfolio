@@ -75,17 +75,20 @@
   });
 
   // ---------- Project card staggered reveal ----------
+  // One clean motion per card: fade + soft scale-up + slight rise. No
+  // separate image wipe or extra layers competing with it.
   var projectGrid = document.querySelector(".projects__grid");
   if (projectGrid && projectCards.length) {
     gsap.fromTo(
       projectCards,
-      { opacity: 0, y: 32 },
+      { opacity: 0, y: 28, scale: 0.94 },
       {
         opacity: 1,
         y: 0,
-        duration: 0.6,
-        ease: "power2.out",
-        stagger: 0.12,
+        scale: 1,
+        duration: 0.7,
+        ease: "power3.out",
+        stagger: 0.1,
         scrollTrigger: { trigger: projectGrid, start: "top 80%", once: true },
       }
     );
