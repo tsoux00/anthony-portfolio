@@ -211,15 +211,16 @@
   })();
 
   /* ======================================================================
-     4. Horizontal scroll-pinned project showcase
-     Pins #projects and scrubs the card row horizontally instead of the
-     normal vertical grid. Enabled on touch too (mobile responsive) —
-     only reduced motion and having fewer than 3 project cards skip it,
-     falling back to the plain vertical grid with the reveal from
-     scroll-animations.js.
+     4. Horizontal scroll-pinned project showcase (fine pointer only)
+     Pins #projects and scrubs the card row horizontally as the user
+     scrolls vertically. Desktop/trackpad (fine pointer) only — on touch
+     (mobile/tablet/iPad) this is skipped entirely so the section scrolls
+     vertically like any other, and the cards are just a plain, natively
+     swipeable horizontal strip instead (see the "(pointer: coarse)" rule
+     in style.css).
      ====================================================================== */
   (function initHorizontalShowcase() {
-    if (prefersReducedMotion) return;
+    if (prefersReducedMotion || isCoarsePointer) return;
     if (typeof ScrollTrigger === "undefined") return;
 
     var section = document.getElementById("projects");

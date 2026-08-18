@@ -975,6 +975,26 @@ html[data-theme="dark"] .skill-card:hover{
 
 /* ---------- Projects ---------- */
 .projects__grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 26px; }
+
+/* Mobile/tablet/iPad (touch = coarse pointer): no pinned/scrubbed
+   showcase — the section scrolls vertically like any other section, and
+   the cards themselves become a plain, natively swipeable horizontal
+   strip, shown at their normal full size exactly as in the grid. */
+@media (pointer: coarse){
+  .projects__grid{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    gap: 20px;
+    padding-bottom: 14px;
+  }
+  .projects__grid .project-card{
+    flex: 0 0 85%;
+    scroll-snap-align: start;
+  }
+}
 .project-card{
   background: var(--card-bg);
   border: 1px solid var(--line);
