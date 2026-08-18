@@ -979,7 +979,8 @@ html[data-theme="dark"] .skill-card:hover{
 /* Mobile/tablet/iPad (touch = coarse pointer): no pinned/scrubbed
    showcase — the section scrolls vertically like any other section, and
    the cards themselves become a plain, natively swipeable horizontal
-   strip, shown at their normal full size exactly as in the grid. */
+   strip. Each card is sized down so its whole content — picture, title,
+   description, tags, everything — is visible at once per swipe. */
 @media (pointer: coarse){
   .projects__grid{
     display: flex;
@@ -987,12 +988,55 @@ html[data-theme="dark"] .skill-card:hover{
     overflow-x: auto;
     scroll-snap-type: x proximity;
     -webkit-overflow-scrolling: touch;
-    gap: 20px;
+    gap: 16px;
     padding-bottom: 14px;
   }
   .projects__grid .project-card{
-    flex: 0 0 85%;
+    flex: 0 0 min(280px, 80%);
     scroll-snap-align: start;
+  }
+  .projects__grid .project-card__media{
+    aspect-ratio: auto;
+    height: 120px;
+    min-height: 0;
+    padding: 12px;
+  }
+  .projects__grid .project-card__body{
+    padding: 14px 16px 16px;
+  }
+  .projects__grid .project-card__body h3{
+    font-size: .92rem;
+    line-height: 1.3;
+    margin-bottom: 3px;
+  }
+  .projects__grid .project-card__role{
+    font-size: 9.5px;
+    margin-bottom: 7px;
+  }
+  .projects__grid .project-card__body > p{
+    font-size: .73rem;
+    line-height: 1.4;
+    margin-bottom: 7px;
+  }
+  .projects__grid .tech-tags{
+    gap: 4px;
+    margin-bottom: 7px;
+  }
+  .projects__grid .tech-tags span{
+    font-size: 8px;
+    padding: 2px 5px;
+  }
+  .projects__grid .project-card__line{
+    font-size: .73rem;
+    line-height: 1.32;
+    margin-bottom: 4px;
+  }
+  .projects__grid .project-card__actions{
+    margin-top: 5px;
+    gap: 10px;
+  }
+  .projects__grid .project-card__actions .link-btn{
+    font-size: .75rem;
   }
 }
 .project-card{
