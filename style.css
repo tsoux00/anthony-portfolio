@@ -841,6 +841,16 @@ html[data-theme="dark"] .skill-card:hover{
   margin: 0 0 18px;
 }
 
+.skill-card__head{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.skill-card__head h3{
+  margin-bottom: 0;
+}
+
 .skill-card__header{
   display:flex;
   align-items:center;
@@ -887,9 +897,11 @@ html[data-theme="dark"] .skill-card:hover{
   border-bottom:none;
 }
 
-.skill-list li span{
+.skill-list li > span{
   grid-area: label;
-  display:block;
+  display:flex;
+  align-items:center;
+  gap:8px;
   font-size:.95rem;
   color:var(--ink);
   line-height:1.4;
@@ -932,7 +944,7 @@ html[data-theme="dark"] .skill-card:hover{
   width: var(--progress, 0%);
 }
 
-.skill-list li:hover span{
+.skill-list li:hover > span{
   color: var(--blue);
 }
 
@@ -1478,7 +1490,11 @@ html[data-theme="dark"] .skill-card:hover{
 .contact__list li:hover{ background: var(--card-bg); padding-left: 14px; }
 .contact__list li:last-child{ border-bottom: none; }
 
-.contact__list .ic{
+/* Shared icon-badge component: originally built for the contact list,
+   now reused verbatim (base look + hover animation) by the skills
+   section too, via .ic / .ic--sm and the shared hover-trigger list
+   below. Any future tweak here applies everywhere it's used. */
+.ic{
   flex: none;
   width: 38px; height: 38px;
   border-radius: 11px;
@@ -1487,8 +1503,17 @@ html[data-theme="dark"] .skill-card:hover{
   color: var(--blue);
   transition: transform .3s var(--ease), background .3s var(--ease), color .3s var(--ease);
 }
-.contact__list .ic svg{ width:18px; height:18px; }
-.contact__list li:hover .ic{
+.ic svg{ width:18px; height:18px; }
+
+.ic--sm{
+  width: 24px; height: 24px;
+  border-radius: 8px;
+}
+.ic--sm svg{ width:13px; height:13px; }
+
+.contact__list li:hover .ic,
+.skill-card:hover .ic,
+.skill-list li:hover .ic{
   transform: translateY(-3px) rotate(-6deg);
   background: var(--blue);
   color: #fff;
