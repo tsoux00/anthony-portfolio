@@ -603,16 +603,46 @@
       <h2 class="section-title" data-i18n="process.title">How an idea becomes a release</h2>
 
       <div class="pipeline reveal" id="pipeline">
-        <div class="pipeline__stage" data-stage="1"><span>Discovery</span></div>
-        <div class="pipeline__stage" data-stage="2"><span>Research</span></div>
-        <div class="pipeline__stage" data-stage="3"><span>Prioritization</span></div>
-        <div class="pipeline__stage" data-stage="4"><span>Roadmap</span></div>
-        <div class="pipeline__stage" data-stage="5"><span>Sprint Planning</span></div>
-        <div class="pipeline__stage" data-stage="6"><span>Development</span></div>
-        <div class="pipeline__stage" data-stage="7"><span>QA</span></div>
-        <div class="pipeline__stage" data-stage="8"><span>Release</span></div>
-        <div class="pipeline__stage" data-stage="9"><span>Analytics</span></div>
-        <div class="pipeline__stage" data-stage="10"><span>Improvement</span></div>
+        <div class="pipeline__stage" data-stage="1">
+          <span class="ic pipeline__icon" aria-hidden="true"><span data-lucide="lightbulb"></span></span>
+          <h3>Discovery</h3>
+        </div>
+        <div class="pipeline__stage" data-stage="2">
+          <span class="ic pipeline__icon" aria-hidden="true"><span data-lucide="search"></span></span>
+          <h3>Research</h3>
+        </div>
+        <div class="pipeline__stage" data-stage="3">
+          <span class="ic pipeline__icon" aria-hidden="true"><span data-lucide="list-ordered"></span></span>
+          <h3>Prioritization</h3>
+        </div>
+        <div class="pipeline__stage" data-stage="4">
+          <span class="ic pipeline__icon" aria-hidden="true"><span data-lucide="map"></span></span>
+          <h3>Roadmap</h3>
+        </div>
+        <div class="pipeline__stage" data-stage="5">
+          <span class="ic pipeline__icon" aria-hidden="true"><span data-lucide="calendar-clock"></span></span>
+          <h3>Sprint Planning</h3>
+        </div>
+        <div class="pipeline__stage" data-stage="6">
+          <span class="ic pipeline__icon" aria-hidden="true"><span data-lucide="code-2"></span></span>
+          <h3>Development</h3>
+        </div>
+        <div class="pipeline__stage" data-stage="7">
+          <span class="ic pipeline__icon" aria-hidden="true"><span data-lucide="shield-check"></span></span>
+          <h3>QA</h3>
+        </div>
+        <div class="pipeline__stage" data-stage="8">
+          <span class="ic pipeline__icon" aria-hidden="true"><span data-lucide="rocket"></span></span>
+          <h3>Release</h3>
+        </div>
+        <div class="pipeline__stage" data-stage="9">
+          <span class="ic pipeline__icon" aria-hidden="true"><span data-lucide="bar-chart-3"></span></span>
+          <h3>Analytics</h3>
+        </div>
+        <div class="pipeline__stage" data-stage="10">
+          <span class="ic pipeline__icon" aria-hidden="true"><span data-lucide="trending-up"></span></span>
+          <h3>Improvement</h3>
+        </div>
       </div>
     </div>
   </section>
@@ -878,27 +908,34 @@
         </div>
 
         <form class="contact__form" id="contactForm" novalidate>
-          <div class="field field--float">
-            <input type="text" id="fname" name="name" required minlength="2" placeholder=" ">
-            <label for="fname" data-i18n="contact.nameLabel">Name</label>
-            <span class="field__error" id="fnameError"></span>
-          </div>
-          <div class="field field--float">
-            <input type="email" id="femail" name="email" required placeholder=" ">
-            <label for="femail" data-i18n="contact.emailLabelField">Email</label>
-            <span class="field__error" id="femailError"></span>
-          </div>
-          <div class="field field--float">
-            <textarea id="fmsg" name="message" rows="4" required minlength="10" placeholder=" "></textarea>
-            <label for="fmsg" data-i18n="contact.messageLabel">Message</label>
-            <span class="field__error" id="fmsgError"></span>
-          </div>
-          <button type="submit" class="btn btn--primary btn--wide btn--submit" data-i18n="contact.submitBtn">
-            Send message <span class="arrow">→</span>
-          </button>
-          <p class="field__note" id="formNote" role="status"></p>
-          <p class="field__disclaimer" data-i18n="contact.disclaimer">This is a static form — no data is submitted or stored anywhere.</p>
-        </form>
+            <div class="field field--float">
+              <span class="field__icon ic" aria-hidden="true"><span data-lucide="user"></span></span>
+              <input type="text" id="fname" name="name" required minlength="2" placeholder=" ">
+              <label for="fname" data-i18n="contact.nameLabel">Name</label>
+              <span class="field__check" aria-hidden="true"><span data-lucide="check"></span></span>
+              <span class="field__error" id="fnameError"></span>
+            </div>
+            <div class="field field--float">
+              <span class="field__icon ic" aria-hidden="true"><span data-lucide="mail"></span></span>
+              <input type="email" id="femail" name="email" required placeholder=" ">
+              <label for="femail" data-i18n="contact.emailLabelField">Email</label>
+              <span class="field__check" aria-hidden="true"><span data-lucide="check"></span></span>
+              <span class="field__error" id="femailError"></span>
+            </div>
+            <div class="field field--float">
+              <span class="field__icon field__icon--top ic" aria-hidden="true"><span data-lucide="message-square"></span></span>
+              <textarea id="fmsg" name="message" rows="4" required minlength="10" placeholder=" "></textarea>
+              <label for="fmsg" data-i18n="contact.messageLabel">Message</label>
+              <span class="field__check field__check--top" aria-hidden="true"><span data-lucide="check"></span></span>
+              <span class="field__error" id="fmsgError"></span>
+            </div>
+            <button type="submit" class="btn btn--primary btn--wide btn--submit" data-i18n="contact.submitBtn">
+              Send message <span class="arrow">→</span>
+            </button>
+            <p class="field__note" id="formNote" role="status"></p>
+            <p class="field__disclaimer" data-i18n="contact.disclaimer">This is a static form — no data is submitted or stored anywhere.</p>
+          </form>
+        </div>
       </div>
     </div>
   </section>
