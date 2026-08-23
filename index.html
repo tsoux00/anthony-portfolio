@@ -11,6 +11,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
+<!-- flag-icons (Languages section flags) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7/css/flag-icons.min.css">
+
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -268,9 +271,13 @@
       <p class="release-tag" data-i18n="experience.release">v1.3 · changelog</p>
       <h2 class="section-title" data-i18n="experience.title">Experience</h2>
 
-      <ol class="changelog reveal">
+      <div class="changelog-wrap">
+        <div class="changelog__fill" aria-hidden="true"></div>
+
+        <ol class="changelog reveal">
 
         <li class="changelog__entry">
+          <span class="changelog__dot" aria-hidden="true"></span>
           <div class="changelog__meta">
             <span class="version-pill">shipped</span>
             <time>Jan 2026 - May 2026</time>
@@ -278,75 +285,108 @@
           <h3>Product Owner & QA Lead <span class="at">@ Here2Be </span></h3>
           <p>Led the migration of a Bubble.io application to a scalable Xano backend with a vibe-coded frontend.</p>
           <ul class="changelog__list">
-            <li><strong>Added:</strong> a structured product backlog of 50 user stories across 9 epics, enabling clear prioritization across a 20-sprint Agile roadmap.</li>
-            <li><strong>Improved:</strong> application performance and scalability by redesigning the backend architecture and optimizing development workflows. </li>
-            <li><strong>Established:</strong> Jira-based Agile workflows supporting sprint planning, standups, retrospectives, and velocity tracking.</li>
-            <li><strong>Designed:</strong> Figma wireframes and low-fidelity prototypes to align stakeholders on UX decisions before development handoff.</li>
-            <li><strong>Validated:</strong> product quality through end-to-end QA processes, including test case creation, regression testing, and bug resolution cycles.</li>
+            <li><span class="tag tag--added"><span data-lucide="plus-circle"></span>Added</span><span class="tag-text">a structured product backlog of 50 user stories across 9 epics, enabling clear prioritization across a 20-sprint Agile roadmap.</span></li>
+            <li><span class="tag tag--improved"><span data-lucide="trending-up"></span>Improved</span><span class="tag-text">application performance and scalability by redesigning the backend architecture and optimizing development workflows.</span></li>
+            <li><span class="tag tag--designed"><span data-lucide="pencil-ruler"></span>Designed</span><span class="tag-text">Jira-based Agile workflows supporting sprint planning, standups, retrospectives, and velocity tracking.</span></li>
+            <li><span class="tag tag--designed"><span data-lucide="pencil-ruler"></span>Designed</span><span class="tag-text">Figma wireframes and low-fidelity prototypes to align stakeholders on UX decisions before development handoff.</span></li>
+            <li><span class="tag tag--validated"><span data-lucide="shield-check"></span>Validated</span><span class="tag-text">product quality through end-to-end QA processes, including test case creation, regression testing, and bug resolution cycles.</span></li>
           </ul>
+          <div class="changelog__tools" aria-hidden="false">
+            <span class="ic ic--sm" title="Bubble.io"><span data-lucide="app-window"></span></span>
+            <span class="ic ic--sm" title="Xano"><span data-lucide="database"></span></span>
+            <span class="ic ic--sm" title="Jira"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.571 11.513H0a5.218 5.218 0 0 0 5.232 5.215h2.13v2.057A5.215 5.215 0 0 0 12.575 24V12.518a1.005 1.005 0 0 0-1.005-1.005zm5.723-5.756H5.736a5.215 5.215 0 0 0 5.215 5.214h2.129v2.058a5.218 5.218 0 0 0 5.215 5.214V6.758a1.001 1.001 0 0 0-1.001-1.001zM23.013 0H11.455a5.215 5.215 0 0 0 5.215 5.215h2.129v2.057A5.215 5.215 0 0 0 24 12.483V1.005A1.001 1.001 0 0 0 23.013 0Z"/></svg></span>
+            <span class="ic ic--sm" title="Figma"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539zm-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019 1.705 0 3.093-1.376 3.093-3.068v-2.97H8.148zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-.098z"/></svg></span>
+          </div>
         </li>
 
         <li class="changelog__entry">
+          <span class="changelog__dot" aria-hidden="true"></span>
           <div class="changelog__meta">
             <span class="version-pill">shipped</span>
             <time>Mar 2025 - Sep 2025</time>
           </div>
           <h3>Project Manager <span class="at">@ Micasa</span></h3>
-            <p>Led the development of a mobile event-management app from concept to launch, coordinating a cross-functional team of four over a 7+ month product build.</p>
-
-            <ul class="changelog__list">
-            <li><strong>Added:</strong> a complete event-management platform by guiding product delivery from initial requirements to final release.</li>
-            <li><strong>Improved:</strong> delivery efficiency through sprint planning, milestone tracking, and priority management using Huly.io.</li>
-            <li><strong>Established:</strong> structured backlog grooming, acceptance criteria, and KPI reporting processes to support data-driven product decisions.</li>
-            <li><strong>Aligned:</strong> user flows and UI designs with product guidelines through continuous collaboration with the design team.</li>
-            <li><strong>Managed:</strong> stakeholder communication as the primary client liaison, ensuring clear requirements, progress visibility, and expectation alignment.</li>
-            </ul>
+          <p>Led the development of a mobile event-management app from concept to launch, coordinating a cross-functional team of four over a 7+ month product build.</p>
+          <ul class="changelog__list">
+            <li><span class="tag tag--added"><span data-lucide="plus-circle"></span>Added</span><span class="tag-text">a complete event-management platform by guiding product delivery from initial requirements to final release.</span></li>
+            <li><span class="tag tag--improved"><span data-lucide="trending-up"></span>Improved</span><span class="tag-text">delivery efficiency through sprint planning, milestone tracking, and priority management using Huly.io.</span></li>
+            <li><span class="tag tag--designed"><span data-lucide="pencil-ruler"></span>Designed</span><span class="tag-text">structured backlog grooming, acceptance criteria, and KPI reporting processes to support data-driven product decisions.</span></li>
+            <li><span class="tag tag--led"><span data-lucide="users"></span>Led</span><span class="tag-text">user flows and UI designs alignment with product guidelines through continuous collaboration with the design team.</span></li>
+            <li><span class="tag tag--led"><span data-lucide="users"></span>Led</span><span class="tag-text">stakeholder communication as the primary client liaison, ensuring clear requirements, progress visibility, and expectation alignment.</span></li>
+          </ul>
+          <div class="changelog__tools" aria-hidden="false">
+            <span class="ic ic--sm" title="Huly.io"><span data-lucide="kanban"></span></span>
+            <span class="ic ic--sm" title="Figma"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539zm-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019 1.705 0 3.093-1.376 3.093-3.068v-2.97H8.148zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-.098z"/></svg></span>
+            <span class="ic ic--sm" title="Flutter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.357zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z"/></svg></span>
+          </div>
+        </li>
 
         <li class="changelog__entry">
+          <span class="changelog__dot" aria-hidden="true"></span>
           <div class="changelog__meta">
             <span class="version-pill">shipped</span>
             <time>2023 - 2026</time>
           </div>
           <h3>No-code Developer <span class="at">@ Genhax</span></h3>
           <p>Architected and delivered a full hackathon platform supporting 50–200 participants with custom workflows, collaboration tools, and mentor management features.</p>
-            <ul class="changelog__list">
-            <li><strong>Added:</strong> a complete hackathon ecosystem with task management, real-time messaging, dashboards, mentor features, and custom event workflows built with Bubble.io.</li>
-            <li><strong>Improved:</strong> user experience consistency by designing responsive multi-role interfaces using reusable component libraries and structured design systems.</li>
-            <li><strong>Created:</strong> clear UI copy and onboarding flows to reduce user confusion and improve platform adoption.</li>
-            <li><strong>Integrated:</strong> REST APIs and custom admin panels to streamline event management operations.</li>
-            <li><strong>Collaborated:</strong> with international remote teams across time zones and contributed as a mentor, earning a Knowhax 2024 Mentor Completion Certificate.</li>
-            </ul>
+          <ul class="changelog__list">
+            <li><span class="tag tag--added"><span data-lucide="plus-circle"></span>Added</span><span class="tag-text">a complete hackathon ecosystem with task management, real-time messaging, dashboards, mentor features, and custom event workflows built with Bubble.io.</span></li>
+            <li><span class="tag tag--improved"><span data-lucide="trending-up"></span>Improved</span><span class="tag-text">user experience consistency by designing responsive multi-role interfaces using reusable component libraries and structured design systems.</span></li>
+            <li><span class="tag tag--added"><span data-lucide="plus-circle"></span>Added</span><span class="tag-text">clear UI copy and onboarding flows to reduce user confusion and improve platform adoption.</span></li>
+            <li><span class="tag tag--improved"><span data-lucide="trending-up"></span>Improved</span><span class="tag-text">REST API integration and custom admin panels to streamline event management operations.</span></li>
+            <li><span class="tag tag--led"><span data-lucide="users"></span>Led</span><span class="tag-text">collaboration with international remote teams across time zones and contributed as a mentor, earning a Knowhax 2024 Mentor Completion Certificate.</span></li>
+          </ul>
+          <div class="changelog__tools" aria-hidden="false">
+            <span class="ic ic--sm" title="Bubble.io"><span data-lucide="app-window"></span></span>
+            <span class="ic ic--sm" title="Huly.io"><span data-lucide="kanban"></span></span>
+            <span class="ic ic--sm" title="Plugins"><span data-lucide="puzzle"></span></span>
+          </div>
+        </li>
 
         <li class="changelog__entry">
+          <span class="changelog__dot" aria-hidden="true"></span>
           <div class="changelog__meta">
             <span class="version-pill">shipped</span>
             <time>2024 - 2026</time>
           </div>
           <h3>Project Manager → No-code Developer <span class="at">@ The Parity Productions</span></h3>
           <p>Built and launched a job-seeking platform for underrepresented communities, delivering career discovery, networking, and management features through a 12+ month product build.</p>
-        <ul class="changelog__list">
-        <li><strong>Added:</strong> a complete employment platform with job search, artist profiles, real-time messaging, CRM capabilities, and administrative tools built with Bubble.io.</li>
-        <li><strong>Designed:</strong> early user flows and wireframes to translate customer needs into intuitive product experiences before development.</li>
-        <li><strong>Managed:</strong> the full product lifecycle from requirements gathering to deployment while applying MoSCoW prioritization to align scope with delivery goals.</li>
-        </ul>
+          <ul class="changelog__list">
+            <li><span class="tag tag--added"><span data-lucide="plus-circle"></span>Added</span><span class="tag-text">a complete employment platform with job search, artist profiles, real-time messaging, CRM capabilities, and administrative tools built with Bubble.io.</span></li>
+            <li><span class="tag tag--designed"><span data-lucide="pencil-ruler"></span>Designed</span><span class="tag-text">early user flows and wireframes to translate customer needs into intuitive product experiences before development.</span></li>
+            <li><span class="tag tag--led"><span data-lucide="users"></span>Led</span><span class="tag-text">the full product lifecycle from requirements gathering to deployment while applying MoSCoW prioritization to align scope with delivery goals.</span></li>
+          </ul>
+          <div class="changelog__tools" aria-hidden="false">
+            <span class="ic ic--sm" title="Bubble.io"><span data-lucide="app-window"></span></span>
+            <span class="ic ic--sm" title="Huly.io"><span data-lucide="kanban"></span></span>
+            <span class="ic ic--sm" title="iOS development"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg></span>
+            <span class="ic ic--sm" title="Excel"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 1.5q.41 0 .7.3.3.29.3.7v19q0 .41-.3.7-.29.3-.7.3H7q-.41 0-.7-.3-.3-.29-.3-.7V18H1q-.41 0-.7-.3-.3-.29-.3-.7V7q0-.41.3-.7Q.58 6 1 6h5V2.5q0-.41.3-.7.29-.3.7-.3zM6 13.28l1.42 2.66h2.14l-2.38-3.87 2.34-3.8H7.46l-1.3 2.4-.05.08-.04.09-.64-1.28-.66-1.29H2.59l2.27 3.82-2.48 3.85h2.16zM14.25 21v-3H7.5v3zm0-4.5v-3.75H12v3.75zm0-5.25V7.5H12v3.75zm0-5.25V3H7.5v3zm8.25 15v-3h-6.75v3zm0-4.5v-3.75h-6.75v3.75zm0-5.25V7.5h-6.75v3.75zm0-5.25V3h-6.75v3Z"/></svg></span>
+          </div>
         </li>
 
-
         <li class="changelog__entry">
+          <span class="changelog__dot" aria-hidden="true"></span>
           <div class="changelog__meta">
             <span class="version-pill">shipped</span>
             <time>2022 - 2023</time>
           </div>
-          <h3> Java / React Developer <span class="at">@ UGD Madagascar</span></h3>
+          <h3>Java / React Developer <span class="at">@ UGD Madagascar</span></h3>
           <p>Developed AI-powered and enterprise application features during an internship, contributing to automation, user experience, and workflow optimization initiatives.</p>
-            <ul class="changelog__list">
-            <li><strong>Added:</strong> a face-recognition module integrated into a Java enterprise application to enhance automated identification workflows.</li>
-            <li><strong>Built:</strong> interactive quiz features using React while contributing to Agile sprint deliveries under senior developer mentorship.</li>
-            <li><strong>Improved:</strong> internal workflow automation by supporting BPM process modeling and optimization using Bonita Studio.</li>
-            </ul>
+          <ul class="changelog__list">
+            <li><span class="tag tag--added"><span data-lucide="plus-circle"></span>Added</span><span class="tag-text">a face-recognition module integrated into a Java enterprise application to enhance automated identification workflows.</span></li>
+            <li><span class="tag tag--added"><span data-lucide="plus-circle"></span>Added</span><span class="tag-text">interactive quiz features using React while contributing to Agile sprint deliveries under senior developer mentorship.</span></li>
+            <li><span class="tag tag--improved"><span data-lucide="trending-up"></span>Improved</span><span class="tag-text">internal workflow automation by supporting BPM process modeling and optimization using Bonita Studio.</span></li>
+          </ul>
+          <div class="changelog__tools" aria-hidden="false">
+            <span class="ic ic--sm" title="Java"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149M8.276 15.933s-1.028.761.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218M13.116 11.475c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0-.001-8.216 2.051-4.292 6.573M19.33 20.504s.679.559-.747.991c-2.712.822-11.288 1.069-13.669.033-.856-.373.75-.89 1.254-.998.527-.114.828-.093.828-.093-.953-.671-6.156 1.317-2.643 1.887 9.58 1.553 17.462-.7 14.977-1.82M9.292 13.21s-4.362 1.036-1.544 1.412c1.189.159 3.561.123 5.77-.062 1.806-.152 3.618-.477 3.618-.477s-.637.272-1.098.587c-4.429 1.165-12.986.623-10.522-.568 2.082-1.006 3.776-.892 3.776-.892M17.116 17.584c4.503-2.34 2.421-4.589.968-4.285-.355.074-.515.138-.515.138s.132-.207.385-.297c2.875-1.011 5.086 2.981-.928 4.562 0-.001.07-.062.09-.118M14.401 0s2.494 2.494-2.365 6.33c-3.896 3.077-.888 4.832-.001 6.836-2.274-2.053-3.943-3.858-2.824-5.539 1.644-2.469 6.197-3.665 5.19-7.627M9.734 23.924c4.322.277 10.959-.153 11.116-2.198 0 0-.302.775-3.572 1.391-3.688.694-8.239.613-10.937.168 0-.001.553.457 3.393.639"/></svg></span>
+            <span class="ic ic--sm" title="React"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z"/></svg></span>
+            <span class="ic ic--sm" title="Bonita Studio"><span data-lucide="workflow"></span></span>
+            <span class="ic ic--sm" title="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></span>
+          </div>
         </li>
 
-      </ol>
+        </ol>
+      </div>
     </div>
   </section>
 
@@ -653,35 +693,35 @@
         <div class="languages__list">
           <article class="language-card">
             <div class="language-card__top">
-              <div class="language-card__icon" aria-hidden="true">EN</div>
+              <span class="language-card__flag" aria-hidden="true"><span class="fi fi-us"></span></span>
               <div>
                 <h3>English</h3>
-                <p>C1</p>
+                <span class="tag tag--improved">C1</span>
               </div>
             </div>
-            <div class="language-card__bar"><span data-level="88"></span></div>
+            <div class="language-card__bar" style="--bar-start:#2451B8; --bar-end:#60A5FA;"><span data-level="88"></span></div>
           </article>
 
           <article class="language-card">
             <div class="language-card__top">
-              <div class="language-card__icon" aria-hidden="true">FR</div>
+              <span class="language-card__flag" aria-hidden="true"><span class="fi fi-fr"></span></span>
               <div>
                 <h3>French</h3>
-                <p>B2</p>
+                <span class="tag tag--led">B2</span>
               </div>
             </div>
-            <div class="language-card__bar"><span data-level="74"></span></div>
+            <div class="language-card__bar" style="--bar-start:#f59e0b; --bar-end:#fbbf24;"><span data-level="74"></span></div>
           </article>
 
           <article class="language-card">
             <div class="language-card__top">
-              <div class="language-card__icon" aria-hidden="true">MG</div>
+              <span class="language-card__flag" aria-hidden="true"><span class="fi fi-mg"></span></span>
               <div>
                 <h3>Malagasy</h3>
-                <p>Native</p>
+                <span class="tag tag--added">Native</span>
               </div>
             </div>
-            <div class="language-card__bar"><span data-level="98"></span></div>
+            <div class="language-card__bar" style="--bar-start:#1F8A5F; --bar-end:#63D19E;"><span data-level="98"></span></div>
           </article>
         </div>
       </div>
@@ -892,8 +932,11 @@
 <script src="scroll-animations.js"></script>
 <script src="signature-effects.js"></script>
 
-<!-- Lucide (skills-by-category icons) -->
+<!-- Lucide (skills-by-category + experience tool icons) -->
 <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
 <script src="skills-icons.js"></script>
+
+<!-- Experience timeline progressive line-fill -->
+<script src="experience-timeline.js"></script>
 </body>
 </html>
