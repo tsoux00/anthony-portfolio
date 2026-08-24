@@ -1088,11 +1088,14 @@ html:not([data-theme="dark"]) .changelog__entry{
   width: 12px; height:12px; border-radius:50%;
   background: var(--card-bg); border: 2px solid var(--blue);
   z-index: 2;
+  /* A small halo matching the page background, so the line visibly
+     stops just short of the dot instead of running flush into it. */
+  box-shadow: 0 0 0 4px var(--bg);
   transition: background .3s var(--ease), box-shadow .3s var(--ease), transform .3s var(--ease);
 }
 .changelog__dot.is-lit{
   background: var(--blue);
-  box-shadow: 0 0 0 5px rgba(100,144,255,.2);
+  box-shadow: 0 0 0 4px var(--bg), 0 0 0 9px rgba(100,144,255,.2);
   transform: scale(1.15);
 }
 
