@@ -126,7 +126,10 @@
     </div>
     <div class="section-inner">
       <p class="release-tag" data-i18n="about.release">v1.1 · about</p>
-      <h2 class="section-title" data-i18n="about.title">Release notes on how I work</h2>
+      <div class="section-title-row">
+        <span class="ic section-icon" aria-hidden="true"><span data-lucide="id-card"></span></span>
+        <h2 class="section-title" data-i18n="about.title">Release notes on how I work</h2>
+      </div>
 
       <div class="about__grid reveal">
         <div class="about__bio">
@@ -170,7 +173,10 @@
   </div>
   <div class="section-inner">
 <p class="release-tag" data-i18n="skills.release">v1.2 · capability matrix</p>
-      <h2 class="section-title" data-i18n="skills.title">Skills, by category</h2>
+      <div class="section-title-row">
+        <span class="ic section-icon" aria-hidden="true"><span data-lucide="layers"></span></span>
+        <h2 class="section-title" data-i18n="skills.title">Skills, by category</h2>
+      </div>
 
     <div class="skills__grid reveal">
 
@@ -269,7 +275,10 @@
     </div>
     <div class="section-inner">
       <p class="release-tag" data-i18n="experience.release">v1.3 · changelog</p>
-      <h2 class="section-title" data-i18n="experience.title">Experience</h2>
+      <div class="section-title-row">
+        <span class="ic section-icon" aria-hidden="true"><span data-lucide="briefcase"></span></span>
+        <h2 class="section-title" data-i18n="experience.title">Experience</h2>
+      </div>
 
       <div class="changelog-wrap">
         <div class="changelog__fill" aria-hidden="true"></div>
@@ -398,7 +407,10 @@
   </div>
   <div class="section-inner">
     <p class="release-tag" data-i18n="projects.release">v1.4 · case studies</p>
-    <h2 class="section-title" data-i18n="projects.title">Projects</h2>
+    <div class="section-title-row">
+      <span class="ic section-icon" aria-hidden="true"><span data-lucide="folder-code"></span></span>
+      <h2 class="section-title" data-i18n="projects.title">Projects</h2>
+    </div>
 
     <div class="projects__grid reveal">
 
@@ -600,7 +612,10 @@
     </div>
     <div class="section-inner">
       <p class="release-tag" data-i18n="process.release">v1.5 · pipeline</p>
-      <h2 class="section-title" data-i18n="process.title">How an idea becomes a release</h2>
+      <div class="section-title-row">
+        <span class="ic section-icon" aria-hidden="true"><span data-lucide="workflow"></span></span>
+        <h2 class="section-title" data-i18n="process.title">How an idea becomes a release</h2>
+      </div>
 
       <div class="pipeline reveal" id="pipeline">
         <div class="pipeline__stage" data-stage="1">
@@ -655,7 +670,10 @@
     </div>
     <div class="section-inner">
       <p class="release-tag" data-i18n="education.release">v1.6 · education</p>
-      <h2 class="section-title" data-i18n="education.title">Education &amp; continuous learning</h2>
+      <div class="section-title-row">
+        <span class="ic section-icon" aria-hidden="true"><span data-lucide="graduation-cap"></span></span>
+        <h2 class="section-title" data-i18n="education.title">Education &amp; continuous learning</h2>
+      </div>
 
       <p class="education__intro reveal" data-i18n="education.intro">
         A background built through formal study, language growth, and practical product work.
@@ -713,7 +731,10 @@
     </div>
     <div class="section-inner">
       <p class="release-tag" data-i18n="languages.release">v1.6.1 · languages</p>
-      <h2 class="section-title" data-i18n="languages.title">Languages</h2>
+      <div class="section-title-row">
+        <span class="ic section-icon" aria-hidden="true"><span data-lucide="globe"></span></span>
+        <h2 class="section-title" data-i18n="languages.title">Languages</h2>
+      </div>
 
       <div class="languages__panel reveal">
         <div class="languages__headline">
@@ -766,7 +787,10 @@
     </div>
     <div class="section-inner">
       <p class="release-tag" data-i18n="certs.release">v1.7 · credentials</p>
-      <h2 class="section-title" data-i18n="certs.title">Certifications</h2>
+      <div class="section-title-row">
+        <span class="ic section-icon" aria-hidden="true"><span data-lucide="award"></span></span>
+        <h2 class="section-title" data-i18n="certs.title">Certifications</h2>
+      </div>
 
       <div class="certs__grid">
 
@@ -828,16 +852,22 @@
     </div>
     <div class="section-inner">
       <p class="release-tag" data-i18n="testimonials.release">v1.8 · notes from the team</p>
-      <h2 class="section-title" data-i18n="testimonials.title">What shipping with me is like</h2>
+      <div class="section-title-row">
+        <span class="ic section-icon" aria-hidden="true"><span data-lucide="message-circle"></span></span>
+        <h2 class="section-title" data-i18n="testimonials.title">What shipping with me is like</h2>
+      </div>
 
       <div class="testimonial reveal">
-        <div class="testimonial__track" id="testimonialTrack">
-
-          <blockquote class="testimonial__slide is-active">
-            <p data-i18n="testimonials.quote">"Anthony is the only PO I've worked with who writes acceptance criteria I never have to ask about twice."</p>
-            <footer data-i18n="testimonials.author">— Hugues Seureau, Staff Engineer</footer>
-          </blockquote>
-
+        <div class="chat-message">
+          <div class="chat-message__sender">
+            <span class="testimonial__avatar" aria-hidden="true">
+              <img src="image/hugues.jpg" alt="Hugues Seureau">
+            </span>
+            <span class="chat-message__name">Hugues Seureau</span>
+          </div>
+          <div class="chat-message__bubble">
+            <p>Most engineers wait to be told what to build. Anthony usually has it half-built by the time we finish discussing it.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -853,7 +883,10 @@
     </div>
     <div class="section-inner">
       <p class="release-tag" data-i18n="contact.release">v1.9 · get in touch</p>
-      <h2 class="section-title" data-i18n="contact.title">Open to the next hard problem</h2>
+      <div class="section-title-row">
+        <span class="ic section-icon" aria-hidden="true"><span data-lucide="mail"></span></span>
+        <h2 class="section-title" data-i18n="contact.title">Open to the next hard problem</h2>
+      </div>
 
       <div class="contact__badges reveal">
         <span class="mini-badge"><span class="mini-badge__dot"></span><span data-i18n="contact.badgeRoles">Available for new roles</span></span>
@@ -935,7 +968,6 @@
             <p class="field__note" id="formNote" role="status"></p>
             <p class="field__disclaimer" data-i18n="contact.disclaimer">This is a static form — no data is submitted or stored anywhere.</p>
           </form>
-        </div>
       </div>
     </div>
   </section>
@@ -975,5 +1007,8 @@
 
 <!-- Experience timeline progressive line-fill -->
 <script src="experience-timeline.js"></script>
+
+<!-- Testimonial chat-message entrance -->
+<script src="testimonial-chat.js"></script>
 </body>
 </html>
