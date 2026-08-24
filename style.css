@@ -1512,6 +1512,8 @@ html:not([data-theme="dark"]) .changelog__entry{
   flex-wrap: wrap;
   margin-bottom: 14px;
 }
+.education-card__title-group{ display:flex; align-items:center; gap:10px; }
+.education-card__icon{ width:34px; height:34px; border-radius:10px; }
 .education-card__tag{
   display:inline-flex;
   align-items:center;
@@ -1657,6 +1659,9 @@ html:not([data-theme="dark"]) .changelog__entry{
   padding: 22px 24px 24px;
   flex: 1;
 }
+.cert-card__title-group{ display:flex; align-items:center; gap:8px; margin-bottom:4px; }
+.cert-card__icon{ width:32px; height:32px; border-radius:9px; }
+.cert-card__title-group .cert-card__mono{ margin-bottom: 0; }
 .cert-card__mono{
   display:inline-block;
   font-family: var(--font-mono);
@@ -1875,7 +1880,9 @@ html:not([data-theme="dark"]) .changelog__entry{
 .skill-card:hover .ic,
 .skill-list li:hover .ic,
 .changelog__tools .ic:hover,
-.pipeline__stage:hover .ic{
+.pipeline__stage:hover .ic,
+.education-card:hover .ic,
+.cert-card:hover .ic{
   transform: translateY(-3px) rotate(-6deg);
   background: var(--blue);
   color: #fff;
