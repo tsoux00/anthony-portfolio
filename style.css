@@ -1053,13 +1053,12 @@ html[data-theme="dark"] .skill-card:hover{
    reduced motion. */
 .changelog__fill{
   position:absolute;
-  top:0; bottom:0;
+  top:0;
   left:0;
   width:2px;
+  height:100%;
   border-radius:2px;
   background: var(--blue);
-  transform-origin: top;
-  transform: scaleY(1);
 }
 
 .changelog__entry{ position:relative; padding: 24px 24px 44px 28px; margin-bottom: 32px; opacity:0; transform: translateY(24px) scale(0.98); filter: blur(1.8px); will-change: opacity, transform, filter; transition: opacity .65s var(--ease), transform .65s var(--ease), filter .65s var(--ease), box-shadow .65s var(--ease), border-radius .65s var(--ease), background .65s var(--ease); }
