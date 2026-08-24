@@ -595,9 +595,11 @@ if (!window.__thonyPortfolioScriptInit) {
 
     const nameInput = document.getElementById("fname");
     const emailInput = document.getElementById("femail");
+    const subjectInput = document.getElementById("fsubject");
     const msgInput = document.getElementById("fmsg");
     const nameError = document.getElementById("fnameError");
     const emailError = document.getElementById("femailError");
+    const subjectError = document.getElementById("fsubjectError");
     const msgError = document.getElementById("fmsgError");
     const formNote = document.getElementById("formNote");
     const submitBtn = form.querySelector("button[type='submit']");
@@ -629,6 +631,12 @@ if (!window.__thonyPortfolioScriptInit) {
       } else {
         setError(emailInput, emailError, "");
       }
+      if (subjectInput.value.trim().length < 3) {
+        setError(subjectInput, subjectError, "Please enter a subject.");
+        valid = false;
+      } else {
+        setError(subjectInput, subjectError, "");
+      }
       if (msgInput.value.trim().length < 10) {
         setError(msgInput, msgError, "Please enter at least 10 characters.");
         valid = false;
@@ -653,6 +661,7 @@ if (!window.__thonyPortfolioScriptInit) {
           {
             from_name: nameInput.value.trim(),
             reply_to: emailInput.value.trim(),
+            subject: subjectInput.value.trim(),
             message: msgInput.value.trim()
           }
         );

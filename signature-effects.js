@@ -1,7 +1,9 @@
 /*
  * Signature interactive layer: binary-trail cursor effect (default OS
- * cursor stays untouched), split-text heading reveals, link text-scramble,
- * and the horizontal scroll-pinned project showcase.
+ * cursor stays untouched), split-text heading reveals, and link
+ * text-scramble. (The horizontal scroll-pinned project showcase that used
+ * to live here has been removed — the Projects section now uses a
+ * manual scroll-snap carousel; see projects-carousel.js.)
  *
  * Fully independent from script.js (hero typing animation untouched) and
  * from scroll-animations.js's existing Lenis/reveal/magnetic-button logic.
@@ -206,76 +208,6 @@
     document.querySelectorAll(".project-card__actions .link-btn").forEach(function (el) {
       el.addEventListener("mouseenter", function () {
         scramble(el);
-      });
-    });
-  })();
-
-  /* ======================================================================
-     4. Horizontal scroll-pinned project showcase (fine pointer only)
-     Pins #projects and scrubs the card row horizontally as the user
-     scrolls vertically. Desktop/trackpad (fine pointer) only — on touch
-     (mobile/tablet/iPad) this is skipped entirely so the section scrolls
-     vertically like any other, and the cards are just a plain, natively
-     swipeable horizontal strip instead (see the "(pointer: coarse)" rule
-     in style.css).
-     ====================================================================== */
-  (function initHorizontalShowcase() {
-    if (prefersReducedMotion || isCoarsePointer) return;
-    if (typeof ScrollTrigger === "undefined") return;
-
-    var section = document.getElementById("projects");
-    var sectionInner = section ? section.querySelector(".section-inner") : null;
-    var grid = document.querySelector(".projects__grid");
-    if (!section || !sectionInner || !grid) return;
-
-    var cards = grid.querySelectorAll(".project-card");
-    if (cards.length < 3) return;
-
-    section.classList.add("sig-horizontal-projects");
-    grid.classList.add("sig-horizontal-projects__track");
-
-    function getMaxScroll() {
-      return Math.max(0, grid.scrollWidth - sectionInner.clientWidth);
-    }
-
-    gsap.to(grid, {
-      x: function () {
-        return -getMaxScroll();
-      },
-      ease: "none",
-      scrollTrigger: {
-        trigger: section,
-        start: "top top",
-        end: function () {
-          return "+=" + getMaxScroll();
-        },
-        scrub: true,
-        pin: true,
-        anticipatePin: 1,
-        invalidateOnRefresh: true,
-      },
-    });
-
-    // The project images load asynchronously, so grid.scrollWidth (and
-    // therefore the scrub end / how far the last card needs to travel)
-    // is wrong until they've all decoded. Refresh once they're in so the
-    // last card lands fully in view instead of being cut off short.
-    var images = grid.querySelectorAll("img");
-    var pending = 0;
-    images.forEach(function (img) {
-      if (img.complete) return;
-      pending++;
-      img.addEventListener(
-        "load",
-        function () {
-          pending--;
-          if (pending === 0) ScrollTrigger.refresh();
-        },
-        { once: true }
-      );
-      img.addEventListener("error", function () {
-        pending--;
-        if (pending === 0) ScrollTrigger.refresh();
       });
     });
   })();

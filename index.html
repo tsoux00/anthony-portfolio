@@ -80,6 +80,7 @@
       <h1 class="hero__title">
         Anthony<br>Rasolofoarimanana
       </h1>
+      <p class="hero__location"><span data-lucide="map-pin"></span> Madagascar</p>
       <p class="hero__role">
         <span class="hero__role--label" data-i18n="hero.roleLabel">I am a</span>
         <span class="typing accent" id="typing"></span>
@@ -133,11 +134,11 @@
 
       <div class="about__grid reveal">
         <div class="about__bio">
+          <span class="about__accent" aria-hidden="true"></span>
           <p>
-            I'm a Product Owner and Project Manager working across SaaS, mobile, and platform teams,  
-            translating strategy into a backlog that engineers can actually build from.  
-            My background moved through QA, full-stack development, and project  
-            management before product, so I read a sprint the way a tester reads an  
+            <span class="about__lead">I'm a Product Owner and Project Manager working across SaaS, mobile, and platform teams, translating strategy into a backlog that engineers can actually build from.</span>
+            My background moved through QA, full-stack development, and project
+            management before product, so I read a sprint the way a tester reads an
             edge case — looking for what breaks.
           </p>
           <p>
@@ -148,15 +149,18 @@
         </div>
 
         <div class="about__cards">
-          <div class="mini-card">
+          <div class="mini-card identity-card identity-card--mindset">
+            <span class="ic identity-card__icon" aria-hidden="true"><span data-lucide="undo-2"></span></span>
             <span class="mini-card__tag">MINDSET</span>
             <p>Decisions are cheap to reverse if you make them small. I optimize for reversibility, not certainty.</p>
           </div>
-          <div class="mini-card">
+          <div class="mini-card identity-card identity-card--philosophy">
+            <span class="ic identity-card__icon" aria-hidden="true"><span data-lucide="refresh-cw"></span></span>
             <span class="mini-card__tag">AGILE PHILOSOPHY</span>
             <p>Scrum is a container, not a religion. I keep the ceremonies that create clarity and cut the ones that create theater.</p>
           </div>
-          <div class="mini-card">
+          <div class="mini-card identity-card identity-card--vision">
+            <span class="ic identity-card__icon" aria-hidden="true"><span data-lucide="telescope"></span></span>
             <span class="mini-card__tag">PRODUCT VISION</span>
             <p>A vision only counts if a new hire can repeat it back after one week. Anything longer than that is a slide, not a strategy.</p>
           </div>
@@ -412,195 +416,167 @@
       <h2 class="section-title" data-i18n="projects.title">Projects</h2>
     </div>
 
-    <div class="projects__grid reveal">
+    <div class="projects__viewport">
+      <div class="projects__grid" id="projectsGrid">
 
-      <article class="project-card">
-        <div class="project-card__media" style="--tint: var(--blue-dim);">
-          <img class="project-card__image" src="image/parity.png" alt="Parity Productions Platform">
-        </div>
-
-        <div class="project-card__body">
-          <h3>Parity Productions Platform</h3>
-          <p class="project-card__role">Role: Project Manager / No-code Developer</p>
-
-          <p>
-            Led the development of a job-seeking platform supporting underrepresented communities,
-            including job search, artist profiles, real-time messaging, CRM and administration features.
-          </p>
-
-          <div class="tech-tags">
-            <span>Bubble.io</span>
-            <span>Xano</span>
-            <span>Figma</span>
-            <span>Agile</span>
-            <span>MoSCoW Framework</span>
+        <article class="project-card">
+          <div class="project-card__media" data-seed="Parity Productions Platform" aria-hidden="true"></div>
+          <div class="project-card__overlay">
+            <p>Led the development of a job-seeking platform supporting underrepresented communities, including job search, artist profiles, real-time messaging, CRM and administration features.</p>
           </div>
-
-          <p class="project-card__line">
-            <strong>Challenge:</strong> Transform user needs into a scalable platform with multiple user roles.
-          </p>
-
-          <p class="project-card__line">
-            <strong>Result:</strong> Delivered a complete platform from discovery to deployment over a 12+ month build.
-          </p>
-
-          <div class="project-card__actions">
-            <a href="#contact" class="link-btn">Read case study</a>
-            <a href="#contact" class="link-btn link-btn--muted">Ask about it</a>
+          <div class="project-card__body">
+            <div class="project-card__heading">
+              <h3>Parity Productions Platform</h3>
+              <span class="project-card__tag">Team project</span>
+            </div>
+            <p class="project-card__role">Role: Project Manager / No-code Developer</p>
+            <p class="project-card__line"><strong>Challenge:</strong> Transform user needs into a scalable platform with multiple user roles.</p>
+            <p class="project-card__line"><strong>Result:</strong> Delivered a complete platform from discovery to deployment over a 12+ month build.</p>
+            <div class="project-card__tools">
+              <span class="ic ic--sm" title="Bubble.io"><span data-lucide="app-window"></span></span>
+              <span class="ic ic--sm" title="Xano"><span data-lucide="database"></span></span>
+              <span class="ic ic--sm" title="Figma"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539zm-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019 1.705 0 3.093-1.376 3.093-3.068v-2.97H8.148zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-.098z"/></svg></span>
+            </div>
+            <div class="project-card__actions">
+              <a href="#contact" class="link-btn">Read case study</a>
+              <a href="#contact" class="link-btn link-btn--muted">Ask about it</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-
-      <article class="project-card">
-        <div class="project-card__media" style="--tint: var(--green-dim);">
-          <img class="project-card__image" src="image/kopenao.png" alt="Kopenao Services Platform">
-        </div>
-
-        <div class="project-card__body">
-          <h3>Kopenao Services Platform</h3>
-          <p class="project-card__role">Role: Product Manager / Fullstack Developer</p>
-
-          <p>
-            Built and managed a digital marketplace platform connecting customers with local service providers,
-            including booking workflows and service management features.
-          </p>
-
-          <div class="tech-tags">
-            <span>Bubble.io</span>
-            <span>React</span>
-            <span>API</span>
-            <span>Product Strategy</span>
+        <article class="project-card">
+          <div class="project-card__media" data-seed="Kopenao Services Platform" aria-hidden="true"></div>
+          <div class="project-card__overlay">
+            <p>Built and managed a digital marketplace platform connecting customers with local service providers, including booking workflows and service management features.</p>
           </div>
-
-          <p class="project-card__line">
-            <strong>Challenge:</strong> Simplify service discovery and booking processes for users.
-          </p>
-
-          <p class="project-card__line">
-            <strong>Result:</strong> Delivered a functional platform improving accessibility to local services.
-          </p>
-
-          <div class="project-card__actions">
-            <a href="#contact" class="link-btn">Read case study</a>
-            <a href="#contact" class="link-btn link-btn--muted">Ask about it</a>
+          <div class="project-card__body">
+            <div class="project-card__heading">
+              <h3>Kopenao Services Platform</h3>
+              <span class="project-card__tag">Freelance project</span>
+            </div>
+            <p class="project-card__role">Role: Product Manager / Fullstack Developer</p>
+            <p class="project-card__line"><strong>Challenge:</strong> Simplify service discovery and booking processes for users.</p>
+            <p class="project-card__line"><strong>Result:</strong> Delivered a functional platform improving accessibility to local services.</p>
+            <div class="project-card__tools">
+              <span class="ic ic--sm" title="Bubble.io"><span data-lucide="app-window"></span></span>
+              <span class="ic ic--sm" title="React"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z"/></svg></span>
+              <span class="ic ic--sm" title="API"><span data-lucide="plug-2"></span></span>
+            </div>
+            <div class="project-card__actions">
+              <a href="#contact" class="link-btn">Read case study</a>
+              <a href="#contact" class="link-btn link-btn--muted">Ask about it</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-
-      <article class="project-card">
-        <div class="project-card__media" style="--tint: var(--blue-dim);">
-          <img class="project-card__image" src="image/micasa.png" alt="Micasa Mobile Application">
-        </div>
-
-        <div class="project-card__body">
-          <h3>Micasa Mobile Application</h3>
-          <p class="project-card__role">Role: Project Manager</p>
-
-          <p>
-            Managed a team of four developers to design and deliver a mobile application,
-            coordinating development activities, priorities, and delivery milestones.
-          </p>
-
-          <div class="tech-tags">
-            <span>Flutter</span>
-            <span>React</span>
-            <span>Huly.io</span>
-            <span>Agile</span>
+        <article class="project-card">
+          <div class="project-card__media" data-seed="Micasa Mobile Application" aria-hidden="true"></div>
+          <div class="project-card__overlay">
+            <p>Managed a team of four developers to design and deliver a mobile application, coordinating development activities, priorities, and delivery milestones.</p>
           </div>
-
-          <p class="project-card__line">
-            <strong>Challenge:</strong> Coordinate multiple contributors while maintaining product consistency.
-          </p>
-
-          <p class="project-card__line">
-            <strong>Result:</strong> Delivered the application from concept to launch within a 7+ month roadmap.
-          </p>
-
-          <div class="project-card__actions">
-            <a href="#contact" class="link-btn">Read case study</a>
-            <a href="#contact" class="link-btn link-btn--muted">Ask about it</a>
+          <div class="project-card__body">
+            <div class="project-card__heading">
+              <h3>Micasa Mobile Application</h3>
+              <span class="project-card__tag">Team project</span>
+            </div>
+            <p class="project-card__role">Role: Project Manager</p>
+            <p class="project-card__line"><strong>Challenge:</strong> Coordinate multiple contributors while maintaining product consistency.</p>
+            <p class="project-card__line"><strong>Result:</strong> Delivered the application from concept to launch within a 7+ month roadmap.</p>
+            <div class="project-card__tools">
+              <span class="ic ic--sm" title="Flutter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.357zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z"/></svg></span>
+              <span class="ic ic--sm" title="React"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z"/></svg></span>
+              <span class="ic ic--sm" title="Huly.io"><span data-lucide="kanban"></span></span>
+            </div>
+            <div class="project-card__actions">
+              <a href="#contact" class="link-btn">Read case study</a>
+              <a href="#contact" class="link-btn link-btn--muted">Ask about it</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-
-      <article class="project-card">
-        <div class="project-card__media" style="--tint: var(--green-dim);">
-          <img class="project-card__image" src="image/ugd.png" alt="AI Face Recognition System">
-        </div>
-
-        <div class="project-card__body">
-          <h3>AI Face Recognition System</h3>
-          <p class="project-card__role">Role: Fullstack Developer / QA Engineer</p>
-
-          <p>
-            Developed a face-recognition module integrated into a Java enterprise application
-            and contributed to workflow automation and interactive React features.
-          </p>
-
-          <div class="tech-tags">
-            <span>Java</span>
-            <span>React</span>
-            <span>OpenCV</span>
-            <span>Bonita BPM</span>
+        <article class="project-card">
+          <div class="project-card__media" data-seed="AI Face Recognition System" aria-hidden="true"></div>
+          <div class="project-card__overlay">
+            <p>Developed a face-recognition module integrated into a Java enterprise application and contributed to workflow automation and interactive React features.</p>
           </div>
-
-          <p class="project-card__line">
-            <strong>Challenge:</strong> Integrate AI capabilities into an existing enterprise workflow.
-          </p>
-
-          <p class="project-card__line">
-            <strong>Result:</strong> Delivered AI-powered functionality while participating in Agile development cycles.
-          </p>
-
-          <div class="project-card__actions">
-            <a href="#contact" class="link-btn">Read case study</a>
-            <a href="#contact" class="link-btn link-btn--muted">Ask about it</a>
+          <div class="project-card__body">
+            <div class="project-card__heading">
+              <h3>AI Face Recognition System</h3>
+              <span class="project-card__tag">Team project</span>
+            </div>
+            <p class="project-card__role">Role: Fullstack Developer / QA Engineer</p>
+            <p class="project-card__line"><strong>Challenge:</strong> Integrate AI capabilities into an existing enterprise workflow.</p>
+            <p class="project-card__line"><strong>Result:</strong> Delivered AI-powered functionality while participating in Agile development cycles.</p>
+            <div class="project-card__tools">
+              <span class="ic ic--sm" title="Java"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149M8.276 15.933s-1.028.761.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218M13.116 11.475c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0-.001-8.216 2.051-4.292 6.573M19.33 20.504s.679.559-.747.991c-2.712.822-11.288 1.069-13.669.033-.856-.373.75-.89 1.254-.998.527-.114.828-.093.828-.093-.953-.671-6.156 1.317-2.643 1.887 9.58 1.553 17.462-.7 14.977-1.82M9.292 13.21s-4.362 1.036-1.544 1.412c1.189.159 3.561.123 5.77-.062 1.806-.152 3.618-.477 3.618-.477s-.637.272-1.098.587c-4.429 1.165-12.986.623-10.522-.568 2.082-1.006 3.776-.892 3.776-.892M17.116 17.584c4.503-2.34 2.421-4.589.968-4.285-.355.074-.515.138-.515.138s.132-.207.385-.297c2.875-1.011 5.086 2.981-.928 4.562 0-.001.07-.062.09-.118M14.401 0s2.494 2.494-2.365 6.33c-3.896 3.077-.888 4.832-.001 6.836-2.274-2.053-3.943-3.858-2.824-5.539 1.644-2.469 6.197-3.665 5.19-7.627M9.734 23.924c4.322.277 10.959-.153 11.116-2.198 0 0-.302.775-3.572 1.391-3.688.694-8.239.613-10.937.168 0-.001.553.457 3.393.639"/></svg></span>
+              <span class="ic ic--sm" title="React"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z"/></svg></span>
+              <span class="ic ic--sm" title="OpenCV"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.8992.8525C8.735.8525 6.17 3.4175 6.17 6.5817c0 2.102 1.1321 3.9398 2.8198 4.9366l1.6412-2.7849c.0411-.0699.0176-.1593-.0495-.2048-.6233-.4227-1.0328-1.137-1.0328-1.947 0-1.298 1.0524-2.3504 2.3505-2.3504 1.2981 0 2.3505 1.0524 2.3505 2.3505 0 .8098-.4095 1.5242-1.0328 1.947-.0671.0454-.0907.1348-.0495.2047l1.6414 2.785c1.6878-.9969 2.8199-2.8346 2.8199-4.9367 0-3.1642-2.5653-5.7292-5.7295-5.7292zm-6.17 10.8366C2.565 11.6891 0 14.2541 0 17.4183c0 3.1642 2.565 5.7292 5.7292 5.7292 3.1798 0 5.8074-2.6995 5.7275-5.8762H8.2313c-.0847 0-.1513.0717-.1519.1564-.0082 1.266-1.0644 2.3411-2.3502 2.3411-1.2981 0-2.3505-1.0524-2.3505-2.3505 0-1.2982 1.0524-2.3505 2.3505-2.3505.34 0 .663.0724.9547.2022.0713.0318.1566.0077.1962-.0595l1.6464-2.7935c-.8273-.4636-1.7815-.7279-2.7973-.7279zm15.4424.7614l-1.6366 2.7878c-.041.07-.0172.1594.05.2048.624.4217 1.0348 1.1354 1.0363 1.9452.0022 1.298-1.0483 2.352-2.3465 2.3542-1.298.0023-2.3523-1.0482-2.3545-2.3462-.0015-.8098.4068-1.5248 1.0294-1.9486.067-.0457.0905-.1353.0492-.2051l-1.6464-2.7818c-1.6859.9998-2.8146 2.8394-2.811 4.9415.0056 3.1641 2.575 5.7248 5.7393 5.7192 3.1641-.0054 5.7246-2.575 5.7192-5.7392-.0037-2.1022-1.139-3.938-2.8284-4.9318z"/></svg></span>
+              <span class="ic ic--sm" title="Bonita BPM"><span data-lucide="workflow"></span></span>
+            </div>
+            <div class="project-card__actions">
+              <a href="#contact" class="link-btn">Read case study</a>
+              <a href="#contact" class="link-btn link-btn--muted">Ask about it</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-
-      <article class="project-card">
-        <div class="project-card__media" style="--tint: var(--blue-dim);">
-          <img class="project-card__image" src="image/genhax.png" alt="Genhax Digital Products">
-        </div>
-
-        <div class="project-card__body">
-          <h3>Genhax Digital Products</h3>
-          <p class="project-card__role">Role: No-code Developer</p>
-
-          <p>
-            Contributed to the development and delivery of digital products for an international team,
-            translating business requirements into technical solutions and supporting continuous improvements.
-          </p>
-
-          <div class="tech-tags">
-            <span>Bubble.io</span>
-            <span>Figma</span>
-            <span>API</span>
-            <span>Agile</span>
-            <span>Huly.io</span>
+        <article class="project-card">
+          <div class="project-card__media" data-seed="Genhax Digital Products" aria-hidden="true"></div>
+          <div class="project-card__overlay">
+            <p>Contributed to the development and delivery of digital products for an international team, translating business requirements into technical solutions and supporting continuous improvements.</p>
           </div>
-
-          <p class="project-card__line">
-            <strong>Challenge:</strong> Align product requirements, technical implementation, and delivery priorities across a remote team.
-          </p>
-
-          <p class="project-card__line">
-            <strong>Result:</strong> Supported feature delivery, testing, and Agile collaboration for international products.
-          </p>
-
-          <div class="project-card__actions">
-            <a href="#contact" class="link-btn">Read case study</a>
-            <a href="#contact" class="link-btn link-btn--muted">Ask about it</a>
+          <div class="project-card__body">
+            <div class="project-card__heading">
+              <h3>Genhax Digital Products</h3>
+              <span class="project-card__tag">Team project</span>
+            </div>
+            <p class="project-card__role">Role: No-code Developer</p>
+            <p class="project-card__line"><strong>Challenge:</strong> Align product requirements, technical implementation, and delivery priorities across a remote team.</p>
+            <p class="project-card__line"><strong>Result:</strong> Supported feature delivery, testing, and Agile collaboration for international products.</p>
+            <div class="project-card__tools">
+              <span class="ic ic--sm" title="Bubble.io"><span data-lucide="app-window"></span></span>
+              <span class="ic ic--sm" title="Figma"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539zm-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019 1.705 0 3.093-1.376 3.093-3.068v-2.97H8.148zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-.098z"/></svg></span>
+              <span class="ic ic--sm" title="API"><span data-lucide="plug-2"></span></span>
+              <span class="ic ic--sm" title="Huly.io"><span data-lucide="kanban"></span></span>
+            </div>
+            <div class="project-card__actions">
+              <a href="#contact" class="link-btn">Read case study</a>
+              <a href="#contact" class="link-btn link-btn--muted">Ask about it</a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
 
+        <article class="project-card">
+          <div class="project-card__media" data-seed="Domino Project" aria-hidden="true"></div>
+          <div class="project-card__overlay">
+            <p>A real-time multiplayer domino game with live matchmaking that pairs players instantly and keeps every board in sync as moves happen. Built in Flutter, using the flutter_animate package to drive fluid tile-placement and turn-transition animations for a responsive, game-like feel.</p>
+          </div>
+          <div class="project-card__body">
+            <div class="project-card__heading">
+              <h3>Domino Project</h3>
+              <span class="project-card__tag">Personal project</span>
+            </div>
+            <p class="project-card__role">Role: Solo Developer</p>
+            <p class="project-card__line"><strong>Challenge:</strong> Keep gameplay state synchronized in real time across matched players.</p>
+            <p class="project-card__line"><strong>Result:</strong> Shipped a fully playable multiplayer experience with live matchmaking and animated gameplay.</p>
+            <div class="project-card__tools">
+              <span class="ic ic--sm" title="Flutter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.357zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z"/></svg></span>
+              <span class="ic ic--sm" title="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></span>
+            </div>
+            <div class="project-card__actions">
+              <a href="#contact" class="link-btn">Read case study</a>
+              <a href="#contact" class="link-btn link-btn--muted">Ask about it</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <button class="projects__arrow projects__arrow--prev" id="projectsPrev" aria-label="Previous project"><span data-lucide="chevron-left"></span></button>
+      <button class="projects__arrow projects__arrow--next" id="projectsNext" aria-label="Next project"><span data-lucide="chevron-right"></span></button>
     </div>
+
+    <div class="projects__dots" id="projectsDots" aria-hidden="true"></div>
   </div>
 </section>
 
@@ -898,6 +874,8 @@
         <div class="contact__info">
           <p data-i18n="contact.intro">Best reached by email. I read everything, and I answer product questions faster than sales pitches.</p>
 
+          <p class="contact__location reveal"><span data-lucide="map-pin"></span> Based in Madagascar · Open to remote work</p>
+
           <ul class="contact__list">
             <li>
               <span class="ic" aria-hidden="true">
@@ -956,6 +934,13 @@
               <span class="field__error" id="femailError"></span>
             </div>
             <div class="field field--float">
+              <span class="field__icon ic" aria-hidden="true"><span data-lucide="heading"></span></span>
+              <input type="text" id="fsubject" name="subject" required minlength="3" placeholder=" ">
+              <label for="fsubject" data-i18n="contact.subjectLabel">Subject</label>
+              <span class="field__check" aria-hidden="true"><span data-lucide="check"></span></span>
+              <span class="field__error" id="fsubjectError"></span>
+            </div>
+            <div class="field field--float">
               <span class="field__icon field__icon--top ic" aria-hidden="true"><span data-lucide="message-square"></span></span>
               <textarea id="fmsg" name="message" rows="4" required minlength="10" placeholder=" "></textarea>
               <label for="fmsg" data-i18n="contact.messageLabel">Message</label>
@@ -1010,5 +995,15 @@
 
 <!-- Testimonial chat-message entrance -->
 <script src="testimonial-chat.js"></script>
+
+<!-- Header active-section wave -->
+<script src="header-scroll-spy.js"></script>
+
+<!-- About section redesign (accent line, card stagger, 3D tilt) -->
+<script src="about-redesign.js"></script>
+
+<!-- Projects: generative card visuals + manual snap carousel -->
+<script src="project-visuals.js"></script>
+<script src="projects-carousel.js"></script>
 </body>
 </html>
