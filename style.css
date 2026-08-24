@@ -1317,17 +1317,29 @@ html:not([data-theme="dark"]) .changelog__entry{
 @media (max-width: 700px){
   .projects__arrow{ display: none; }
 
-  /* Peek carousel: card width/gap are untouched — this only adds
-     matching visual + scroll padding on the track, so scroll-snap
-     settles each card with a sliver of its neighbor(s) showing at the
-     edges. The first card naturally has nothing to peek at on its
-     left (no padding-side card exists there), and the last card has
-     nothing on its right — no extra logic needed for that. */
+  /* Peek carousel. The card's own width must be sized relative to the
+     available space (not a fixed px/vw guess) or the peek math breaks
+     on narrow phones: with a fixed/vw-based card width, the card plus
+     the inter-card gap could exceed the space the padding below was
+     trying to reserve, swallowing the peek entirely (or worse,
+     overflowing past the visible edge) on small screens.
+     The math: with container padding/scroll-padding P, card width W,
+     and inter-card gap G, the visible sliver on each side works out to
+     (P - G) on the left and (clientWidth - P - W - G) on the right.
+     Setting W to exactly 100% of the grid's content-box (i.e. plain
+     `flex: 0 0 100%`, no px/vw) and solving both sides for an equal
+     P-G-independent peek gives P = peek + G. With peek=16 and G=16,
+     P=32 — and because W is percentage-based, this ratio (and the
+     resulting peek) holds at ANY viewport width, including 320-360px
+     phones, unlike the previous fixed/vw sizing. First/last cards
+     naturally have nothing to peek at on their outer side — no extra
+     logic needed for that. */
   .projects__grid{
-    padding-left: 26px;
-    padding-right: 26px;
-    scroll-padding-left: 26px;
-    scroll-padding-right: 26px;
+    gap: 16px;
+    padding-left: 32px;
+    padding-right: 32px;
+    scroll-padding-left: 32px;
+    scroll-padding-right: 32px;
   }
 
   /* Non-active (peeking) cards get a subtle blur; the active one stays
@@ -1338,6 +1350,7 @@ html:not([data-theme="dark"]) .changelog__entry{
      `transition` is a shorthand and would otherwise be replaced rather
      than extended. */
   .project-card{
+    flex: 0 0 100%;
     transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s var(--ease), filter .3s var(--ease), opacity .3s var(--ease);
   }
   .project-card.is-peeking{
