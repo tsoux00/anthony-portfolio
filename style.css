@@ -1316,6 +1316,34 @@ html:not([data-theme="dark"]) .changelog__entry{
 
 @media (max-width: 700px){
   .projects__arrow{ display: none; }
+
+  /* Peek carousel: card width/gap are untouched — this only adds
+     matching visual + scroll padding on the track, so scroll-snap
+     settles each card with a sliver of its neighbor(s) showing at the
+     edges. The first card naturally has nothing to peek at on its
+     left (no padding-side card exists there), and the last card has
+     nothing on its right — no extra logic needed for that. */
+  .projects__grid{
+    padding-left: 26px;
+    padding-right: 26px;
+    scroll-padding-left: 26px;
+    scroll-padding-right: 26px;
+  }
+
+  /* Non-active (peeking) cards get a subtle blur; the active one stays
+     sharp. Toggled by the .is-peeking class from projects-carousel.js,
+     which only runs this logic at this same breakpoint. Restates the
+     card's existing hover transition list (transform/box-shadow/
+     border-color) alongside the new filter/opacity ones, since
+     `transition` is a shorthand and would otherwise be replaced rather
+     than extended. */
+  .project-card{
+    transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s var(--ease), filter .3s var(--ease), opacity .3s var(--ease);
+  }
+  .project-card.is-peeking{
+    filter: blur(2px);
+    opacity: .8;
+  }
 }
 .link-btn{ font-size: .88rem; font-weight:600; color: var(--blue); position:relative; }
 .link-btn::after{ content:''; position:absolute; left:0; right:0; bottom:-3px; height:1px; background: var(--blue); transform: scaleX(0); transition: transform .25s var(--ease); transform-origin: left; }
