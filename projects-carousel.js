@@ -43,26 +43,6 @@
     "(prefers-reduced-motion: reduce)"
   ).matches;
 
-  // Mobile-only peek carousel: blur every card except the active one.
-  // Card size/spacing themselves are untouched (that's plain CSS via
-  // .projects__grid's scroll-padding in the same breakpoint) — this
-  // just tracks which card is active so the neighbors peeking in at
-  // the edges can be blurred. Gated to the same max-width:700px
-  // breakpoint used for that CSS, so desktop is never affected.
-  var peekQuery = window.matchMedia("(max-width: 700px)");
-
-  function updatePeekBlur(activeIndex) {
-    if (!peekQuery.matches) {
-      wraps.forEach(function (wrap) {
-        wrap.classList.remove("is-peeking");
-      });
-      return;
-    }
-    wraps.forEach(function (wrap, i) {
-      wrap.classList.toggle("is-peeking", i !== activeIndex);
-    });
-  }
-
   // ---------- Progress dots (one per card, generated so this stays
   // correct automatically if more project cards are added later) ----------
   var dots = [];
@@ -118,18 +98,8 @@
       var active = currentIndex();
       setActiveDot(active);
       updateArrows();
-      updatePeekBlur(active);
     }, 80);
   });
-
-  // Re-evaluate if the viewport crosses the 700px breakpoint (e.g.
-  // device rotation, resizing a desktop window) so blur never lingers
-  // on the wrong side of it.
-  if (typeof peekQuery.addEventListener === "function") {
-    peekQuery.addEventListener("change", function () {
-      updatePeekBlur(currentIndex());
-    });
-  }
 
   if (prevBtn) {
     prevBtn.addEventListener("click", function () {
@@ -144,7 +114,6 @@
 
   setActiveDot(0);
   updateArrows();
-  updatePeekBlur(0);
 
   // ---------- One-time entrance reveal ----------
   if (prefersReducedMotion) return;
