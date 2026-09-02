@@ -1176,26 +1176,82 @@ html:not([data-theme="dark"]) .changelog__entry{
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  padding: 4px 4px 18px;
+  /* Generous room on every side (vs. the 4px this section used before
+     the blob restyle) so the blurred blob behind each card has space to
+     peek past the card's own edges without being clipped by this scroll
+     container, and so the carousel doesn't feel cramped against the
+     section's edges. Left is wider than the rest so the first card
+     doesn't sit flush against the section's left edge. perspective
+     matches .about__cards, for the reused 3D tilt hover below. */
+  padding-top: 40px;
+  padding-right: 28px;
+  padding-bottom: 46px;
+  padding-left: 56px;
+  perspective: 900px;
   scrollbar-width: none;
 }
 .projects__grid::-webkit-scrollbar{ display: none; }
 
-.project-card{
+/* The flex/scroll-snap item is now this wrap, not .project-card itself,
+   so the blob (below) can extend past the card's own overflow:hidden
+   box while still being a sibling the scroll math can measure via
+   offsetLeft (projects-carousel.js reads offsets on this element). */
+.project-card__wrap{
   position: relative;
   flex: 0 0 min(360px, 85vw);
   scroll-snap-align: start;
+}
+
+/* Soft colored blob peeking from behind each card — a large, heavily
+   blurred radial-gradient on an oversized, irregularly-rounded
+   pseudo-element. It's generated before the card in paint order (this
+   ::before is the wrap's first "child", the <article> that follows it
+   in markup paints on top), and the card's own opaque background fully
+   covers it within the card's own bounds — so no explicit stacking is
+   needed for it to sit behind, only around, the card. Colors cycle
+   through the same 5-color accent palette already used by the
+   generative card visuals (project-visuals.js), one per carousel
+   position. Purely decorative/static per prefers-reduced-motion. */
+.project-card__wrap::before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 125%;
+  height: 122%;
+  transform: translate(-50%, -50%);
+  border-radius: 42% 58% 63% 37% / 47% 44% 56% 53%;
+  background: radial-gradient(circle, var(--blob-color) 0%, var(--blob-color) 40%, transparent 72%);
+  filter: blur(38px);
+  opacity: .55;
+  pointer-events: none;
+}
+.projects__grid .project-card__wrap:nth-child(5n+1){ --blob-color: var(--blue); }
+.projects__grid .project-card__wrap:nth-child(5n+2){ --blob-color: var(--green); }
+.projects__grid .project-card__wrap:nth-child(5n+3){ --blob-color: #a855f7; }
+.projects__grid .project-card__wrap:nth-child(5n+4){ --blob-color: #f59e0b; }
+.projects__grid .project-card__wrap:nth-child(5n+5){ --blob-color: #14b8a6; }
+
+.project-card{
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
   background: var(--card-bg);
   border: 1px solid var(--line);
   border-radius: var(--radius-l);
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s var(--ease);
+  /* No `transform` here: the 3D tilt hover (project-card-tilt.js, the
+     same GSAP parameters used for the About section's identity cards)
+     drives this element's transform directly. A CSS transition on
+     transform would fight GSAP's own per-frame updates, so only the
+     non-transform hover states animate via CSS. */
+  transition: box-shadow .35s var(--ease), border-color .35s var(--ease);
   will-change: transform, box-shadow;
 }
 .project-card:hover{
-  transform: translateY(-6px);
   box-shadow: 0 20px 50px rgba(100, 144, 255, 0.12);
   border-color: rgba(100, 144, 255, 0.18);
 }
@@ -1212,7 +1268,9 @@ html:not([data-theme="dark"]) .changelog__entry{
 }
 .project-card__media svg{ display: block; width: 100%; height: 100%; }
 
-/* Hover overlay: short description, fades/slides up over the visual. */
+/* Hover overlay: a subtle, understated dim on the preview area (not a
+   dramatic scrim) that also carries the short description up over the
+   visual. */
 .project-card__overlay{
   position: absolute;
   top: 0; left: 0; right: 0;
@@ -1221,7 +1279,7 @@ html:not([data-theme="dark"]) .changelog__entry{
   display: flex;
   align-items: flex-end;
   padding: 18px;
-  background: linear-gradient(180deg, transparent 15%, rgba(10,12,20,.82) 100%);
+  background: linear-gradient(180deg, transparent 40%, rgba(10,12,20,.45) 100%);
   opacity: 0;
   transform: translateY(10px);
   transition: opacity .3s var(--ease), transform .3s var(--ease);
@@ -1300,7 +1358,13 @@ html:not([data-theme="dark"]) .changelog__entry{
 .projects__arrow svg{ width: 20px; height: 20px; }
 .projects__arrow--prev{ left: -10px; }
 .projects__arrow--next{ right: -10px; }
-.projects__arrow:hover{ border-color: var(--blue); color: var(--blue); transform: translateY(-50%) scale(1.06); }
+.projects__arrow:hover{
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #fff;
+  transform: translateY(-50%) scale(1.06);
+  box-shadow: 0 10px 26px rgba(36, 81, 184, .28);
+}
 .projects__arrow:disabled{ opacity: .35; pointer-events: none; }
 
 /* Progress dots */
@@ -1338,26 +1402,50 @@ html:not([data-theme="dark"]) .changelog__entry{
      logic needed for that. */
   .projects__grid{
     gap: 16px;
-    padding-left: 32px;
+    padding-top: 34px;
+    padding-bottom: 38px;
+    /* Left is bumped up from 32 (P = peek + G) to 44, matching the
+       desktop version's wider inset before the first card. Because card
+       width here is 100% of the content box (clientWidth minus BOTH
+       paddings), the peek formula above actually reduces to
+       peek = padding-left - G on both sides regardless of padding-right
+       — so this also grows the peek uniformly from 16px to 28px on
+       every card transition, not just the first card's inset. That's a
+       harmless side effect of the percentage-based sizing this
+       breakpoint relies on, not a bug. Right stays at the original 32
+       so the last card keeps the same margin before the section's right
+       edge as before. */
+    padding-left: 44px;
     padding-right: 32px;
-    scroll-padding-left: 32px;
+    scroll-padding-left: 44px;
     scroll-padding-right: 32px;
   }
 
   /* Non-active (peeking) cards get a subtle blur; the active one stays
      sharp. Toggled by the .is-peeking class from projects-carousel.js,
-     which only runs this logic at this same breakpoint. Restates the
-     card's existing hover transition list (transform/box-shadow/
-     border-color) alongside the new filter/opacity ones, since
-     `transition` is a shorthand and would otherwise be replaced rather
-     than extended. */
-  .project-card{
+     which only runs this logic at this same breakpoint. Applied to the
+     wrap (card + its blob together) rather than just .project-card, so
+     a peeking neighbor's blob blurs along with its card instead of
+     staying sharp on its own. */
+  .project-card__wrap{
     flex: 0 0 100%;
-    transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s var(--ease), filter .3s var(--ease), opacity .3s var(--ease);
+    transition: filter .3s var(--ease), opacity .3s var(--ease);
   }
-  .project-card.is-peeking{
+  .project-card__wrap.is-peeking{
     filter: blur(2px);
     opacity: .8;
+  }
+}
+
+/* The tilt hover itself is skipped entirely under reduced motion (see
+   project-card-tilt.js) — this just makes the remaining hover states
+   (dim overlay, shadow/border) snap instead of animate, instead of
+   leaving their normal-speed transitions running on their own. Blob
+   shapes are static regardless and need no reduced-motion rule. */
+@media (prefers-reduced-motion: reduce){
+  .project-card,
+  .project-card__overlay{
+    transition-duration: .001s;
   }
 }
 .link-btn{ font-size: .88rem; font-weight:600; color: var(--blue); position:relative; }
@@ -1365,6 +1453,24 @@ html:not([data-theme="dark"]) .changelog__entry{
 .link-btn:hover::after{ transform: scaleX(1); }
 .link-btn--muted{ color: var(--ink-dim); }
 .link-btn--muted::after{ background: var(--ink-dim); }
+
+/* Projects action links only: a trailing arrow that nudges forward on
+   hover ("Read case study →"), matching the reference's "text link
+   with an arrow" style. Scoped to .project-card__actions so the
+   underline treatment above stays exactly as-is everywhere else
+   (Certifications footer links, etc.) — the underline ::after is
+   swapped for this arrow glyph only inside Projects, not removed
+   globally. */
+.project-card__actions .link-btn{ display: inline-flex; align-items: center; gap: 4px; }
+.project-card__actions .link-btn::after{
+  content: "\2192";
+  position: static;
+  background: none;
+  height: auto;
+  transform: none;
+  transition: transform .25s var(--ease);
+}
+.project-card__actions .link-btn:hover::after{ transform: translateX(3px); }
 
 /* ---------- Pipeline ---------- */
 .pipeline{

@@ -19,10 +19,25 @@
   var dotsWrap = document.getElementById("projectsDots");
   if (!grid) return;
 
+  // The restyle wraps each .project-card in a .project-card__wrap that
+  // now carries the flex-item/scroll-snap-align (so a blob behind the
+  // card can bleed past it without being clipped). Position/scroll math
+  // below reads *this* element's offsetLeft, not the inner card's — the
+  // inner article is position:relative for the tilt hover, which would
+  // make its own offsetLeft relative to the wrap (always ~0) instead of
+  // the grid. The entrance reveal further down still targets the inner
+  // .project-card, unchanged, since scroll-animations.js's own
+  // (protected, untouched) entrance reveal already targets that same
+  // element — keeping this one on the same node preserves that existing
+  // overwrite relationship instead of introducing a second, competing
+  // tween on a different node.
+  var wraps = Array.prototype.slice.call(
+    grid.querySelectorAll(".project-card__wrap")
+  );
   var cards = Array.prototype.slice.call(
     grid.querySelectorAll(".project-card")
   );
-  if (!cards.length) return;
+  if (!wraps.length) return;
 
   var prefersReducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
@@ -38,13 +53,13 @@
 
   function updatePeekBlur(activeIndex) {
     if (!peekQuery.matches) {
-      cards.forEach(function (card) {
-        card.classList.remove("is-peeking");
+      wraps.forEach(function (wrap) {
+        wrap.classList.remove("is-peeking");
       });
       return;
     }
-    cards.forEach(function (card, i) {
-      card.classList.toggle("is-peeking", i !== activeIndex);
+    wraps.forEach(function (wrap, i) {
+      wrap.classList.toggle("is-peeking", i !== activeIndex);
     });
   }
 
@@ -52,7 +67,7 @@
   // correct automatically if more project cards are added later) ----------
   var dots = [];
   if (dotsWrap) {
-    cards.forEach(function (card, i) {
+    wraps.forEach(function (wrap, i) {
       var dot = document.createElement("button");
       dot.type = "button";
       dot.setAttribute("aria-label", "Go to project " + (i + 1));
@@ -71,14 +86,14 @@
   }
 
   function getCardStep() {
-    if (cards.length < 2) return cards[0] ? cards[0].offsetWidth : 0;
-    return cards[1].offsetLeft - cards[0].offsetLeft;
+    if (wraps.length < 2) return wraps[0] ? wraps[0].offsetWidth : 0;
+    return wraps[1].offsetLeft - wraps[0].offsetLeft;
   }
 
   function scrollToCard(index) {
-    index = Math.max(0, Math.min(cards.length - 1, index));
+    index = Math.max(0, Math.min(wraps.length - 1, index));
     grid.scrollTo({
-      left: cards[index].offsetLeft - grid.offsetLeft,
+      left: wraps[index].offsetLeft - grid.offsetLeft,
       behavior: prefersReducedMotion ? "auto" : "smooth",
     });
   }
