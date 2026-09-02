@@ -413,8 +413,87 @@ html[data-language="fr"] .contact__grid{
 .hero__inner{
   position:relative;
   z-index:2;
-  text-align:center;
-  max-width:760px;
+  width:100%;
+  max-width:1180px;
+}
+
+/* Two-column desktop layout: text left, illustration right. Collapses
+   to a single stacked column (text first) at the existing 900px
+   tablet breakpoint below — see Hero Responsive. */
+.hero__columns{
+  display:grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items:center;
+  gap:60px;
+  text-align:left;
+}
+
+.hero__visual{
+  display:flex;
+  justify-content:center;
+}
+
+.hero__illustration-wrap{
+  position:relative;
+  width:100%;
+  max-width:420px;
+}
+.hero__illustration-img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:var(--radius-l);
+  border:1px solid var(--line);
+  box-shadow:var(--shadow-m);
+}
+
+/* Floating personality bubbles — positioned around the image via a
+   percentage offset from their near edge, so each one sits partly over
+   the illustration's own edge rather than fully detached from it.
+   Hidden/offset by default (hero-illustration.js fades + settles them
+   in, with a safe fallback to this fully-visible resting state if that
+   script or GSAP fails to load) and given a small triangular tail via
+   ::after, pointing back toward the image on whichever side each
+   bubble sits. */
+.hero__bubble{
+  position:absolute;
+  z-index:3;
+  max-width:170px;
+  padding:9px 14px;
+  background:var(--card-bg);
+  border:1px solid var(--line);
+  border-radius:14px;
+  box-shadow:var(--shadow-m);
+  font-family:var(--font-mono);
+  font-size:12.5px;
+  font-weight:600;
+  line-height:1.35;
+  color:var(--ink);
+}
+.hero__bubble::after{
+  content:'';
+  position:absolute;
+  top:50%;
+  width:0;
+  height:0;
+  border-top:7px solid transparent;
+  border-bottom:7px solid transparent;
+  transform:translateY(-50%);
+}
+.hero__bubble--1{ top:-4%; left:-12%; }
+.hero__bubble--2{ top:44%; right:-12%; }
+.hero__bubble--3{ bottom:4%; left:-10%; }
+
+.hero__bubble--1::after,
+.hero__bubble--3::after{
+  right:-7px;
+  border-left:9px solid var(--card-bg);
+  filter:drop-shadow(1px 0 0 var(--line));
+}
+.hero__bubble--2::after{
+  left:-7px;
+  border-right:9px solid var(--card-bg);
+  filter:drop-shadow(-1px 0 0 var(--line));
 }
 
 .tag-badge{
@@ -455,7 +534,7 @@ html[data-language="fr"] .contact__grid{
 .hero__location{
   display:flex;
   align-items:center;
-  justify-content:center;
+  justify-content:flex-start;
   gap:6px;
   color:var(--ink-dim);
   font-size:.92rem;
@@ -470,10 +549,10 @@ html[data-language="fr"] .contact__grid{
   margin-bottom:22px;
   min-height:1.6em;
   display:flex;
-  justify-content:center;
+  justify-content:flex-start;
   align-items: center;
   gap: 0.7rem;
-  text-align:center;
+  text-align:left;
   flex-wrap: wrap;
 }
 .hero__role--label{
@@ -507,13 +586,13 @@ html[data-language="fr"] .contact__grid{
   font-size:clamp(1rem, 1.6vw, 1.15rem);
   color:var(--ink-dim);
   max-width:560px;
-  margin:0 auto 32px;
+  margin:0 0 32px;
 }
 
 .hero__cta{
   display:flex;
   gap:14px;
-  justify-content:center;
+  justify-content:flex-start;
   flex-wrap:wrap;
   margin-bottom:26px;
 }
@@ -644,8 +723,11 @@ html[data-language="fr"] .contact__grid{
   }
 
   .hero__inner{
-    max-width: 680px;
+    max-width: 960px;
   }
+
+  .hero__columns{ gap: 40px; }
+  .hero__illustration-wrap{ max-width: 360px; }
 
   .hero__title{ margin-bottom: 16px; }
   .hero__role{ margin-bottom: 20px; }
@@ -672,7 +754,32 @@ html[data-language="fr"] .contact__grid{
     max-width:100%;
   }
 
+  /* Stack back into a single column: text first, illustration below —
+     plain DOM order already puts .hero__content before .hero__visual,
+     so switching from grid to a column flex is enough. Text re-centers
+     to match how this section already looked on mobile before the
+     two-column restyle. */
+  .hero__columns{
+    display:flex;
+    flex-direction:column;
+    gap:36px;
+    text-align:center;
+  }
+  .hero__location{ justify-content:center; }
+  .hero__role{ justify-content:center; text-align:center; }
+  .hero__summary{ margin:0 auto 32px; }
+  .hero__cta{ justify-content:center; }
+
+  .hero__illustration-wrap{ max-width:300px; }
+  .hero__bubble{ font-size:11.5px; padding:7px 11px; max-width:140px; }
+  .hero__bubble--1{ left:-21%; }
+
+  /* Stacked, the illustration (with bubbles peeking past its edges)
+     sits directly above this bar — the base 8px margin-top was tuned
+     for when a plain text column was there instead, and reads as too
+     tight now. */
   .hero__stats{
+    margin-top:32px;
     gap:28px;
   }
 
@@ -689,6 +796,13 @@ html[data-language="fr"] .contact__grid{
     width:100%;
     max-width:100%;
   }
+
+  .hero__illustration-wrap{ max-width:230px; }
+  .hero__bubble{ font-size:10.5px; padding:6px 9px; max-width:112px; border-radius:11px; }
+  .hero__bubble::after{ border-top-width:5px; border-bottom-width:5px; }
+  .hero__bubble--1::after,
+  .hero__bubble--3::after{ border-left-width:7px; }
+  .hero__bubble--2::after{ border-right-width:7px; }
 
   .hero__title{
     font-size:2.1rem;

@@ -75,35 +75,55 @@
     </div>
 
     <div class="section-inner hero__inner">
-      <p class="tag-badge" data-i18n="hero.badge"><span class="tag-badge__dot"></span> v1.0.0 · currently shipping</p>
+      <div class="hero__columns">
+        <div class="hero__content">
+          <p class="tag-badge" data-i18n="hero.badge"><span class="tag-badge__dot"></span> v1.0.0 · currently shipping</p>
 
-      <h1 class="hero__title">
-        Anthony<br>Rasolofoarimanana
-      </h1>
-      <p class="hero__location"><span data-lucide="map-pin"></span> Madagascar</p>
-      <p class="hero__role">
-        <span class="hero__role--label" data-i18n="hero.roleLabel">I am a</span>
-        <span class="typing accent" id="typing"></span>
-        <span class="typing-cursor">|</span>
-      </p>
+          <h1 class="hero__title">
+            Anthony<br>Rasolofoarimanana
+          </h1>
+          <p class="hero__location"><span data-lucide="map-pin"></span> Madagascar</p>
+          <p class="hero__role">
+            <span class="hero__role--label" data-i18n="hero.roleLabel">I am a</span>
+            <span class="typing accent" id="typing"></span>
+            <span class="typing-cursor">|</span>
+          </p>
 
-      <p class="hero__summary" data-i18n="hero.summary">
-        I sit between engineering, design, and the business, and I make the
-        backlog tell the truth. Three years turning ambiguous problems into
-        products that ship on time, get adopted, and get renewed.
-      </p>
+          <p class="hero__summary" data-i18n="hero.summary">
+            I sit between engineering, design, and the business, and I make the
+            backlog tell the truth. Three years turning ambiguous problems into
+            products that ship on time, get adopted, and get renewed.
+          </p>
 
-      <div class="hero__cta">
-        <a href="#projects" class="btn btn--primary" data-i18n="hero.ctaProjects">View case studies</a>
-        <a href="assets/resume.pdf" download class="btn btn--ghost" data-i18n="hero.ctaResume">Download résumé</a>
-      </div>
+          <div class="hero__cta">
+            <a href="#projects" class="btn btn--primary" data-i18n="hero.ctaProjects">View case studies</a>
+            <a href="assets/resume.pdf" download class="btn btn--ghost" data-i18n="hero.ctaResume">Download résumé</a>
+          </div>
 
-      <div class="hero__social">
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=tsonyraf@gmail.com" target="_blank" aria-label="Email">Email</a>
-        <span class="dot">·</span>
-        <a href="https://linkedin.com/in/rasolofoarimanana-anthony-mitantsoa-3ab35a275" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-        <span class="dot">·</span>
-        <a href="https://github.com/tsoux00" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+          <div class="hero__social">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=tsonyraf@gmail.com" target="_blank" aria-label="Email">Email</a>
+            <span class="dot">·</span>
+            <a href="https://linkedin.com/in/rasolofoarimanana-anthony-mitantsoa-3ab35a275" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+            <span class="dot">·</span>
+            <a href="https://github.com/tsoux00" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="hero__illustration-wrap">
+            <img src="image/desk-illustration.png" alt="Illustration of Anthony coding at his desk" class="hero__illustration-img">
+
+            <div class="hero__bubble hero__bubble--1" aria-hidden="true">
+              <span>Ships fast, thinks ahead</span>
+            </div>
+            <div class="hero__bubble hero__bubble--2" aria-hidden="true">
+              <span>Writes docs people actually read</span>
+            </div>
+            <div class="hero__bubble hero__bubble--3" aria-hidden="true">
+              <span>Half-built before the meeting ends</span>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="hero__stats reveal" id="heroStats">
@@ -1018,6 +1038,9 @@
 <script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
 <script src="scroll-animations.js"></script>
 <script src="signature-effects.js"></script>
+
+<!-- Hero: floating personality bubbles around the illustration -->
+<script src="hero-illustration.js"></script>
 
 <!-- Lucide (skills-by-category + experience tool icons) -->
 <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
