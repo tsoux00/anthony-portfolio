@@ -896,31 +896,48 @@ html[data-language="fr"] .contact__grid{
 }
 
 /* Touch "scroll down" hint — built the same way as .scroll-cue__mouse
-   just above it (an outline shape with a dot scrolling down inside),
-   just phone-shaped instead of mouse-shaped, and reusing that same
-   scrolldown keyframe/dot rather than a different motion. Shown only
-   when BOTH the mobile-width breakpoint AND a coarse (touch) pointer
-   match — see the max-width:900px block below — so a desktop browser
-   merely resized narrow still shows the mouse variant. Hidden by
-   default here. */
+   just above it (an outline shape with something scrolling down
+   inside), just phone-shaped instead of mouse-shaped, and reusing that
+   same scrolldown keyframe rather than a different motion. A small
+   dynamic-island pill near the top (::before) reads it clearly as a
+   phone rather than a generic rounded rectangle. Shown only when BOTH
+   the mobile-width breakpoint AND a coarse (touch) pointer match — see
+   the max-width:900px block below — so a desktop browser merely
+   resized narrow still shows the mouse variant. Hidden by default
+   here. */
 .scroll-cue__phone{
+  position:relative;
   display:none;
   width:24px;
   height:40px;
   border:1.5px solid var(--line);
   border-radius:7px;
   justify-content:center;
-  padding-top:8px;
+  padding-top:13px;
 }
-.scroll-cue__phone-dot{
-  width:6px;
-  height:12px;
-  background:var(--blue);
-  border-radius:3px;
+.scroll-cue__phone::before{
+  content:'';
+  position:absolute;
+  top:5px;
+  left:50%;
+  transform:translateX(-50%);
+  width:9px;
+  height:3px;
+  border-radius:2px;
+  background:var(--line);
+}
+
+/* A small Lucide "pointer" (hand + extended finger) standing in for
+   the touch itself, in place of the plain dot this used to be —
+   same scrolldown animation/timing, just a recognizable finger shape. */
+.scroll-cue__phone-finger{
+  display:flex;
+  color:var(--blue);
   animation:scrolldown 1.8s infinite;
 }
+.scroll-cue__phone-finger svg{ width:11px; height:11px; }
 @media (prefers-reduced-motion:reduce){
-  .scroll-cue__phone-dot{
+  .scroll-cue__phone-finger{
     animation:none;
     opacity:1;
     transform:none;
