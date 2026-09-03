@@ -491,6 +491,15 @@ html[data-language="fr"] .contact__grid{
   font-weight:600;
   line-height:1.35;
   color:var(--ink);
+  /* No `transform` here — the idle float + hover lift/scale
+     (hero-illustration.js) drive this bubble's transform directly via
+     GSAP, so only the non-transform hover state animates via CSS,
+     matching the same split already used for .project-card's tilt. */
+  transition: box-shadow .3s var(--ease), border-color .3s var(--ease);
+}
+.hero__bubble:hover{
+  box-shadow: 0 14px 28px rgba(36, 81, 184, .22);
+  border-color: var(--blue);
 }
 .hero__bubble::after{
   content:'';
