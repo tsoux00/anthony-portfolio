@@ -658,6 +658,23 @@ html[data-language="fr"] .contact__grid{
   justify-content:center;
 }
 
+/* Icons for the two Hero CTA buttons — a lighter touch than the
+   Email/LinkedIn/GitHub buttons' expand-on-hover pill treatment: these
+   are already full text+icon buttons at rest, so the improvisation
+   here is a small directional nudge on hover instead (trailing arrow
+   moves toward where the click takes you; the download icon nudges
+   down, echoing the action itself), reusing .btn's own existing
+   `--ease` timing rather than introducing a new one. */
+.btn__icon{
+  display:flex;
+  flex:none;
+  transition:transform .25s var(--ease);
+}
+.btn__icon svg{ width:16px; height:16px; }
+
+.btn--primary:hover .btn__icon--trail{ transform:translateX(4px); }
+.btn--ghost:hover .btn__icon--lead{ transform:translateY(3px); }
+
 /* Email/LinkedIn/GitHub buttons. Always centered: on desktop this sits
    under the illustration, which is itself centered within its grid
    column (.hero__visual), and on mobile it's centered along with the
