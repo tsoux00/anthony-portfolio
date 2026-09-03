@@ -82,7 +82,25 @@
           <h1 class="hero__title">
             Anthony<br>Rasolofoarimanana
           </h1>
-          <p class="hero__location"><span data-lucide="map-pin"></span> Madagascar</p>
+          <p class="hero__location">
+            <span class="hero__location-icon" aria-hidden="true"><span data-lucide="map-pin"></span></span>
+            Madagascar
+            <span class="hero__location-icon hero__location-icon--reveal" aria-hidden="true">
+              <svg viewBox="0 0 30 20" width="20" height="14">
+                <defs>
+                  <clipPath id="mg-flag-clip">
+                    <rect x="0" y="0" width="30" height="20" rx="2.5"/>
+                  </clipPath>
+                </defs>
+                <g clip-path="url(#mg-flag-clip)">
+                  <rect x="0" y="0" width="12" height="20" fill="#fff"/>
+                  <rect x="12" y="0" width="18" height="10" fill="#fc3d32"/>
+                  <rect x="12" y="10" width="18" height="10" fill="#007e3a"/>
+                </g>
+                <rect x="0.5" y="0.5" width="29" height="19" rx="2.5" fill="none" stroke="rgba(0,0,0,.15)"/>
+              </svg>
+            </span>
+          </p>
           <p class="hero__role">
             <span class="hero__role--label" data-i18n="hero.roleLabel">I am a</span>
             <span class="typing accent" id="typing"></span>
@@ -177,7 +195,8 @@
       </div>
 
       <a href="#about" class="scroll-cue" aria-label="Scroll to content">
-        <span></span>
+        <span class="scroll-cue__mouse"><span class="scroll-cue__dot"></span></span>
+        <span class="scroll-cue__phone" aria-hidden="true"><span class="scroll-cue__phone-dot"></span></span>
       </a>
     </div>
   </section>
