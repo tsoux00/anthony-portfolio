@@ -99,13 +99,26 @@
             <a href="#projects" class="btn btn--primary" data-i18n="hero.ctaProjects">View case studies</a>
             <a href="assets/resume.pdf" download class="btn btn--ghost" data-i18n="hero.ctaResume">Download résumé</a>
           </div>
+        </div>
 
-          <div class="hero__social">
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=tsonyraf@gmail.com" target="_blank" aria-label="Email">Email</a>
-            <span class="dot">·</span>
-            <a href="https://linkedin.com/in/rasolofoarimanana-anthony-mitantsoa-3ab35a275" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-            <span class="dot">·</span>
-            <a href="https://github.com/tsoux00" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+        <div class="hero__social">
+          <div class="hero__social-item">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=tsonyraf@gmail.com" target="_blank" class="hero__social-btn" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M3.5 6.5h17a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1h-17a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m3.5 7 8.5 6 8.5-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="hero__social-btn__label" aria-hidden="true">Email</span>
+            </a>
+          </div>
+          <div class="hero__social-item">
+            <a href="https://linkedin.com/in/rasolofoarimanana-anthony-mitantsoa-3ab35a275" target="_blank" rel="noopener" class="hero__social-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="3.5" width="17" height="17" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M7.8 10.3v6.2M7.8 7.7v.01M11.6 16.5v-3.8c0-1.2.7-2 1.9-2s1.9.8 1.9 2v3.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="hero__social-btn__label" aria-hidden="true">LinkedIn</span>
+            </a>
+          </div>
+          <div class="hero__social-item">
+            <a href="https://github.com/tsoux00" target="_blank" rel="noopener" class="hero__social-btn" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3.5c-4.7 0-8.5 3.8-8.5 8.5 0 3.8 2.4 7 5.8 8.1.4.1.6-.2.6-.4v-1.6c-2.4.5-2.9-1.1-2.9-1.1-.4-1-1-1.3-1-1.3-.8-.6.1-.5.1-.5.9.1 1.4 1 1.4 1 .8 1.4 2.2 1 2.7.7.1-.6.3-1 .6-1.2-1.9-.2-3.9-1-3.9-4.3 0-.9.3-1.7.9-2.3-.1-.2-.4-1.1.1-2.3 0 0 .8-.2 2.5 1a8.6 8.6 0 0 1 4.5 0c1.7-1.2 2.5-1 2.5-1 .5 1.2.2 2.1.1 2.3.6.6.9 1.4.9 2.3 0 3.3-2 4.1-3.9 4.3.3.3.6.8.6 1.7v2.5c0 .2.2.5.6.4a8.5 8.5 0 0 0 5.8-8.1c0-4.7-3.8-8.5-8.5-8.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+              <span class="hero__social-btn__label" aria-hidden="true">GitHub</span>
+            </a>
           </div>
         </div>
 
@@ -1041,6 +1054,9 @@
 
 <!-- Hero: floating personality bubbles around the illustration -->
 <script src="hero-illustration.js"></script>
+
+<!-- Hero: label-reveal animation for the Email/LinkedIn/GitHub buttons -->
+<script src="hero-social-reveal.js"></script>
 
 <!-- Lucide (skills-by-category + experience tool icons) -->
 <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
