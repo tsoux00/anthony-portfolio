@@ -2328,7 +2328,8 @@ html:not([data-theme="dark"]) .changelog__entry{
 .changelog__tools .ic:hover,
 .pipeline__stage:hover .ic,
 .education-card:hover .ic,
-.cert-card:hover .ic{
+.cert-card:hover .ic,
+.footer__social .ic:hover{
   transform: translateY(-3px) rotate(-6deg);
   background: var(--blue);
   color: #fff;
@@ -2538,9 +2539,120 @@ html:not([data-theme="dark"]) .changelog__entry{
 .btn--submit:hover .arrow{ transform: translateX(5px); }
 
 /* ---------- Footer ---------- */
-.footer{ padding: 34px 0; border-top: 1px solid var(--line); position: relative; overflow: hidden; }
-.footer__inner{ display:flex; justify-content:space-between; flex-wrap: wrap; gap: 8px; font-size: .84rem; color: var(--ink-dim); position: relative; z-index: 2; }
+.footer{
+  padding: 84px 0 0;
+  border-top: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
+}
+.footer__inner{ position: relative; z-index: 2; }
+
+/* Reuses the site's existing .reveal + IntersectionObserver mechanism
+   (script.js already watches any ".reveal" element and toggles
+   .is-visible on scroll-into-view) — same system every other section's
+   entrance relies on, one fade/slide for the whole content grid rather
+   than staggering each column separately. */
+.footer__top{
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 48px;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s var(--ease), transform .7s var(--ease);
+}
+.footer__top.is-visible{ opacity: 1; transform: translateY(0); }
+
+.footer__brand-name{
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+.footer__tagline{
+  color: var(--ink-dim);
+  font-size: .92rem;
+  line-height: 1.6;
+  max-width: 340px;
+  margin-bottom: 22px;
+}
+.footer__social{ display: flex; gap: 10px; }
+
+.footer__col-title{
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--ink-dim);
+  margin-bottom: 18px;
+}
+
+.footer__links{ display: grid; grid-template-columns: 1fr 1fr; gap: 2px 16px; }
+.footer__links a{
+  display: inline-block;
+  position: relative;
+  color: var(--ink-dim);
+  font-size: .92rem;
+  padding: 6px 0;
+  transition: color .2s var(--ease);
+}
+.footer__links a::after{
+  content:'';
+  position: absolute;
+  left: 0; right: 100%; bottom: 3px;
+  height: 1px;
+  background: var(--blue);
+  transition: right .25s var(--ease);
+}
+.footer__links a:hover{ color: var(--blue); }
+.footer__links a:hover::after{ right: 0; }
+
+.footer__contact-line{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: .92rem;
+  color: var(--ink-dim);
+  margin-bottom: 12px;
+}
+.footer__contact-line a{ color: var(--ink); transition: color .2s var(--ease); }
+.footer__contact-line a:hover{ color: var(--blue); }
+
+.footer__cta{ margin-top: 10px; }
+
+.footer__bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 22px 0;
+  border-top: 1px solid var(--line);
+  font-size: .82rem;
+  color: var(--ink-dim);
+}
 .footer__mono{ font-family: var(--font-mono); }
+.footer__top-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--ink-dim);
+  transition: color .2s var(--ease), transform .2s var(--ease);
+}
+.footer__top-link:hover{ color: var(--blue); transform: translateY(-2px); }
+
+/* Matches the site's standard tablet-and-below breakpoint (same one
+   .about__grid/.contact__grid collapse at) rather than a one-off value. */
+@media (max-width: 900px){
+  .footer__top{ grid-template-columns: 1fr; gap: 36px; }
+  .footer__tagline{ max-width: 100%; }
+  .footer__bottom{ justify-content: center; text-align: center; }
+}
+@media (max-width: 420px){
+  .footer__links{ grid-template-columns: 1fr; }
+}
 
 /* ---------- Back to top ---------- */
 .back-to-top{
