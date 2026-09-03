@@ -908,11 +908,12 @@ html[data-language="fr"] .contact__grid{
 .scroll-cue__phone{
   position:relative;
   display:none;
+  align-items:flex-start;
+  justify-content:center;
   width:24px;
   height:40px;
   border:1.5px solid var(--line);
   border-radius:7px;
-  justify-content:center;
   padding-top:13px;
 }
 .scroll-cue__phone::before{
@@ -925,17 +926,34 @@ html[data-language="fr"] .contact__grid{
   height:3px;
   border-radius:2px;
   background:var(--line);
+  z-index:1;
 }
 
 /* A small Lucide "pointer" (hand + extended finger) standing in for
-   the touch itself, in place of the plain dot this used to be —
-   same scrolldown animation/timing, just a recognizable finger shape. */
+   the touch itself, in place of the plain dot this used to be. Its
+   own animation (not the shared .scroll-cue__dot "scrolldown" one —
+   that 20px travel was tuned for the taller 42px mouse shape, and
+   would carry this icon past the phone's shorter ~24px inner screen
+   area before the loop restarts) keeps the same 1.8s duration and
+   0%/70%/100% rhythm, just scaled to a travel distance this smaller
+   outline can actually contain. align-items/justify-content set
+   explicitly (rather than left at their default stretch/flex-start)
+   so the icon reliably centers instead of depending on flex defaults. */
 .scroll-cue__phone-finger{
+  position:relative;
+  z-index:2;
   display:flex;
+  align-items:center;
+  justify-content:center;
   color:var(--blue);
-  animation:scrolldown 1.8s infinite;
+  animation:scrolldown-phone 1.8s infinite;
 }
-.scroll-cue__phone-finger svg{ width:11px; height:11px; }
+.scroll-cue__phone-finger svg{ width:11px; height:11px; display:block; }
+@keyframes scrolldown-phone{
+  0%{ opacity:1; transform:translateY(0);}
+  70%{ opacity:0; transform:translateY(10px);}
+  100%{ opacity:0;}
+}
 @media (prefers-reduced-motion:reduce){
   .scroll-cue__phone-finger{
     animation:none;
