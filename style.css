@@ -2644,14 +2644,38 @@ html:not([data-theme="dark"]) .changelog__entry{
 .footer__top-link:hover{ color: var(--blue); transform: translateY(-2px); }
 
 /* Matches the site's standard tablet-and-below breakpoint (same one
-   .about__grid/.contact__grid collapse at) rather than a one-off value. */
+   .about__grid/.contact__grid collapse at) rather than a one-off value.
+   Everything centers here — the desktop grid's left-aligned columns
+   only read cleanly side-by-side; stacked, centered content matches
+   how the rest of the site already treats its mobile layout (Hero,
+   etc.). Each stacked block also gets its own top divider instead of
+   relying on gap alone, so the three sections (brand, links, contact)
+   read as distinct, organized pieces rather than one long run of
+   center-aligned text. */
 @media (max-width: 900px){
-  .footer__top{ grid-template-columns: 1fr; gap: 36px; }
-  .footer__tagline{ max-width: 100%; }
+  .footer__top{
+    grid-template-columns: 1fr;
+    gap: 0;
+    text-align: center;
+  }
+  .footer__tagline{ max-width: 100%; margin-left: auto; margin-right: auto; }
+  .footer__social{ justify-content: center; }
+  .footer__contact-line{ justify-content: center; }
+
+  .footer__col{
+    padding-top: 32px;
+    margin-top: 32px;
+    border-top: 1px solid var(--line);
+  }
+
+  .footer__links{
+    grid-template-columns: 1fr;
+    gap: 0;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
   .footer__bottom{ justify-content: center; text-align: center; }
-}
-@media (max-width: 420px){
-  .footer__links{ grid-template-columns: 1fr; }
 }
 
 /* ---------- Back to top ---------- */
