@@ -950,8 +950,8 @@ html[data-language="fr"] .contact__grid{
 }
 .scroll-cue__phone-finger svg{ width:11px; height:11px; display:block; }
 @keyframes scrolldown-phone{
-  0%{ opacity:1; transform:translateY(0);}
-  70%{ opacity:0; transform:translateY(10px);}
+  0%{ opacity:1; transform:translateY(10px);}
+  70%{ opacity:0; transform:translateY(0);}
   100%{ opacity:0;}
 }
 @media (prefers-reduced-motion:reduce){
