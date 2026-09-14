@@ -149,7 +149,17 @@ input,textarea{ font-family: inherit; }
   max-width: 1120px;
   margin: 0 auto;
   z-index: 190;
-  background: var(--card-bg);
+  /* Same --card-bg identity as the rest of the pill, just partially
+     transparent (was fully opaque) so the backdrop-filter blur below
+     has something to actually blur — a blur on a 100%-opaque
+     background is invisible, which is why it silently vanished when
+     this became a solid card-colored pill. 88% was still too opaque
+     for scrolled content to read as visibly blurred through it rather
+     than just faintly tinting a near-solid pill, so this is lower —
+     a genuine frosted-glass mix rather than a subtle tint. */
+  background: color-mix(in srgb, var(--card-bg) 62%, transparent);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  backdrop-filter: blur(10px) saturate(140%);
   border: 1px solid var(--line);
   border-radius: 999px;
   box-shadow: var(--shadow-m);
@@ -231,6 +241,94 @@ input,textarea{ font-family: inherit; }
 .nav__link.is-active{ color: var(--blue); }
 .nav__link.is-active::before{ color: var(--blue); }
 .nav__link.is-active::after{ opacity: 1; transform: scale(1); }
+
+/* ---------- "More" group (Process/Notes/FAQ/Language), desktop only ----------
+   Large screens only: on ≤900px this whole thing flattens back into
+   plain items in the mobile menu (see the responsive block), so the
+   mobile dropdown's behavior/breakpoint is untouched. Panel look reuses
+   existing card tokens (--card-bg/--line/--shadow-m/--radius-*), same
+   as the floating pill header itself. Hover opens it (with a small
+   ::after "bridge" over the gap so moving the cursor down into the
+   panel doesn't lose hover); nav-more-menu.js layers a click-to-open
+   toggle on top for trackpad/touch/keyboard users, closing on an
+   outside click, Escape, or after a link inside is actually clicked.
+   The animation is a plain CSS transition (not GSAP), so it already
+   inherits the site's blanket prefers-reduced-motion override with no
+   extra JS gating needed — same approach as the mobile .nav__links
+   dropdown already uses. */
+.nav__more{ position: relative; }
+.nav__more::after{
+  content:'';
+  position:absolute;
+  top:100%; left:0; right:0;
+  height:14px;
+}
+/* Icon-only (Lucide "ellipsis") rather than a "More" text+chevron
+   label — reuses .nav__link's own padding/height/hover treatment as-is
+   (same class, same box), so it lines up with About/Skills/Experience/
+   Education without any extra sizing rules here. Its own index-number
+   prefix (::before) is suppressed since there's no data-tag on this
+   button — an icon doesn't pair naturally with a numbered label the
+   way a word does. */
+.nav__more-trigger{
+  background:none;
+  border:none;
+  font-family:inherit;
+  cursor:pointer;
+}
+.nav__more-trigger::before{ display:none; }
+.nav__more-trigger svg{
+  width:17px;
+  height:17px;
+  transition: transform .3s var(--ease);
+}
+.nav__more.is-open .nav__more-trigger{ color: var(--ink); }
+.nav__more.is-open .nav__more-trigger::after{ opacity:1; transform:scale(1); }
+.nav__more.is-open .nav__more-trigger svg{ transform: rotate(90deg); }
+
+.nav__more-menu{
+  position:absolute;
+  top: calc(100% + 14px);
+  left:50%;
+  min-width:180px;
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+  padding:10px;
+  background: var(--card-bg);
+  border:1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow-m);
+  opacity:0;
+  transform: translateX(-50%) translateY(-8px) scale(.96);
+  pointer-events:none;
+  transition: opacity .25s var(--ease), transform .25s var(--ease);
+  z-index: 50;
+}
+/* No index-number prefix inside the grouped panel — that decoration
+   reads well in the main flat row, but is unnecessary noise in a
+   secondary dropdown list. */
+.nav__more-menu .nav__link::before{ display:none; }
+.nav__more-menu .nav__link{ padding:9px 12px; }
+
+.nav__more.is-open .nav__more-menu{
+  opacity:1;
+  transform: translateX(-50%) translateY(0) scale(1);
+  pointer-events:auto;
+}
+/* Hover-to-open is scoped to devices that actually have a reliable
+   hover state — on a touch device, :hover can "stick" after a tap
+   (a known mobile-browser quirk) and drift out of sync with the
+   click-driven .is-open toggle nav-more-menu.js is the source of
+   truth for; the JS toggle above still opens/closes it correctly
+   there either way. */
+@media (hover:hover) and (pointer:fine){
+  .nav__more:hover .nav__more-menu{
+    opacity:1;
+    transform: translateX(-50%) translateY(0) scale(1);
+    pointer-events:auto;
+  }
+}
 
 .nav__actions{
     display:flex;
@@ -2265,6 +2363,10 @@ html:not([data-theme="dark"]) .changelog__entry{
   flex-direction: column;
   gap: 14px;
   max-width: 760px;
+  /* This is what was causing the misalignment: a max-width narrower
+     than .section-inner with no auto margins left it flush against
+     the left edge instead of centered within the section. */
+  margin: 0 auto;
 }
 
 .faq-item{
@@ -2826,6 +2928,51 @@ html:not([data-theme="dark"]) .changelog__entry{
     transform:translateY(0);
     pointer-events:auto;
   }
+
+  /* Same "•••" trigger as desktop (no extra CSS needed for its own
+     look — it isn't hidden here anymore, so it just renders with the
+     same icon/hover/is-open styling defined above). Clicking it
+     expands/collapses the same 4 grouped links inline, right below it
+     in the mobile menu, reusing the exact same .is-open toggle
+     nav-more-menu.js already sets (its click handler isn't
+     viewport-gated) — just restyled here to sit statically in a
+     vertical list instead of floating as an absolutely-positioned
+     panel. */
+  /* The hover-intent bridge only makes sense for desktop's floating,
+     absolutely-positioned panel — here the menu sits in normal flow
+     directly under the trigger, so the bridge would just be a dead
+     invisible strip capable of intercepting taps on the first link. */
+  .nav__more::after{ display: none; }
+
+  .nav__more-menu{
+    position: static;
+    display: flex;
+    flex-direction: column;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    background: none;
+    transform: none;
+    transition: max-height .3s var(--ease), opacity .3s var(--ease);
+  }
+  .nav__more.is-open .nav__more-menu{
+    max-height: 240px;
+    opacity: 1;
+    padding: 2px 0 2px 16px;
+    /* The base (unconditional, desktop-oriented) .is-open rule further
+       up the file sets transform:translateX(-50%)... for centering a
+       floating panel — since this rule never redeclared `transform`,
+       that value was leaking through here too (same specificity, this
+       rule just came later for every OTHER property), shoving the
+       expanded mobile menu sideways by half its own width instead of
+       actually revealing it in place. */
+    transform: none;
+  }
+  .nav__more-menu .nav__link{ padding: 8px 10px; }
 }
 
 /* ---------- Signature effects (binary trail, split-text, clip-path, scramble) ---------- */

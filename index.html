@@ -42,11 +42,22 @@
       <a href="#skills" class="nav__link" data-tag="02" data-i18n="nav.skills">Skills</a>
       <a href="#experience" class="nav__link" data-tag="03" data-i18n="nav.experience">Experience</a>
       <a href="#projects" class="nav__link" data-tag="04" data-i18n="nav.projects">Projects</a>
-      <a href="#lifecycle" class="nav__link" data-tag="05" data-i18n="nav.process">Process</a>
+
+      <div class="nav__more" id="navMore">
+        <button type="button" class="nav__link nav__more-trigger" aria-label="More" title="More" aria-haspopup="true" aria-expanded="false" aria-controls="navMoreMenu">
+          <span data-lucide="ellipsis"></span>
+        </button>
+        <div class="nav__more-menu" id="navMoreMenu">
+          <a href="#lifecycle" class="nav__link" data-tag="05" data-i18n="nav.process">Process</a>
+          <a href="#testimonials" class="nav__link" data-tag="08" data-i18n="nav.notes">Notes</a>
+          <a href="#faq" class="nav__link">FAQ</a>
+          <a href="#languages" class="nav__link">Language</a>
+        </div>
+      </div>
+
       <a href="#education" class="nav__link" data-tag="06" data-i18n="nav.education">Education</a>
       <a href="#certifications" class="nav__link" data-tag="07" data-i18n="nav.certs">Certs</a>
-      <a href="#testimonials" class="nav__link" data-tag="08" data-i18n="nav.notes">Notes</a>
-      <a href="#contact" class="nav__link" data-tag="09" data-i18n="nav.contact">Contact</a>
+      <a href="#contact" class="nav__link" data-tag="08" data-i18n="nav.contact">Contact</a>
     </nav>
 
     <div class="nav__actions">
@@ -732,209 +743,6 @@
     </div>
   </section>
 
-  <!-- EDUCATION -->
-  <section class="section section--alt" id="education">
-    <div class="bg-shapes" aria-hidden="true">
-      <span class="shape shape--ring" style="top:-6%; left:6%; width:160px; height:160px;"></span>
-      <span class="shape shape--circ2" style="bottom:12%; right:8%;"></span>
-    </div>
-    <div class="section-inner">
-      <p class="release-tag" data-i18n="education.release">v1.6 · education</p>
-      <div class="section-title-row">
-        <span class="ic section-icon" aria-hidden="true"><span data-lucide="graduation-cap"></span></span>
-        <h2 class="section-title" data-i18n="education.title">Education &amp; continuous learning</h2>
-      </div>
-
-      <p class="education__intro reveal" data-i18n="education.intro">
-        A background built through formal study, language growth, and practical product work.
-      </p>
-
-      <div class="education__grid">
-        <article class="education-card reveal">
-          <div class="education-card__header">
-            <div class="education-card__title-group">
-              <span class="ic education-card__icon" aria-hidden="true"><span data-lucide="brain"></span></span>
-              <span class="education-card__tag">CURRENT</span>
-            </div>
-            <span class="education-card__badge">Purdue University</span>
-          </div>
-          <h3>AI Master</h3>
-          <p class="education-card__meta">United States · June 2026 – Present</p>
-          <p class="education-card__body">Exploring applied AI, intelligent systems, and product-led innovation with a focus on real-world impact.</p>
-        </article>
-
-        <article class="education-card reveal">
-          <div class="education-card__header">
-            <div class="education-card__title-group">
-              <span class="ic education-card__icon" aria-hidden="true"><span data-lucide="landmark"></span></span>
-              <span class="education-card__tag">STUDIES</span>
-            </div>
-            <span class="education-card__badge">IT University</span>
-          </div>
-          <h3>Information Technology</h3>
-          <p class="education-card__meta">Madagascar · 2020 – 2023</p>
-          <p class="education-card__body">Built a strong foundation in digital systems, software thinking, and technology problem-solving.</p>
-        </article>
-
-        <article class="education-card reveal">
-          <div class="education-card__header">
-            <div class="education-card__title-group">
-              <span class="ic education-card__icon" aria-hidden="true"><span data-lucide="book-open"></span></span>
-              <span class="education-card__tag">TRAINING</span>
-            </div>
-            <span class="education-card__badge">English Teaching Program</span>
-          </div>
-          <h3>English Course</h3>
-          <p class="education-card__meta">Madagascar · 2020 – 2021</p>
-          <p class="education-card__body">Developed communication, teaching, and cross-cultural collaboration skills in a language-focused program.</p>
-        </article>
-
-        <article class="education-card reveal">
-          <div class="education-card__header">
-            <div class="education-card__title-group">
-              <span class="ic education-card__icon" aria-hidden="true"><span data-lucide="languages"></span></span>
-              <span class="education-card__tag">LANGUAGE</span>
-            </div>
-            <span class="education-card__badge">English Language Institute</span>
-          </div>
-          <h3>English Course</h3>
-          <p class="education-card__meta">Madagascar · 2019 – 2020</p>
-          <p class="education-card__body">Strengthened academic English and professional communication for international collaboration.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- LANGUAGES -->
-  <section class="section" id="languages">
-    <div class="bg-shapes" aria-hidden="true">
-      <span class="shape shape--sq2" style="top:8%; left:8%;"></span>
-      <span class="shape shape--dot" style="bottom:16%; right:10%;"></span>
-    </div>
-    <div class="section-inner">
-      <p class="release-tag" data-i18n="languages.release">v1.6.1 · languages</p>
-      <div class="section-title-row">
-        <span class="ic section-icon" aria-hidden="true"><span data-lucide="globe"></span></span>
-        <h2 class="section-title" data-i18n="languages.title">Languages</h2>
-      </div>
-
-      <div class="languages__panel reveal">
-        <div class="languages__headline">
-          <p data-i18n="languages.intro">Communication is part of delivery. These are the languages I use to bridge teams, clients, and ideas.</p>
-        </div>
-
-        <div class="languages__list">
-          <article class="language-card">
-            <div class="language-card__top">
-              <span class="language-card__flag" aria-hidden="true"><span class="fi fi-us"></span></span>
-              <div>
-                <h3>English</h3>
-                <span class="tag tag--improved">C1</span>
-              </div>
-            </div>
-            <div class="language-card__bar" style="--bar-start:#2451B8; --bar-end:#60A5FA;"><span data-level="88"></span></div>
-          </article>
-
-          <article class="language-card">
-            <div class="language-card__top">
-              <span class="language-card__flag" aria-hidden="true"><span class="fi fi-fr"></span></span>
-              <div>
-                <h3>French</h3>
-                <span class="tag tag--led">B2</span>
-              </div>
-            </div>
-            <div class="language-card__bar" style="--bar-start:#f59e0b; --bar-end:#fbbf24;"><span data-level="74"></span></div>
-          </article>
-
-          <article class="language-card">
-            <div class="language-card__top">
-              <span class="language-card__flag" aria-hidden="true"><span class="fi fi-mg"></span></span>
-              <div>
-                <h3>Malagasy</h3>
-                <span class="tag tag--added">Native</span>
-              </div>
-            </div>
-            <div class="language-card__bar" style="--bar-start:#1F8A5F; --bar-end:#63D19E;"><span data-level="98"></span></div>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CERTIFICATIONS -->
-  <section class="section" id="certifications">
-    <div class="bg-shapes" aria-hidden="true">
-      <span class="shape shape--ring" style="top:-8%; right:6%; width:150px; height:150px;"></span>
-      <span class="shape shape--sq2" style="bottom:10%; left:8%;"></span>
-    </div>
-    <div class="section-inner">
-      <p class="release-tag" data-i18n="certs.release">v1.7 · credentials</p>
-      <div class="section-title-row">
-        <span class="ic section-icon" aria-hidden="true"><span data-lucide="award"></span></span>
-        <h2 class="section-title" data-i18n="certs.title">Certifications</h2>
-      </div>
-
-      <div class="certs__grid">
-
-        <article class="cert-card reveal">
-          <div class="cert-card__cover">
-            <img src="image/cert-ai-ethics.png" alt="AI Ethics for Kids certificate">
-          </div>
-          <div class="cert-card__body">
-            <div class="cert-card__title-group">
-              <span class="ic cert-card__icon" aria-hidden="true"><span data-lucide="heart-handshake"></span></span>
-              <span class="cert-card__mono">Mentor</span>
-            </div>
-            <h3>AI Ethics for Kids</h3>
-            <p class="cert-card__meta">Team: Mentors</p>
-            <div class="cert-card__footer">
-              <time>Issued Jun 8, 2026</time>
-              <a href="https://app.genhax.com/certificate/9722f1a8-02ed-4b9a-aa99-d5f155e34b09" target="_blank" rel="noopener" class="link-btn">View certificate →</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="cert-card reveal">
-          <div class="cert-card__cover">
-            <img src="image/cert-knowhax.png" alt="KnowHax Episode 2, Hosts & Recognition certificate">
-          </div>
-          <div class="cert-card__body">
-            <div class="cert-card__title-group">
-              <span class="ic cert-card__icon" aria-hidden="true"><span data-lucide="trophy"></span></span>
-              <span class="cert-card__mono">Hackathon</span>
-            </div>
-            <h3>KnowHax Episode 2, Hosts &amp; Recognition</h3>
-            <p class="cert-card__meta">Team: KnowHax Hackathon Episode 2</p>
-            <p class="cert-card__note">With the US National Science Foundation, Proto-OKN program.</p>
-            <div class="cert-card__footer">
-              <time>Issued Jun 1, 2026</time>
-              <a href="https://app.genhax.com/certificate/25a4721c-c652-49fa-8c86-8ac32cd4f6bd" target="_blank" rel="noopener" class="link-btn">View certificate →</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="cert-card reveal">
-          <div class="cert-card__cover">
-            <img src="image/cert-first-ai.png" alt="Code Your First AI App or Agent: From Zero to Prototype 02/05 certificate">
-          </div>
-          <div class="cert-card__body">
-            <div class="cert-card__title-group">
-              <span class="ic cert-card__icon" aria-hidden="true"><span data-lucide="code-2"></span></span>
-              <span class="cert-card__mono">Challenge</span>
-            </div>
-            <h3>Code Your First AI App or Agent: From Zero to Prototype 02/05</h3>
-            <p class="cert-card__meta">Team: Brendan &amp; Bruno's Team</p>
-            <div class="cert-card__footer">
-              <time>Issued Mar 18, 2026</time>
-              <a href="https://app.genhax.com/certificate/6f10d336-e385-4ad0-9e56-9314a423c141" target="_blank" rel="noopener" class="link-btn">View certificate →</a>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
   <!-- TESTIMONIALS -->
   <section class="section" id="testimonials">
     <div class="bg-shapes" aria-hidden="true">
@@ -1077,6 +885,209 @@
             <p class="faq-answer__inner">Reach out through the contact form or email — I'll usually reply within a day to set up a quick call and understand what you need.</p>
           </div>
         </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LANGUAGES -->
+  <section class="section" id="languages">
+    <div class="bg-shapes" aria-hidden="true">
+      <span class="shape shape--sq2" style="top:8%; left:8%;"></span>
+      <span class="shape shape--dot" style="bottom:16%; right:10%;"></span>
+    </div>
+    <div class="section-inner">
+      <p class="release-tag" data-i18n="languages.release">v1.6.1 · languages</p>
+      <div class="section-title-row">
+        <span class="ic section-icon" aria-hidden="true"><span data-lucide="globe"></span></span>
+        <h2 class="section-title" data-i18n="languages.title">Languages</h2>
+      </div>
+
+      <div class="languages__panel reveal">
+        <div class="languages__headline">
+          <p data-i18n="languages.intro">Communication is part of delivery. These are the languages I use to bridge teams, clients, and ideas.</p>
+        </div>
+
+        <div class="languages__list">
+          <article class="language-card">
+            <div class="language-card__top">
+              <span class="language-card__flag" aria-hidden="true"><span class="fi fi-us"></span></span>
+              <div>
+                <h3>English</h3>
+                <span class="tag tag--improved">C1</span>
+              </div>
+            </div>
+            <div class="language-card__bar" style="--bar-start:#2451B8; --bar-end:#60A5FA;"><span data-level="88"></span></div>
+          </article>
+
+          <article class="language-card">
+            <div class="language-card__top">
+              <span class="language-card__flag" aria-hidden="true"><span class="fi fi-fr"></span></span>
+              <div>
+                <h3>French</h3>
+                <span class="tag tag--led">B2</span>
+              </div>
+            </div>
+            <div class="language-card__bar" style="--bar-start:#f59e0b; --bar-end:#fbbf24;"><span data-level="74"></span></div>
+          </article>
+
+          <article class="language-card">
+            <div class="language-card__top">
+              <span class="language-card__flag" aria-hidden="true"><span class="fi fi-mg"></span></span>
+              <div>
+                <h3>Malagasy</h3>
+                <span class="tag tag--added">Native</span>
+              </div>
+            </div>
+            <div class="language-card__bar" style="--bar-start:#1F8A5F; --bar-end:#63D19E;"><span data-level="98"></span></div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section section--alt" id="education">
+    <div class="bg-shapes" aria-hidden="true">
+      <span class="shape shape--ring" style="top:-6%; left:6%; width:160px; height:160px;"></span>
+      <span class="shape shape--circ2" style="bottom:12%; right:8%;"></span>
+    </div>
+    <div class="section-inner">
+      <p class="release-tag" data-i18n="education.release">v1.6 · education</p>
+      <div class="section-title-row">
+        <span class="ic section-icon" aria-hidden="true"><span data-lucide="graduation-cap"></span></span>
+        <h2 class="section-title" data-i18n="education.title">Education &amp; continuous learning</h2>
+      </div>
+
+      <p class="education__intro reveal" data-i18n="education.intro">
+        A background built through formal study, language growth, and practical product work.
+      </p>
+
+      <div class="education__grid">
+        <article class="education-card reveal">
+          <div class="education-card__header">
+            <div class="education-card__title-group">
+              <span class="ic education-card__icon" aria-hidden="true"><span data-lucide="brain"></span></span>
+              <span class="education-card__tag">CURRENT</span>
+            </div>
+            <span class="education-card__badge">Purdue University</span>
+          </div>
+          <h3>AI Master</h3>
+          <p class="education-card__meta">United States · June 2026 – Present</p>
+          <p class="education-card__body">Exploring applied AI, intelligent systems, and product-led innovation with a focus on real-world impact.</p>
+        </article>
+
+        <article class="education-card reveal">
+          <div class="education-card__header">
+            <div class="education-card__title-group">
+              <span class="ic education-card__icon" aria-hidden="true"><span data-lucide="landmark"></span></span>
+              <span class="education-card__tag">STUDIES</span>
+            </div>
+            <span class="education-card__badge">IT University</span>
+          </div>
+          <h3>Information Technology</h3>
+          <p class="education-card__meta">Madagascar · 2020 – 2023</p>
+          <p class="education-card__body">Built a strong foundation in digital systems, software thinking, and technology problem-solving.</p>
+        </article>
+
+        <article class="education-card reveal">
+          <div class="education-card__header">
+            <div class="education-card__title-group">
+              <span class="ic education-card__icon" aria-hidden="true"><span data-lucide="book-open"></span></span>
+              <span class="education-card__tag">TRAINING</span>
+            </div>
+            <span class="education-card__badge">English Teaching Program</span>
+          </div>
+          <h3>English Course</h3>
+          <p class="education-card__meta">Madagascar · 2020 – 2021</p>
+          <p class="education-card__body">Developed communication, teaching, and cross-cultural collaboration skills in a language-focused program.</p>
+        </article>
+
+        <article class="education-card reveal">
+          <div class="education-card__header">
+            <div class="education-card__title-group">
+              <span class="ic education-card__icon" aria-hidden="true"><span data-lucide="languages"></span></span>
+              <span class="education-card__tag">LANGUAGE</span>
+            </div>
+            <span class="education-card__badge">English Language Institute</span>
+          </div>
+          <h3>English Course</h3>
+          <p class="education-card__meta">Madagascar · 2019 – 2020</p>
+          <p class="education-card__body">Strengthened academic English and professional communication for international collaboration.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section class="section" id="certifications">
+    <div class="bg-shapes" aria-hidden="true">
+      <span class="shape shape--ring" style="top:-8%; right:6%; width:150px; height:150px;"></span>
+      <span class="shape shape--sq2" style="bottom:10%; left:8%;"></span>
+    </div>
+    <div class="section-inner">
+      <p class="release-tag" data-i18n="certs.release">v1.7 · credentials</p>
+      <div class="section-title-row">
+        <span class="ic section-icon" aria-hidden="true"><span data-lucide="award"></span></span>
+        <h2 class="section-title" data-i18n="certs.title">Certifications</h2>
+      </div>
+
+      <div class="certs__grid">
+
+        <article class="cert-card reveal">
+          <div class="cert-card__cover">
+            <img src="image/cert-ai-ethics.png" alt="AI Ethics for Kids certificate">
+          </div>
+          <div class="cert-card__body">
+            <div class="cert-card__title-group">
+              <span class="ic cert-card__icon" aria-hidden="true"><span data-lucide="heart-handshake"></span></span>
+              <span class="cert-card__mono">Mentor</span>
+            </div>
+            <h3>AI Ethics for Kids</h3>
+            <p class="cert-card__meta">Team: Mentors</p>
+            <div class="cert-card__footer">
+              <time>Issued Jun 8, 2026</time>
+              <a href="https://app.genhax.com/certificate/9722f1a8-02ed-4b9a-aa99-d5f155e34b09" target="_blank" rel="noopener" class="link-btn">View certificate →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="cert-card reveal">
+          <div class="cert-card__cover">
+            <img src="image/cert-knowhax.png" alt="KnowHax Episode 2, Hosts & Recognition certificate">
+          </div>
+          <div class="cert-card__body">
+            <div class="cert-card__title-group">
+              <span class="ic cert-card__icon" aria-hidden="true"><span data-lucide="trophy"></span></span>
+              <span class="cert-card__mono">Hackathon</span>
+            </div>
+            <h3>KnowHax Episode 2, Hosts &amp; Recognition</h3>
+            <p class="cert-card__meta">Team: KnowHax Hackathon Episode 2</p>
+            <p class="cert-card__note">With the US National Science Foundation, Proto-OKN program.</p>
+            <div class="cert-card__footer">
+              <time>Issued Jun 1, 2026</time>
+              <a href="https://app.genhax.com/certificate/25a4721c-c652-49fa-8c86-8ac32cd4f6bd" target="_blank" rel="noopener" class="link-btn">View certificate →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="cert-card reveal">
+          <div class="cert-card__cover">
+            <img src="image/cert-first-ai.png" alt="Code Your First AI App or Agent: From Zero to Prototype 02/05 certificate">
+          </div>
+          <div class="cert-card__body">
+            <div class="cert-card__title-group">
+              <span class="ic cert-card__icon" aria-hidden="true"><span data-lucide="code-2"></span></span>
+              <span class="cert-card__mono">Challenge</span>
+            </div>
+            <h3>Code Your First AI App or Agent: From Zero to Prototype 02/05</h3>
+            <p class="cert-card__meta">Team: Brendan &amp; Bruno's Team</p>
+            <div class="cert-card__footer">
+              <time>Issued Mar 18, 2026</time>
+              <a href="https://app.genhax.com/certificate/6f10d336-e385-4ad0-9e56-9314a423c141" target="_blank" rel="noopener" class="link-btn">View certificate →</a>
+            </div>
+          </div>
+        </article>
 
       </div>
     </div>
@@ -1298,6 +1309,9 @@
 
 <!-- Header active-section wave -->
 <script src="header-scroll-spy.js"></script>
+
+<!-- Header "More" group dropdown -->
+<script src="nav-more-menu.js"></script>
 
 <!-- About section redesign (accent line, card stagger, 3D tilt) -->
 <script src="about-redesign.js"></script>
