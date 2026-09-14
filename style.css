@@ -321,13 +321,18 @@ input,textarea{ font-family: inherit; }
    (a known mobile-browser quirk) and drift out of sync with the
    click-driven .is-open toggle nav-more-menu.js is the source of
    truth for; the JS toggle above still opens/closes it correctly
-   there either way. */
+   there either way. Same reasoning for the trigger's own icon
+   animation just below: it should play on hover too (matching the
+   panel it's opening), not only once .is-open is actually toggled. */
 @media (hover:hover) and (pointer:fine){
   .nav__more:hover .nav__more-menu{
     opacity:1;
     transform: translateX(-50%) translateY(0) scale(1);
     pointer-events:auto;
   }
+  .nav__more:hover .nav__more-trigger{ color: var(--ink); }
+  .nav__more:hover .nav__more-trigger::after{ opacity:1; transform:scale(1); }
+  .nav__more:hover .nav__more-trigger svg{ transform: rotate(90deg); }
 }
 
 .nav__actions{
