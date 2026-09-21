@@ -34,7 +34,10 @@
   <span class="nav__avatar">
     <img src="image/Profile.webp" alt="Anthony Rasolofoarimanana">
   </span>
-  <span class="nav__name">anthony<span class="nav__dim">.rasolofoarimanana</span></span>
+  <span class="nav__name">
+    <span class="nav__name-full">anthony<span class="nav__dim">.rasolofoarimanana</span></span>
+    <span class="nav__name-short">anthony<span class="nav__dim">.ras</span></span>
+  </span>
 </a>
 
     <nav class="nav__links" id="navLinks">
@@ -50,8 +53,8 @@
         <div class="nav__more-menu" id="navMoreMenu">
           <a href="#lifecycle" class="nav__link" data-tag="05" data-i18n="nav.process">Process</a>
           <a href="#testimonials" class="nav__link" data-tag="08" data-i18n="nav.notes">Notes</a>
-          <a href="#faq" class="nav__link">FAQ</a>
-          <a href="#languages" class="nav__link">Language</a>
+          <a href="#faq" class="nav__link" data-i18n="nav.faq">FAQ</a>
+          <a href="#languages" class="nav__link" data-i18n="nav.language">Language</a>
         </div>
       </div>
 
@@ -129,7 +132,7 @@
               <span data-i18n="hero.ctaProjects">View case studies</span>
               <span class="btn__icon btn__icon--trail" aria-hidden="true"><span data-lucide="arrow-right"></span></span>
             </a>
-            <a href="assets/resume.pdf" download class="btn btn--ghost">
+            <a href="assets/resume.pdf" download target="_blank" rel="noopener" class="btn btn--ghost">
               <span class="btn__icon btn__icon--lead" aria-hidden="true"><span data-lucide="download"></span></span>
               <span data-i18n="hero.ctaResume">Download résumé</span>
             </a>
@@ -162,13 +165,13 @@
             <img src="image/desk-illustration.png" alt="Illustration of Anthony coding at his desk" class="hero__illustration-img">
 
             <div class="hero__bubble hero__bubble--1" aria-hidden="true">
-              <span>Ships fast, thinks ahead</span>
+              <span data-i18n="hero.bubble1">Ships fast, thinks ahead</span>
             </div>
             <div class="hero__bubble hero__bubble--2" aria-hidden="true">
-              <span>Writes docs people actually read</span>
+              <span data-i18n="hero.bubble2">Writes docs people actually read</span>
             </div>
             <div class="hero__bubble hero__bubble--3" aria-hidden="true">
-              <span>Half-built before the meeting ends</span>
+              <span data-i18n="hero.bubble3">Half-built before the meeting ends</span>
             </div>
           </div>
         </div>
@@ -229,33 +232,29 @@
         <div class="about__bio">
           <span class="about__accent" aria-hidden="true"></span>
           <p>
-            <span class="about__lead">I'm a Product Owner and Project Manager working across SaaS, mobile, and platform teams, translating strategy into a backlog that engineers can actually build from.</span>
-            My background moved through QA, full-stack development, and project
-            management before product, so I read a sprint the way a tester reads an
-            edge case — looking for what breaks.
+            <span class="about__lead" data-i18n="about.bio1lead">I'm a Product Owner and Project Manager working across SaaS, mobile, and platform teams, translating strategy into a backlog that engineers can actually build from.</span>
+            <span data-i18n="about.bio1rest">My background moved through QA, full-stack development, and project management before product, so I read a sprint the way a tester reads an edge case — looking for what breaks.</span>
           </p>
           <p>
-            I don't believe in roadmaps as decoration. Every item in mine has
-            an owner, a reason, and a way to tell if it worked. I'd rather
-            ship a narrow slice this sprint than a wide promise next quarter.
+            <span data-i18n="about.bio2">I don't believe in roadmaps as decoration. Every item in mine has an owner, a reason, and a way to tell if it worked. I'd rather ship a narrow slice this sprint than a wide promise next quarter.</span>
           </p>
         </div>
 
         <div class="about__cards">
           <div class="mini-card identity-card identity-card--mindset">
             <span class="ic identity-card__icon" aria-hidden="true"><span data-lucide="undo-2"></span></span>
-            <span class="mini-card__tag">MINDSET</span>
-            <p>Decisions are cheap to reverse if you make them small. I optimize for reversibility, not certainty.</p>
+            <span class="mini-card__tag" data-i18n="about.mindset.tag">MINDSET</span>
+            <p data-i18n="about.mindset.text">Decisions are cheap to reverse if you make them small. I optimize for reversibility, not certainty.</p>
           </div>
           <div class="mini-card identity-card identity-card--philosophy">
             <span class="ic identity-card__icon" aria-hidden="true"><span data-lucide="refresh-cw"></span></span>
-            <span class="mini-card__tag">AGILE PHILOSOPHY</span>
-            <p>Scrum is a container, not a religion. I keep the ceremonies that create clarity and cut the ones that create theater.</p>
+            <span class="mini-card__tag" data-i18n="about.philosophy.tag">AGILE PHILOSOPHY</span>
+            <p data-i18n="about.philosophy.text">Scrum is a container, not a religion. I keep the ceremonies that create clarity and cut the ones that create theater.</p>
           </div>
           <div class="mini-card identity-card identity-card--vision">
             <span class="ic identity-card__icon" aria-hidden="true"><span data-lucide="telescope"></span></span>
-            <span class="mini-card__tag">PRODUCT VISION</span>
-            <p>A vision only counts if a new hire can repeat it back after one week. Anything longer than that is a slide, not a strategy.</p>
+            <span class="mini-card__tag" data-i18n="about.vision.tag">PRODUCT VISION</span>
+            <p data-i18n="about.vision.text">A vision only counts if a new hire can repeat it back after one week. Anything longer than that is a slide, not a strategy.</p>
           </div>
         </div>
       </div>
@@ -280,83 +279,83 @@
       <div class="skill-card">
         <div class="skill-card__head">
           <span class="ic" aria-hidden="true"><span data-lucide="target"></span></span>
-          <h3>Product Management</h3>
+          <h3 data-i18n="skills.pm.title">Product Management</h3>
         </div>
         <ul class="skill-list">
-          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="map"></span></span>Roadmapping &amp; prioritization</span><i data-level="89"></i></li>
-          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="search"></span></span>Discovery &amp; user research</span><i data-level="85"></i></li>
-          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="list-checks"></span></span>Backlog refinement</span><i data-level="92"></i></li>
-          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="handshake"></span></span>Stakeholder alignment</span><i data-level="88"></i></li>
+          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="map"></span></span><span data-i18n="skills.pm.item1">Roadmapping &amp; prioritization</span></span><i data-level="89"></i></li>
+          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="search"></span></span><span data-i18n="skills.pm.item2">Discovery &amp; user research</span></span><i data-level="85"></i></li>
+          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="list-checks"></span></span><span data-i18n="skills.pm.item3">Backlog refinement</span></span><i data-level="92"></i></li>
+          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="handshake"></span></span><span data-i18n="skills.pm.item4">Stakeholder alignment</span></span><i data-level="88"></i></li>
         </ul>
       </div>
 
       <div class="skill-card">
         <div class="skill-card__head">
           <span class="ic" aria-hidden="true"><span data-lucide="refresh-cw"></span></span>
-          <h3>Agile &amp; Scrum</h3>
+          <h3 data-i18n="skills.agile.title">Agile &amp; Scrum</h3>
         </div>
         <ul class="skill-list">
-          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="calendar-clock"></span></span>Sprint planning</span><i data-level="91"></i></li>
-          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="pencil-line"></span></span>Story writing &amp; estimation</span><i data-level="89"></i></li>
-          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="rotate-ccw"></span></span>Retrospective facilitation</span><i data-level="87"></i></li>
-          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="layers"></span></span>Scaled Agile (SAFe)</span><i data-level="75"></i></li>
+          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="calendar-clock"></span></span><span data-i18n="skills.agile.item1">Sprint planning</span></span><i data-level="91"></i></li>
+          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="pencil-line"></span></span><span data-i18n="skills.agile.item2">Story writing &amp; estimation</span></span><i data-level="89"></i></li>
+          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="rotate-ccw"></span></span><span data-i18n="skills.agile.item3">Retrospective facilitation</span></span><i data-level="87"></i></li>
+          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="layers"></span></span><span data-i18n="skills.agile.item4">Scaled Agile (SAFe)</span></span><i data-level="75"></i></li>
         </ul>
       </div>
 
       <div class="skill-card">
         <div class="skill-card__head">
           <span class="ic" aria-hidden="true"><span data-lucide="shield-check"></span></span>
-          <h3>QA &amp; Testing</h3>
+          <h3 data-i18n="skills.qa.title">QA &amp; Testing</h3>
         </div>
         <ul class="skill-list">
-          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="clipboard-check"></span></span>Acceptance criteria design</span><i data-level="90"></i></li>
-          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="file-search"></span></span>Test case review</span><i data-level="83"></i></li>
-          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="bug"></span></span>Regression triage</span><i data-level="80"></i></li>
-          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="compass"></span></span>Exploratory testing</span><i data-level="77"></i></li>
+          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="clipboard-check"></span></span><span data-i18n="skills.qa.item1">Acceptance criteria design</span></span><i data-level="90"></i></li>
+          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="file-search"></span></span><span data-i18n="skills.qa.item2">Test case review</span></span><i data-level="83"></i></li>
+          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="bug"></span></span><span data-i18n="skills.qa.item3">Regression triage</span></span><i data-level="80"></i></li>
+          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="compass"></span></span><span data-i18n="skills.qa.item4">Exploratory testing</span></span><i data-level="77"></i></li>
         </ul>
       </div>
 
       <div class="skill-card">
         <div class="skill-card__head">
           <span class="ic" aria-hidden="true"><span data-lucide="kanban"></span></span>
-          <h3>Project Management</h3>
+          <h3 data-i18n="skills.proj.title">Project Management</h3>
         </div>
         <ul class="skill-list">
-          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="alert-triangle"></span></span>Risk &amp; dependency tracking</span><i data-level="85"></i></li>
-          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="rocket"></span></span>Release planning</span><i data-level="88"></i></li>
-          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="users-round"></span></span>Vendor &amp; cross-team coordination</span><i data-level="82"></i></li>
-          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="wallet"></span></span>Budget &amp; resourcing</span><i data-level="77"></i></li>
+          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="alert-triangle"></span></span><span data-i18n="skills.proj.item1">Risk &amp; dependency tracking</span></span><i data-level="85"></i></li>
+          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="rocket"></span></span><span data-i18n="skills.proj.item2">Release planning</span></span><i data-level="88"></i></li>
+          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="users-round"></span></span><span data-i18n="skills.proj.item3">Vendor &amp; cross-team coordination</span></span><i data-level="82"></i></li>
+          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="wallet"></span></span><span data-i18n="skills.proj.item4">Budget &amp; resourcing</span></span><i data-level="77"></i></li>
         </ul>
       </div>
 
       <div class="skill-card">
         <div class="skill-card__head">
           <span class="ic" aria-hidden="true"><span data-lucide="code-2"></span></span>
-          <h3>Technical Skills</h3>
+          <h3 data-i18n="skills.tech.title">Technical Skills</h3>
         </div>
         <ul class="skill-list">
-          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="database"></span></span>SQL &amp; data analysis</span><i data-level="75"></i></li>
-          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="plug-2"></span></span>API &amp; systems literacy</span><i data-level="79"></i></li>
+          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="database"></span></span><span data-i18n="skills.tech.item1">SQL &amp; data analysis</span></span><i data-level="75"></i></li>
+          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="plug-2"></span></span><span data-i18n="skills.tech.item2">API &amp; systems literacy</span></span><i data-level="79"></i></li>
           <li><span>
             <span class="ic ic--sm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.571 11.513H0a5.218 5.218 0 0 0 5.232 5.215h2.13v2.057A5.215 5.215 0 0 0 12.575 24V12.518a1.005 1.005 0 0 0-1.005-1.005zm5.723-5.756H5.736a5.215 5.215 0 0 0 5.215 5.214h2.129v2.058a5.218 5.218 0 0 0 5.215 5.214V6.758a1.001 1.001 0 0 0-1.001-1.001zM23.013 0H11.455a5.215 5.215 0 0 0 5.215 5.215h2.129v2.057A5.215 5.215 0 0 0 24 12.483V1.005A1.001 1.001 0 0 0 23.013 0Z"/></svg></span>
             <span class="ic ic--sm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.87 18.257c-.248.382-.53.875-.763 1.245a.764.764 0 0 0 .255 1.04l4.965 3.054a.764.764 0 0 0 1.058-.26c.199-.332.454-.763.733-1.221 1.967-3.247 3.945-2.853 7.508-1.146l4.957 2.337a.764.764 0 0 0 1.028-.382l2.364-5.346a.764.764 0 0 0-.382-1 599.851 599.851 0 0 1-4.965-2.361C10.911 10.97 5.224 11.185.87 18.257zM23.131 5.743c.249-.405.531-.875.764-1.25a.764.764 0 0 0-.256-1.034L18.675.404a.764.764 0 0 0-1.058.26c-.195.335-.451.763-.734 1.225-1.966 3.246-3.945 2.85-7.508 1.146L4.437.694a.764.764 0 0 0-1.027.382L1.046 6.422a.764.764 0 0 0 .382 1c1.039.49 3.105 1.467 4.965 2.361 6.698 3.246 12.392 3.029 16.738-4.04z"/></svg></span>
             <span class="ic ic--sm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539zm-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019 1.705 0 3.093-1.376 3.093-3.068v-2.97H8.148zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-.098z"/></svg></span>
             Jira, Confluence, Figma
           </span><i data-level="93"></i></li>
-          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="bar-chart-3"></span></span>A/B testing &amp; analytics tooling</span><i data-level="81"></i></li>
+          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="bar-chart-3"></span></span><span data-i18n="skills.tech.item4">A/B testing &amp; analytics tooling</span></span><i data-level="81"></i></li>
         </ul>
       </div>
 
       <div class="skill-card">
         <div class="skill-card__head">
           <span class="ic" aria-hidden="true"><span data-lucide="users"></span></span>
-          <h3>Communication &amp; Leadership</h3>
+          <h3 data-i18n="skills.comm.title">Communication &amp; Leadership</h3>
         </div>
         <ul class="skill-list">
-          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="presentation"></span></span>Executive reporting</span><i data-level="89"></i></li>
-          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="network"></span></span>Cross-functional facilitation</span><i data-level="91"></i></li>
-          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="graduation-cap"></span></span>Mentoring junior POs</span><i data-level="86"></i></li>
-          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="scale"></span></span>Conflict resolution</span><i data-level="84"></i></li>
+          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="presentation"></span></span><span data-i18n="skills.comm.item1">Executive reporting</span></span><i data-level="89"></i></li>
+          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="network"></span></span><span data-i18n="skills.comm.item2">Cross-functional facilitation</span></span><i data-level="91"></i></li>
+          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="graduation-cap"></span></span><span data-i18n="skills.comm.item3">Mentoring junior POs</span></span><i data-level="86"></i></li>
+          <li><span><span class="ic ic--sm" aria-hidden="true"><span data-lucide="scale"></span></span><span data-i18n="skills.comm.item4">Conflict resolution</span></span><i data-level="84"></i></li>
         </ul>
       </div>
 
@@ -389,13 +388,13 @@
             <time>Jan 2026 - May 2026</time>
           </div>
           <h3>Product Owner & QA Lead <span class="at">@ Here2Be </span></h3>
-          <p>Led the migration of a Bubble.io application to a scalable Xano backend with a vibe-coded frontend.</p>
+          <p data-i18n="experience.entry1.summary">Led the migration of a Bubble.io application to a scalable Xano backend with a vibe-coded frontend.</p>
           <ul class="changelog__list">
-            <li><span class="tag tag--added"><span data-lucide="plus-circle"></span>Added</span><span class="tag-text">a structured product backlog of 50 user stories across 9 epics, enabling clear prioritization across a 20-sprint Agile roadmap.</span></li>
-            <li><span class="tag tag--improved"><span data-lucide="trending-up"></span>Improved</span><span class="tag-text">application performance and scalability by redesigning the backend architecture and optimizing development workflows.</span></li>
-            <li><span class="tag tag--designed"><span data-lucide="pencil-ruler"></span>Designed</span><span class="tag-text">Jira-based Agile workflows supporting sprint planning, standups, retrospectives, and velocity tracking.</span></li>
-            <li><span class="tag tag--designed"><span data-lucide="pencil-ruler"></span>Designed</span><span class="tag-text">Figma wireframes and low-fidelity prototypes to align stakeholders on UX decisions before development handoff.</span></li>
-            <li><span class="tag tag--validated"><span data-lucide="shield-check"></span>Validated</span><span class="tag-text">product quality through end-to-end QA processes, including test case creation, regression testing, and bug resolution cycles.</span></li>
+            <li><span class="tag tag--added"><span data-lucide="plus-circle"></span><span data-i18n="experience.tag.added">Added</span></span><span class="tag-text" data-i18n="experience.entry1.bullet1">a structured product backlog of 50 user stories across 9 epics, enabling clear prioritization across a 20-sprint Agile roadmap.</span></li>
+            <li><span class="tag tag--improved"><span data-lucide="trending-up"></span><span data-i18n="experience.tag.improved">Improved</span></span><span class="tag-text" data-i18n="experience.entry1.bullet2">application performance and scalability by redesigning the backend architecture and optimizing development workflows.</span></li>
+            <li><span class="tag tag--designed"><span data-lucide="pencil-ruler"></span><span data-i18n="experience.tag.designed">Designed</span></span><span class="tag-text" data-i18n="experience.entry1.bullet3">Jira-based Agile workflows supporting sprint planning, standups, retrospectives, and velocity tracking.</span></li>
+            <li><span class="tag tag--designed"><span data-lucide="pencil-ruler"></span><span data-i18n="experience.tag.designed">Designed</span></span><span class="tag-text" data-i18n="experience.entry1.bullet4">Figma wireframes and low-fidelity prototypes to align stakeholders on UX decisions before development handoff.</span></li>
+            <li><span class="tag tag--validated"><span data-lucide="shield-check"></span><span data-i18n="experience.tag.validated">Validated</span></span><span class="tag-text" data-i18n="experience.entry1.bullet5">product quality through end-to-end QA processes, including test case creation, regression testing, and bug resolution cycles.</span></li>
           </ul>
           <div class="changelog__tools" aria-hidden="false">
             <span class="ic ic--sm" title="Bubble.io"><span data-lucide="app-window"></span></span>
@@ -412,13 +411,13 @@
             <time>Mar 2025 - Sep 2025</time>
           </div>
           <h3>Project Manager <span class="at">@ Micasa</span></h3>
-          <p>Led the development of a mobile event-management app from concept to launch, coordinating a cross-functional team of four over a 7+ month product build.</p>
+          <p data-i18n="experience.entry2.summary">Led the development of a mobile event-management app from concept to launch, coordinating a cross-functional team of four over a 7+ month product build.</p>
           <ul class="changelog__list">
-            <li><span class="tag tag--added"><span data-lucide="plus-circle"></span>Added</span><span class="tag-text">a complete event-management platform by guiding product delivery from initial requirements to final release.</span></li>
-            <li><span class="tag tag--improved"><span data-lucide="trending-up"></span>Improved</span><span class="tag-text">delivery efficiency through sprint planning, milestone tracking, and priority management using Huly.io.</span></li>
-            <li><span class="tag tag--designed"><span data-lucide="pencil-ruler"></span>Designed</span><span class="tag-text">structured backlog grooming, acceptance criteria, and KPI reporting processes to support data-driven product decisions.</span></li>
-            <li><span class="tag tag--led"><span data-lucide="users"></span>Led</span><span class="tag-text">user flows and UI designs alignment with product guidelines through continuous collaboration with the design team.</span></li>
-            <li><span class="tag tag--led"><span data-lucide="users"></span>Led</span><span class="tag-text">stakeholder communication as the primary client liaison, ensuring clear requirements, progress visibility, and expectation alignment.</span></li>
+            <li><span class="tag tag--added"><span data-lucide="plus-circle"></span><span data-i18n="experience.tag.added">Added</span></span><span class="tag-text" data-i18n="experience.entry2.bullet1">a complete event-management platform by guiding product delivery from initial requirements to final release.</span></li>
+            <li><span class="tag tag--improved"><span data-lucide="trending-up"></span><span data-i18n="experience.tag.improved">Improved</span></span><span class="tag-text" data-i18n="experience.entry2.bullet2">delivery efficiency through sprint planning, milestone tracking, and priority management using Huly.io.</span></li>
+            <li><span class="tag tag--designed"><span data-lucide="pencil-ruler"></span><span data-i18n="experience.tag.designed">Designed</span></span><span class="tag-text" data-i18n="experience.entry2.bullet3">structured backlog grooming, acceptance criteria, and KPI reporting processes to support data-driven product decisions.</span></li>
+            <li><span class="tag tag--led"><span data-lucide="users"></span><span data-i18n="experience.tag.led">Led</span></span><span class="tag-text" data-i18n="experience.entry2.bullet4">user flows and UI designs alignment with product guidelines through continuous collaboration with the design team.</span></li>
+            <li><span class="tag tag--led"><span data-lucide="users"></span><span data-i18n="experience.tag.led">Led</span></span><span class="tag-text" data-i18n="experience.entry2.bullet5">stakeholder communication as the primary client liaison, ensuring clear requirements, progress visibility, and expectation alignment.</span></li>
           </ul>
           <div class="changelog__tools" aria-hidden="false">
             <span class="ic ic--sm" title="Huly.io"><span data-lucide="kanban"></span></span>
@@ -433,17 +432,18 @@
             <span class="version-pill">shipped</span>
             <time>2023 - 2026</time>
           </div>
-          <h3>No-code Developer <span class="at">@ Genhax</span></h3>
-          <p>Architected and delivered a full hackathon platform supporting 50–200 participants with custom workflows, collaboration tools, and mentor management features.</p>
+          <h3>Project Manager and Lead Developer <span class="at">@ Genhax</span></h3>
+          <p data-i18n="experience.entry3.summary">Architected and delivered a full hackathon platform supporting 50–200 participants with custom workflows, collaboration tools, and mentor management features.</p>
           <ul class="changelog__list">
-            <li><span class="tag tag--added"><span data-lucide="plus-circle"></span>Added</span><span class="tag-text">a complete hackathon ecosystem with task management, real-time messaging, dashboards, mentor features, and custom event workflows built with Bubble.io.</span></li>
-            <li><span class="tag tag--improved"><span data-lucide="trending-up"></span>Improved</span><span class="tag-text">user experience consistency by designing responsive multi-role interfaces using reusable component libraries and structured design systems.</span></li>
-            <li><span class="tag tag--added"><span data-lucide="plus-circle"></span>Added</span><span class="tag-text">clear UI copy and onboarding flows to reduce user confusion and improve platform adoption.</span></li>
-            <li><span class="tag tag--improved"><span data-lucide="trending-up"></span>Improved</span><span class="tag-text">REST API integration and custom admin panels to streamline event management operations.</span></li>
-            <li><span class="tag tag--led"><span data-lucide="users"></span>Led</span><span class="tag-text">collaboration with international remote teams across time zones and contributed as a mentor, earning a Knowhax 2024 Mentor Completion Certificate.</span></li>
+            <li><span class="tag tag--added"><span data-lucide="plus-circle"></span><span data-i18n="experience.tag.added">Added</span></span><span class="tag-text" data-i18n="experience.entry3.bullet1">a complete hackathon ecosystem with task management, real-time messaging, dashboards, mentor features, and custom event workflows, vibe-coded with Next.js and Supabase.</span></li>
+            <li><span class="tag tag--improved"><span data-lucide="trending-up"></span><span data-i18n="experience.tag.improved">Improved</span></span><span class="tag-text" data-i18n="experience.entry3.bullet2">user experience consistency by designing responsive multi-role interfaces using reusable component libraries and structured design systems.</span></li>
+            <li><span class="tag tag--added"><span data-lucide="plus-circle"></span><span data-i18n="experience.tag.added">Added</span></span><span class="tag-text" data-i18n="experience.entry3.bullet3">clear UI copy and onboarding flows to reduce user confusion and improve platform adoption.</span></li>
+            <li><span class="tag tag--improved"><span data-lucide="trending-up"></span><span data-i18n="experience.tag.improved">Improved</span></span><span class="tag-text" data-i18n="experience.entry3.bullet4">REST API integration and custom admin panels to streamline event management operations.</span></li>
+            <li><span class="tag tag--led"><span data-lucide="users"></span><span data-i18n="experience.tag.led">Led</span></span><span class="tag-text" data-i18n="experience.entry3.bullet5">collaboration with international remote teams across time zones and contributed as a mentor, earning a Knowhax 2024 Mentor Completion Certificate.</span></li>
           </ul>
           <div class="changelog__tools" aria-hidden="false">
-            <span class="ic ic--sm" title="Bubble.io"><span data-lucide="app-window"></span></span>
+            <span class="ic ic--sm" title="Next.js"><span data-lucide="triangle"></span></span>
+            <span class="ic ic--sm" title="Supabase"><span data-lucide="zap"></span></span>
             <span class="ic ic--sm" title="Huly.io"><span data-lucide="kanban"></span></span>
             <span class="ic ic--sm" title="Plugins"><span data-lucide="puzzle"></span></span>
           </div>
@@ -456,11 +456,11 @@
             <time>2024 - 2026</time>
           </div>
           <h3>Project Manager → No-code Developer <span class="at">@ The Parity Productions</span></h3>
-          <p>Built and launched a job-seeking platform for underrepresented communities, delivering career discovery, networking, and management features through a 12+ month product build.</p>
+          <p data-i18n="experience.entry4.summary">Built and launched a job-seeking platform for underrepresented communities, delivering career discovery, networking, and management features through a 12+ month product build.</p>
           <ul class="changelog__list">
-            <li><span class="tag tag--added"><span data-lucide="plus-circle"></span>Added</span><span class="tag-text">a complete employment platform with job search, artist profiles, real-time messaging, CRM capabilities, and administrative tools built with Bubble.io.</span></li>
-            <li><span class="tag tag--designed"><span data-lucide="pencil-ruler"></span>Designed</span><span class="tag-text">early user flows and wireframes to translate customer needs into intuitive product experiences before development.</span></li>
-            <li><span class="tag tag--led"><span data-lucide="users"></span>Led</span><span class="tag-text">the full product lifecycle from requirements gathering to deployment while applying MoSCoW prioritization to align scope with delivery goals.</span></li>
+            <li><span class="tag tag--added"><span data-lucide="plus-circle"></span><span data-i18n="experience.tag.added">Added</span></span><span class="tag-text" data-i18n="experience.entry4.bullet1">a complete employment platform with job search, artist profiles, real-time messaging, CRM capabilities, and administrative tools built with Bubble.io.</span></li>
+            <li><span class="tag tag--designed"><span data-lucide="pencil-ruler"></span><span data-i18n="experience.tag.designed">Designed</span></span><span class="tag-text" data-i18n="experience.entry4.bullet2">early user flows and wireframes to translate customer needs into intuitive product experiences before development.</span></li>
+            <li><span class="tag tag--led"><span data-lucide="users"></span><span data-i18n="experience.tag.led">Led</span></span><span class="tag-text" data-i18n="experience.entry4.bullet3">the full product lifecycle from requirements gathering to deployment while applying MoSCoW prioritization to align scope with delivery goals.</span></li>
           </ul>
           <div class="changelog__tools" aria-hidden="false">
             <span class="ic ic--sm" title="Bubble.io"><span data-lucide="app-window"></span></span>
@@ -477,11 +477,11 @@
             <time>2022 - 2023</time>
           </div>
           <h3>Java / React Developer <span class="at">@ UGD Madagascar</span></h3>
-          <p>Developed AI-powered and enterprise application features during an internship, contributing to automation, user experience, and workflow optimization initiatives.</p>
+          <p data-i18n="experience.entry5.summary">Developed AI-powered and enterprise application features during an internship, contributing to automation, user experience, and workflow optimization initiatives.</p>
           <ul class="changelog__list">
-            <li><span class="tag tag--added"><span data-lucide="plus-circle"></span>Added</span><span class="tag-text">a face-recognition module integrated into a Java enterprise application to enhance automated identification workflows.</span></li>
-            <li><span class="tag tag--added"><span data-lucide="plus-circle"></span>Added</span><span class="tag-text">interactive quiz features using React while contributing to Agile sprint deliveries under senior developer mentorship.</span></li>
-            <li><span class="tag tag--improved"><span data-lucide="trending-up"></span>Improved</span><span class="tag-text">internal workflow automation by supporting BPM process modeling and optimization using Bonita Studio.</span></li>
+            <li><span class="tag tag--added"><span data-lucide="plus-circle"></span><span data-i18n="experience.tag.added">Added</span></span><span class="tag-text" data-i18n="experience.entry5.bullet1">a face-recognition module integrated into a Java enterprise application to enhance automated identification workflows.</span></li>
+            <li><span class="tag tag--added"><span data-lucide="plus-circle"></span><span data-i18n="experience.tag.added">Added</span></span><span class="tag-text" data-i18n="experience.entry5.bullet2">interactive quiz features using React while contributing to Agile sprint deliveries under senior developer mentorship.</span></li>
+            <li><span class="tag tag--improved"><span data-lucide="trending-up"></span><span data-i18n="experience.tag.improved">Improved</span></span><span class="tag-text" data-i18n="experience.entry5.bullet3">internal workflow automation by supporting BPM process modeling and optimization using Bonita Studio.</span></li>
           </ul>
           <div class="changelog__tools" aria-hidden="false">
             <span class="ic ic--sm" title="Java"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149M8.276 15.933s-1.028.761.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218M13.116 11.475c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0-.001-8.216 2.051-4.292 6.573M19.33 20.504s.679.559-.747.991c-2.712.822-11.288 1.069-13.669.033-.856-.373.75-.89 1.254-.998.527-.114.828-.093.828-.093-.953-.671-6.156 1.317-2.643 1.887 9.58 1.553 17.462-.7 14.977-1.82M9.292 13.21s-4.362 1.036-1.544 1.412c1.189.159 3.561.123 5.77-.062 1.806-.152 3.618-.477 3.618-.477s-.637.272-1.098.587c-4.429 1.165-12.986.623-10.522-.568 2.082-1.006 3.776-.892 3.776-.892M17.116 17.584c4.503-2.34 2.421-4.589.968-4.285-.355.074-.515.138-.515.138s.132-.207.385-.297c2.875-1.011 5.086 2.981-.928 4.562 0-.001.07-.062.09-.118M14.401 0s2.494 2.494-2.365 6.33c-3.896 3.077-.888 4.832-.001 6.836-2.274-2.053-3.943-3.858-2.824-5.539 1.644-2.469 6.197-3.665 5.19-7.627M9.734 23.924c4.322.277 10.959-.153 11.116-2.198 0 0-.302.775-3.572 1.391-3.688.694-8.239.613-10.937.168 0-.001.553.457 3.393.639"/></svg></span>
@@ -516,24 +516,24 @@
         <article class="project-card">
           <div class="project-card__media" data-seed="Parity Productions Platform" aria-hidden="true"></div>
           <div class="project-card__overlay">
-            <p>Led the development of a job-seeking platform supporting underrepresented communities, including job search, artist profiles, real-time messaging, CRM and administration features.</p>
+            <p data-i18n="projects.card1.overlay">Led the development of a job-seeking platform supporting underrepresented communities, including job search, artist profiles, real-time messaging, CRM and administration features.</p>
           </div>
           <div class="project-card__body">
             <div class="project-card__heading">
               <h3>Parity Productions Platform</h3>
-              <span class="project-card__tag">Team project</span>
+              <span class="project-card__tag" data-i18n="projects.tagTeam">Team project</span>
             </div>
-            <p class="project-card__role">Role: Project Manager / No-code Developer</p>
-            <p class="project-card__line"><strong>Challenge:</strong> Transform user needs into a scalable platform with multiple user roles.</p>
-            <p class="project-card__line"><strong>Result:</strong> Delivered a complete platform from discovery to deployment over a 12+ month build.</p>
+            <p class="project-card__role"><span data-i18n="projects.roleLabel">Role:</span> Project Manager / No-code Developer</p>
+            <p class="project-card__line"><strong data-i18n="projects.challengeLabel">Challenge:</strong> <span data-i18n="projects.card1.challenge">Transform user needs into a scalable platform with multiple user roles.</span></p>
+            <p class="project-card__line"><strong data-i18n="projects.resultLabel">Result:</strong> <span data-i18n="projects.card1.result">Delivered a complete platform from discovery to deployment over a 12+ month build.</span></p>
             <div class="project-card__tools">
               <span class="ic ic--sm" title="Bubble.io"><span data-lucide="app-window"></span></span>
               <span class="ic ic--sm" title="Xano"><span data-lucide="database"></span></span>
               <span class="ic ic--sm" title="Figma"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539zm-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019 1.705 0 3.093-1.376 3.093-3.068v-2.97H8.148zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-.098z"/></svg></span>
             </div>
             <div class="project-card__actions">
-              <a href="#contact" class="link-btn">Read case study</a>
-              <a href="#contact" class="link-btn link-btn--muted">Ask about it</a>
+              <a href="#contact" class="link-btn" data-i18n="projects.readCaseStudy">Read case study</a>
+              <a href="#contact" class="link-btn link-btn--muted" data-i18n="projects.askAboutIt">Ask about it</a>
             </div>
           </div>
         </article>
@@ -543,24 +543,24 @@
         <article class="project-card">
           <div class="project-card__media" data-seed="Kopenao Services Platform" aria-hidden="true"></div>
           <div class="project-card__overlay">
-            <p>Built and managed a digital marketplace platform connecting customers with local service providers, including booking workflows and service management features.</p>
+            <p data-i18n="projects.card2.overlay">Built and managed a digital marketplace platform connecting customers with local service providers, including booking workflows and service management features.</p>
           </div>
           <div class="project-card__body">
             <div class="project-card__heading">
               <h3>Kopenao Services Platform</h3>
-              <span class="project-card__tag">Freelance project</span>
+              <span class="project-card__tag" data-i18n="projects.tagFreelance">Freelance project</span>
             </div>
-            <p class="project-card__role">Role: Product Manager / Fullstack Developer</p>
-            <p class="project-card__line"><strong>Challenge:</strong> Simplify service discovery and booking processes for users.</p>
-            <p class="project-card__line"><strong>Result:</strong> Delivered a functional platform improving accessibility to local services.</p>
+            <p class="project-card__role"><span data-i18n="projects.roleLabel">Role:</span> Product Manager / Fullstack Developer</p>
+            <p class="project-card__line"><strong data-i18n="projects.challengeLabel">Challenge:</strong> <span data-i18n="projects.card2.challenge">Simplify service discovery and booking processes for users.</span></p>
+            <p class="project-card__line"><strong data-i18n="projects.resultLabel">Result:</strong> <span data-i18n="projects.card2.result">Delivered a functional platform improving accessibility to local services.</span></p>
             <div class="project-card__tools">
               <span class="ic ic--sm" title="Bubble.io"><span data-lucide="app-window"></span></span>
               <span class="ic ic--sm" title="React"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z"/></svg></span>
               <span class="ic ic--sm" title="API"><span data-lucide="plug-2"></span></span>
             </div>
             <div class="project-card__actions">
-              <a href="#contact" class="link-btn">Read case study</a>
-              <a href="#contact" class="link-btn link-btn--muted">Ask about it</a>
+              <a href="#contact" class="link-btn" data-i18n="projects.readCaseStudy">Read case study</a>
+              <a href="#contact" class="link-btn link-btn--muted" data-i18n="projects.askAboutIt">Ask about it</a>
             </div>
           </div>
         </article>
@@ -570,24 +570,24 @@
         <article class="project-card">
           <div class="project-card__media" data-seed="Micasa Mobile Application" aria-hidden="true"></div>
           <div class="project-card__overlay">
-            <p>Managed a team of four developers to design and deliver a mobile application, coordinating development activities, priorities, and delivery milestones.</p>
+            <p data-i18n="projects.card3.overlay">Managed a team of four developers to design and deliver a mobile application, coordinating development activities, priorities, and delivery milestones.</p>
           </div>
           <div class="project-card__body">
             <div class="project-card__heading">
               <h3>Micasa Mobile Application</h3>
-              <span class="project-card__tag">Team project</span>
+              <span class="project-card__tag" data-i18n="projects.tagTeam">Team project</span>
             </div>
-            <p class="project-card__role">Role: Project Manager</p>
-            <p class="project-card__line"><strong>Challenge:</strong> Coordinate multiple contributors while maintaining product consistency.</p>
-            <p class="project-card__line"><strong>Result:</strong> Delivered the application from concept to launch within a 7+ month roadmap.</p>
+            <p class="project-card__role"><span data-i18n="projects.roleLabel">Role:</span> Project Manager</p>
+            <p class="project-card__line"><strong data-i18n="projects.challengeLabel">Challenge:</strong> <span data-i18n="projects.card3.challenge">Coordinate multiple contributors while maintaining product consistency.</span></p>
+            <p class="project-card__line"><strong data-i18n="projects.resultLabel">Result:</strong> <span data-i18n="projects.card3.result">Delivered the application from concept to launch within a 7+ month roadmap.</span></p>
             <div class="project-card__tools">
               <span class="ic ic--sm" title="Flutter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.357zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z"/></svg></span>
               <span class="ic ic--sm" title="React"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z"/></svg></span>
               <span class="ic ic--sm" title="Huly.io"><span data-lucide="kanban"></span></span>
             </div>
             <div class="project-card__actions">
-              <a href="#contact" class="link-btn">Read case study</a>
-              <a href="#contact" class="link-btn link-btn--muted">Ask about it</a>
+              <a href="#contact" class="link-btn" data-i18n="projects.readCaseStudy">Read case study</a>
+              <a href="#contact" class="link-btn link-btn--muted" data-i18n="projects.askAboutIt">Ask about it</a>
             </div>
           </div>
         </article>
@@ -597,16 +597,16 @@
         <article class="project-card">
           <div class="project-card__media" data-seed="AI Face Recognition System" aria-hidden="true"></div>
           <div class="project-card__overlay">
-            <p>Developed a face-recognition module integrated into a Java enterprise application and contributed to workflow automation and interactive React features.</p>
+            <p data-i18n="projects.card4.overlay">Developed a face-recognition module integrated into a Java enterprise application and contributed to workflow automation and interactive React features.</p>
           </div>
           <div class="project-card__body">
             <div class="project-card__heading">
               <h3>AI Face Recognition System</h3>
-              <span class="project-card__tag">Team project</span>
+              <span class="project-card__tag" data-i18n="projects.tagTeam">Team project</span>
             </div>
-            <p class="project-card__role">Role: Fullstack Developer / QA Engineer</p>
-            <p class="project-card__line"><strong>Challenge:</strong> Integrate AI capabilities into an existing enterprise workflow.</p>
-            <p class="project-card__line"><strong>Result:</strong> Delivered AI-powered functionality while participating in Agile development cycles.</p>
+            <p class="project-card__role"><span data-i18n="projects.roleLabel">Role:</span> Fullstack Developer / QA Engineer</p>
+            <p class="project-card__line"><strong data-i18n="projects.challengeLabel">Challenge:</strong> <span data-i18n="projects.card4.challenge">Integrate AI capabilities into an existing enterprise workflow.</span></p>
+            <p class="project-card__line"><strong data-i18n="projects.resultLabel">Result:</strong> <span data-i18n="projects.card4.result">Delivered AI-powered functionality while participating in Agile development cycles.</span></p>
             <div class="project-card__tools">
               <span class="ic ic--sm" title="Java"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149M8.276 15.933s-1.028.761.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218M13.116 11.475c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0-.001-8.216 2.051-4.292 6.573M19.33 20.504s.679.559-.747.991c-2.712.822-11.288 1.069-13.669.033-.856-.373.75-.89 1.254-.998.527-.114.828-.093.828-.093-.953-.671-6.156 1.317-2.643 1.887 9.58 1.553 17.462-.7 14.977-1.82M9.292 13.21s-4.362 1.036-1.544 1.412c1.189.159 3.561.123 5.77-.062 1.806-.152 3.618-.477 3.618-.477s-.637.272-1.098.587c-4.429 1.165-12.986.623-10.522-.568 2.082-1.006 3.776-.892 3.776-.892M17.116 17.584c4.503-2.34 2.421-4.589.968-4.285-.355.074-.515.138-.515.138s.132-.207.385-.297c2.875-1.011 5.086 2.981-.928 4.562 0-.001.07-.062.09-.118M14.401 0s2.494 2.494-2.365 6.33c-3.896 3.077-.888 4.832-.001 6.836-2.274-2.053-3.943-3.858-2.824-5.539 1.644-2.469 6.197-3.665 5.19-7.627M9.734 23.924c4.322.277 10.959-.153 11.116-2.198 0 0-.302.775-3.572 1.391-3.688.694-8.239.613-10.937.168 0-.001.553.457 3.393.639"/></svg></span>
               <span class="ic ic--sm" title="React"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z"/></svg></span>
@@ -614,8 +614,8 @@
               <span class="ic ic--sm" title="Bonita BPM"><span data-lucide="workflow"></span></span>
             </div>
             <div class="project-card__actions">
-              <a href="#contact" class="link-btn">Read case study</a>
-              <a href="#contact" class="link-btn link-btn--muted">Ask about it</a>
+              <a href="#contact" class="link-btn" data-i18n="projects.readCaseStudy">Read case study</a>
+              <a href="#contact" class="link-btn link-btn--muted" data-i18n="projects.askAboutIt">Ask about it</a>
             </div>
           </div>
         </article>
@@ -625,16 +625,16 @@
         <article class="project-card">
           <div class="project-card__media" data-seed="Genhax Digital Products" aria-hidden="true"></div>
           <div class="project-card__overlay">
-            <p>Contributed to the development and delivery of digital products for an international team, translating business requirements into technical solutions and supporting continuous improvements.</p>
+            <p data-i18n="projects.card5.overlay">Contributed to the development and delivery of digital products for an international team, translating business requirements into technical solutions and supporting continuous improvements.</p>
           </div>
           <div class="project-card__body">
             <div class="project-card__heading">
               <h3>Genhax Digital Products</h3>
-              <span class="project-card__tag">Team project</span>
+              <span class="project-card__tag" data-i18n="projects.tagTeam">Team project</span>
             </div>
-            <p class="project-card__role">Role: No-code Developer</p>
-            <p class="project-card__line"><strong>Challenge:</strong> Align product requirements, technical implementation, and delivery priorities across a remote team.</p>
-            <p class="project-card__line"><strong>Result:</strong> Supported feature delivery, testing, and Agile collaboration for international products.</p>
+            <p class="project-card__role"><span data-i18n="projects.roleLabel">Role:</span> No-code Developer</p>
+            <p class="project-card__line"><strong data-i18n="projects.challengeLabel">Challenge:</strong> <span data-i18n="projects.card5.challenge">Align product requirements, technical implementation, and delivery priorities across a remote team.</span></p>
+            <p class="project-card__line"><strong data-i18n="projects.resultLabel">Result:</strong> <span data-i18n="projects.card5.result">Supported feature delivery, testing, and Agile collaboration for international products.</span></p>
             <div class="project-card__tools">
               <span class="ic ic--sm" title="Bubble.io"><span data-lucide="app-window"></span></span>
               <span class="ic ic--sm" title="Figma"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539zm-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019 1.705 0 3.093-1.376 3.093-3.068v-2.97H8.148zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-.098z"/></svg></span>
@@ -642,8 +642,8 @@
               <span class="ic ic--sm" title="Huly.io"><span data-lucide="kanban"></span></span>
             </div>
             <div class="project-card__actions">
-              <a href="#contact" class="link-btn">Read case study</a>
-              <a href="#contact" class="link-btn link-btn--muted">Ask about it</a>
+              <a href="#contact" class="link-btn" data-i18n="projects.readCaseStudy">Read case study</a>
+              <a href="#contact" class="link-btn link-btn--muted" data-i18n="projects.askAboutIt">Ask about it</a>
             </div>
           </div>
         </article>
@@ -653,23 +653,23 @@
         <article class="project-card">
           <div class="project-card__media" data-seed="Domino Project" aria-hidden="true"></div>
           <div class="project-card__overlay">
-            <p>A real-time multiplayer domino game with live matchmaking that pairs players instantly and keeps every board in sync as moves happen. Built in Flutter, using the flutter_animate package to drive fluid tile-placement and turn-transition animations for a responsive, game-like feel.</p>
+            <p data-i18n="projects.card6.overlay">A real-time multiplayer domino game with live matchmaking that pairs players instantly and keeps every board in sync as moves happen. Built in Flutter, using the flutter_animate package to drive fluid tile-placement and turn-transition animations for a responsive, game-like feel.</p>
           </div>
           <div class="project-card__body">
             <div class="project-card__heading">
               <h3>Domino Project</h3>
-              <span class="project-card__tag">Personal project</span>
+              <span class="project-card__tag" data-i18n="projects.tagPersonal">Personal project</span>
             </div>
-            <p class="project-card__role">Role: Solo Developer</p>
-            <p class="project-card__line"><strong>Challenge:</strong> Keep gameplay state synchronized in real time across matched players.</p>
-            <p class="project-card__line"><strong>Result:</strong> Shipped a fully playable multiplayer experience with live matchmaking and animated gameplay.</p>
+            <p class="project-card__role"><span data-i18n="projects.roleLabel">Role:</span> Solo Developer</p>
+            <p class="project-card__line"><strong data-i18n="projects.challengeLabel">Challenge:</strong> <span data-i18n="projects.card6.challenge">Keep gameplay state synchronized in real time across matched players.</span></p>
+            <p class="project-card__line"><strong data-i18n="projects.resultLabel">Result:</strong> <span data-i18n="projects.card6.result">Shipped a fully playable multiplayer experience with live matchmaking and animated gameplay.</span></p>
             <div class="project-card__tools">
               <span class="ic ic--sm" title="Flutter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.357zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z"/></svg></span>
               <span class="ic ic--sm" title="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></span>
             </div>
             <div class="project-card__actions">
-              <a href="#contact" class="link-btn">Read case study</a>
-              <a href="#contact" class="link-btn link-btn--muted">Ask about it</a>
+              <a href="#contact" class="link-btn" data-i18n="projects.readCaseStudy">Read case study</a>
+              <a href="#contact" class="link-btn link-btn--muted" data-i18n="projects.askAboutIt">Ask about it</a>
             </div>
           </div>
         </article>
@@ -701,43 +701,43 @@
       <div class="pipeline reveal" id="pipeline">
         <div class="pipeline__stage" data-stage="1">
           <span class="ic pipeline__icon" aria-hidden="true"><span data-lucide="lightbulb"></span></span>
-          <h3>Discovery</h3>
+          <h3 data-i18n="process.stage1.title">Discovery</h3>
         </div>
         <div class="pipeline__stage" data-stage="2">
           <span class="ic pipeline__icon" aria-hidden="true"><span data-lucide="search"></span></span>
-          <h3>Research</h3>
+          <h3 data-i18n="process.stage2.title">Research</h3>
         </div>
         <div class="pipeline__stage" data-stage="3">
           <span class="ic pipeline__icon" aria-hidden="true"><span data-lucide="list-ordered"></span></span>
-          <h3>Prioritization</h3>
+          <h3 data-i18n="process.stage3.title">Prioritization</h3>
         </div>
         <div class="pipeline__stage" data-stage="4">
           <span class="ic pipeline__icon" aria-hidden="true"><span data-lucide="map"></span></span>
-          <h3>Roadmap</h3>
+          <h3 data-i18n="process.stage4.title">Roadmap</h3>
         </div>
         <div class="pipeline__stage" data-stage="5">
           <span class="ic pipeline__icon" aria-hidden="true"><span data-lucide="calendar-clock"></span></span>
-          <h3>Sprint Planning</h3>
+          <h3 data-i18n="process.stage5.title">Sprint Planning</h3>
         </div>
         <div class="pipeline__stage" data-stage="6">
           <span class="ic pipeline__icon" aria-hidden="true"><span data-lucide="code-2"></span></span>
-          <h3>Development</h3>
+          <h3 data-i18n="process.stage6.title">Development</h3>
         </div>
         <div class="pipeline__stage" data-stage="7">
           <span class="ic pipeline__icon" aria-hidden="true"><span data-lucide="shield-check"></span></span>
-          <h3>QA</h3>
+          <h3 data-i18n="process.stage7.title">QA</h3>
         </div>
         <div class="pipeline__stage" data-stage="8">
           <span class="ic pipeline__icon" aria-hidden="true"><span data-lucide="rocket"></span></span>
-          <h3>Release</h3>
+          <h3 data-i18n="process.stage8.title">Release</h3>
         </div>
         <div class="pipeline__stage" data-stage="9">
           <span class="ic pipeline__icon" aria-hidden="true"><span data-lucide="bar-chart-3"></span></span>
-          <h3>Analytics</h3>
+          <h3 data-i18n="process.stage9.title">Analytics</h3>
         </div>
         <div class="pipeline__stage" data-stage="10">
           <span class="ic pipeline__icon" aria-hidden="true"><span data-lucide="trending-up"></span></span>
-          <h3>Improvement</h3>
+          <h3 data-i18n="process.stage10.title">Improvement</h3>
         </div>
       </div>
     </div>
@@ -765,7 +765,7 @@
             <span class="chat-message__name">Hugues Seureau</span>
           </div>
           <div class="chat-message__bubble">
-            <p>Most engineers wait to be told what to build. Anthony usually has it half-built by the time we finish discussing it.</p>
+            <p data-i18n="testimonials.quote">Most engineers wait to be told what to build. Anthony usually has it half-built by the time we finish discussing it.</p>
           </div>
         </div>
       </div>
@@ -779,10 +779,10 @@
       <span class="shape shape--sq2" style="bottom:10%; left:8%;"></span>
     </div>
     <div class="section-inner">
-      <p class="release-tag">v1.85 · common questions</p>
+      <p class="release-tag" data-i18n="faq.release">v1.85 · common questions</p>
       <div class="section-title-row">
         <span class="ic section-icon" aria-hidden="true"><span data-lucide="circle-question-mark"></span></span>
-        <h2 class="section-title">Common questions, answered</h2>
+        <h2 class="section-title" data-i18n="faq.title">Common questions, answered</h2>
       </div>
 
       <div class="faq__list">
@@ -790,99 +790,99 @@
         <div class="faq-item reveal">
           <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
             <span class="ic" aria-hidden="true"><span data-lucide="calendar-clock"></span></span>
-            <span class="faq-question__text">Are you available for freelance or full-time work?</span>
+            <span class="faq-question__text" data-i18n="faq.q1">Are you available for freelance or full-time work?</span>
             <span class="faq-question__chevron" aria-hidden="true"><span data-lucide="chevron-down"></span></span>
           </button>
           <div class="faq-answer" id="faq-answer-1">
-            <p class="faq-answer__inner">Yes — I'm currently open to both freelance projects and full-time opportunities, remote or on-site. Based in Madagascar, comfortable working across time zones.</p>
+            <p class="faq-answer__inner" data-i18n="faq.a1">Yes — I'm currently open to both freelance projects and full-time opportunities, remote or on-site. Based in Madagascar, comfortable working across time zones.</p>
           </div>
         </div>
 
         <div class="faq-item reveal">
           <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
             <span class="ic" aria-hidden="true"><span data-lucide="zap"></span></span>
-            <span class="faq-question__text">What's it like working with you?</span>
+            <span class="faq-question__text" data-i18n="faq.q2">What's it like working with you?</span>
             <span class="faq-question__chevron" aria-hidden="true"><span data-lucide="chevron-down"></span></span>
           </button>
           <div class="faq-answer" id="faq-answer-2">
-            <p class="faq-answer__inner">Fast-moving and low-friction. I ask the right questions upfront, then build — most of the back-and-forth happens before code, not after.</p>
+            <p class="faq-answer__inner" data-i18n="faq.a2">Fast-moving and low-friction. I ask the right questions upfront, then build — most of the back-and-forth happens before code, not after.</p>
           </div>
         </div>
 
         <div class="faq-item reveal">
           <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
             <span class="ic" aria-hidden="true"><span data-lucide="sparkles"></span></span>
-            <span class="faq-question__text">Are you a developer, or more on the product side?</span>
+            <span class="faq-question__text" data-i18n="faq.q3">Are you a developer, or more on the product side?</span>
             <span class="faq-question__chevron" aria-hidden="true"><span data-lucide="chevron-down"></span></span>
           </button>
           <div class="faq-answer" id="faq-answer-3">
-            <p class="faq-answer__inner">Both, in a sense — my background is Project Management, Product Ownership, and QA, and I build with AI-assisted ("vibe") coding. I bring the product thinking and process discipline, and use modern AI tools to actually ship the work.</p>
+            <p class="faq-answer__inner" data-i18n="faq.a3">Both, in a sense — my background is Project Management, Product Ownership, and QA, and I build with AI-assisted ("vibe") coding. I bring the product thinking and process discipline, and use modern AI tools to actually ship the work.</p>
           </div>
         </div>
 
         <div class="faq-item reveal">
           <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
             <span class="ic" aria-hidden="true"><span data-lucide="shield-check"></span></span>
-            <span class="faq-question__text">What does having a PM/PO/QA background bring to a project?</span>
+            <span class="faq-question__text" data-i18n="faq.q4">What does having a PM/PO/QA background bring to a project?</span>
             <span class="faq-question__chevron" aria-hidden="true"><span data-lucide="chevron-down"></span></span>
           </button>
           <div class="faq-answer" id="faq-answer-4">
-            <p class="faq-answer__inner">I catch scope and edge-case issues before they become expensive, write specs and acceptance criteria clearly, and test rigorously — skills that don't disappear just because I'm also the one building it.</p>
+            <p class="faq-answer__inner" data-i18n="faq.a4">I catch scope and edge-case issues before they become expensive, write specs and acceptance criteria clearly, and test rigorously — skills that don't disappear just because I'm also the one building it.</p>
           </div>
         </div>
 
         <div class="faq-item reveal">
           <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5">
             <span class="ic" aria-hidden="true"><span data-lucide="clock"></span></span>
-            <span class="faq-question__text">How quickly do you respond to inquiries?</span>
+            <span class="faq-question__text" data-i18n="faq.q5">How quickly do you respond to inquiries?</span>
             <span class="faq-question__chevron" aria-hidden="true"><span data-lucide="chevron-down"></span></span>
           </button>
           <div class="faq-answer" id="faq-answer-5">
-            <p class="faq-answer__inner">Usually within 24 hours, often faster.</p>
+            <p class="faq-answer__inner" data-i18n="faq.a5">Usually within 24 hours, often faster.</p>
           </div>
         </div>
 
         <div class="faq-item reveal">
           <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-6">
             <span class="ic" aria-hidden="true"><span data-lucide="scaling"></span></span>
-            <span class="faq-question__text">Do you take on small projects, or only large ones?</span>
+            <span class="faq-question__text" data-i18n="faq.q6">Do you take on small projects, or only large ones?</span>
             <span class="faq-question__chevron" aria-hidden="true"><span data-lucide="chevron-down"></span></span>
           </button>
           <div class="faq-answer" id="faq-answer-6">
-            <p class="faq-answer__inner">Both. I've shipped everything from quick MVPs to multi-month builds — happy to scope a project of any size.</p>
+            <p class="faq-answer__inner" data-i18n="faq.a6">Both. I've shipped everything from quick MVPs to multi-month builds — happy to scope a project of any size.</p>
           </div>
         </div>
 
         <div class="faq-item reveal">
           <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-7">
             <span class="ic" aria-hidden="true"><span data-lucide="globe"></span></span>
-            <span class="faq-question__text">Do you work remotely?</span>
+            <span class="faq-question__text" data-i18n="faq.q7">Do you work remotely?</span>
             <span class="faq-question__chevron" aria-hidden="true"><span data-lucide="chevron-down"></span></span>
           </button>
           <div class="faq-answer" id="faq-answer-7">
-            <p class="faq-answer__inner">Yes, remote-first. All my recent projects have been fully remote collaborations.</p>
+            <p class="faq-answer__inner" data-i18n="faq.a7">Yes, remote-first. All my recent projects have been fully remote collaborations.</p>
           </div>
         </div>
 
         <div class="faq-item reveal">
           <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-8">
             <span class="ic" aria-hidden="true"><span data-lucide="palette"></span></span>
-            <span class="faq-question__text">Do you only write code, or handle design too?</span>
+            <span class="faq-question__text" data-i18n="faq.q8">Do you only write code, or handle design too?</span>
             <span class="faq-question__chevron" aria-hidden="true"><span data-lucide="chevron-down"></span></span>
           </button>
           <div class="faq-answer" id="faq-answer-8">
-            <p class="faq-answer__inner">I mainly focus on engineering, but I'm comfortable working from designs, mockups, or even just a rough idea — happy to help shape the product direction too.</p>
+            <p class="faq-answer__inner" data-i18n="faq.a8">I mainly focus on engineering, but I'm comfortable working from designs, mockups, or even just a rough idea — happy to help shape the product direction too.</p>
           </div>
         </div>
 
         <div class="faq-item reveal">
           <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-9">
             <span class="ic" aria-hidden="true"><span data-lucide="mail"></span></span>
-            <span class="faq-question__text">How do we start working together?</span>
+            <span class="faq-question__text" data-i18n="faq.q9">How do we start working together?</span>
             <span class="faq-question__chevron" aria-hidden="true"><span data-lucide="chevron-down"></span></span>
           </button>
           <div class="faq-answer" id="faq-answer-9">
-            <p class="faq-answer__inner">Reach out through the contact form or email — I'll usually reply within a day to set up a quick call and understand what you need.</p>
+            <p class="faq-answer__inner" data-i18n="faq.a9">Reach out through the contact form or email — I'll usually reply within a day to set up a quick call and understand what you need.</p>
           </div>
         </div>
 
@@ -936,7 +936,7 @@
               <span class="language-card__flag" aria-hidden="true"><span class="fi fi-mg"></span></span>
               <div>
                 <h3>Malagasy</h3>
-                <span class="tag tag--added">Native</span>
+                <span class="tag tag--added" data-i18n="languages.levelNative">Native</span>
               </div>
             </div>
             <div class="language-card__bar" style="--bar-start:#1F8A5F; --bar-end:#63D19E;"><span data-level="98"></span></div>
@@ -968,52 +968,52 @@
           <div class="education-card__header">
             <div class="education-card__title-group">
               <span class="ic education-card__icon" aria-hidden="true"><span data-lucide="brain"></span></span>
-              <span class="education-card__tag">CURRENT</span>
+              <span class="education-card__tag" data-i18n="education.tagCurrent">CURRENT</span>
             </div>
             <span class="education-card__badge">Purdue University</span>
           </div>
-          <h3>AI Master</h3>
+          <h3 data-i18n="education.card1.title">AI Master</h3>
           <p class="education-card__meta">United States · June 2026 – Present</p>
-          <p class="education-card__body">Exploring applied AI, intelligent systems, and product-led innovation with a focus on real-world impact.</p>
+          <p class="education-card__body" data-i18n="education.card1.body">Exploring applied AI, intelligent systems, and product-led innovation with a focus on real-world impact.</p>
         </article>
 
         <article class="education-card reveal">
           <div class="education-card__header">
             <div class="education-card__title-group">
               <span class="ic education-card__icon" aria-hidden="true"><span data-lucide="landmark"></span></span>
-              <span class="education-card__tag">STUDIES</span>
+              <span class="education-card__tag" data-i18n="education.tagStudies">STUDIES</span>
             </div>
             <span class="education-card__badge">IT University</span>
           </div>
-          <h3>Information Technology</h3>
+          <h3 data-i18n="education.card2.title">Information Technology</h3>
           <p class="education-card__meta">Madagascar · 2020 – 2023</p>
-          <p class="education-card__body">Built a strong foundation in digital systems, software thinking, and technology problem-solving.</p>
+          <p class="education-card__body" data-i18n="education.card2.body">Built a strong foundation in digital systems, software thinking, and technology problem-solving.</p>
         </article>
 
         <article class="education-card reveal">
           <div class="education-card__header">
             <div class="education-card__title-group">
               <span class="ic education-card__icon" aria-hidden="true"><span data-lucide="book-open"></span></span>
-              <span class="education-card__tag">TRAINING</span>
+              <span class="education-card__tag" data-i18n="education.tagTraining">TRAINING</span>
             </div>
             <span class="education-card__badge">English Teaching Program</span>
           </div>
-          <h3>English Course</h3>
+          <h3 data-i18n="education.courseEnglish">English Course</h3>
           <p class="education-card__meta">Madagascar · 2020 – 2021</p>
-          <p class="education-card__body">Developed communication, teaching, and cross-cultural collaboration skills in a language-focused program.</p>
+          <p class="education-card__body" data-i18n="education.card3.body">Developed communication, teaching, and cross-cultural collaboration skills in a language-focused program.</p>
         </article>
 
         <article class="education-card reveal">
           <div class="education-card__header">
             <div class="education-card__title-group">
               <span class="ic education-card__icon" aria-hidden="true"><span data-lucide="languages"></span></span>
-              <span class="education-card__tag">LANGUAGE</span>
+              <span class="education-card__tag" data-i18n="education.tagLanguage">LANGUAGE</span>
             </div>
             <span class="education-card__badge">English Language Institute</span>
           </div>
-          <h3>English Course</h3>
+          <h3 data-i18n="education.courseEnglish">English Course</h3>
           <p class="education-card__meta">Madagascar · 2019 – 2020</p>
-          <p class="education-card__body">Strengthened academic English and professional communication for international collaboration.</p>
+          <p class="education-card__body" data-i18n="education.card4.body">Strengthened academic English and professional communication for international collaboration.</p>
         </article>
       </div>
     </div>
@@ -1041,13 +1041,13 @@
           <div class="cert-card__body">
             <div class="cert-card__title-group">
               <span class="ic cert-card__icon" aria-hidden="true"><span data-lucide="heart-handshake"></span></span>
-              <span class="cert-card__mono">Mentor</span>
+              <span class="cert-card__mono" data-i18n="certs.tagMentor">Mentor</span>
             </div>
             <h3>AI Ethics for Kids</h3>
-            <p class="cert-card__meta">Team: Mentors</p>
+            <p class="cert-card__meta"><span data-i18n="certs.teamLabel">Team:</span> Mentors</p>
             <div class="cert-card__footer">
               <time>Issued Jun 8, 2026</time>
-              <a href="https://app.genhax.com/certificate/9722f1a8-02ed-4b9a-aa99-d5f155e34b09" target="_blank" rel="noopener" class="link-btn">View certificate →</a>
+              <a href="https://app.genhax.com/certificate/9722f1a8-02ed-4b9a-aa99-d5f155e34b09" target="_blank" rel="noopener" class="link-btn" data-i18n="certs.viewCertificate">View certificate →</a>
             </div>
           </div>
         </article>
@@ -1059,14 +1059,14 @@
           <div class="cert-card__body">
             <div class="cert-card__title-group">
               <span class="ic cert-card__icon" aria-hidden="true"><span data-lucide="trophy"></span></span>
-              <span class="cert-card__mono">Hackathon</span>
+              <span class="cert-card__mono" data-i18n="certs.tagHackathon">Hackathon</span>
             </div>
             <h3>KnowHax Episode 2, Hosts &amp; Recognition</h3>
-            <p class="cert-card__meta">Team: KnowHax Hackathon Episode 2</p>
-            <p class="cert-card__note">With the US National Science Foundation, Proto-OKN program.</p>
+            <p class="cert-card__meta"><span data-i18n="certs.teamLabel">Team:</span> KnowHax Hackathon Episode 2</p>
+            <p class="cert-card__note" data-i18n="certs.entry2.note">With the US National Science Foundation, Proto-OKN program.</p>
             <div class="cert-card__footer">
               <time>Issued Jun 1, 2026</time>
-              <a href="https://app.genhax.com/certificate/25a4721c-c652-49fa-8c86-8ac32cd4f6bd" target="_blank" rel="noopener" class="link-btn">View certificate →</a>
+              <a href="https://app.genhax.com/certificate/25a4721c-c652-49fa-8c86-8ac32cd4f6bd" target="_blank" rel="noopener" class="link-btn" data-i18n="certs.viewCertificate">View certificate →</a>
             </div>
           </div>
         </article>
@@ -1078,13 +1078,13 @@
           <div class="cert-card__body">
             <div class="cert-card__title-group">
               <span class="ic cert-card__icon" aria-hidden="true"><span data-lucide="code-2"></span></span>
-              <span class="cert-card__mono">Challenge</span>
+              <span class="cert-card__mono" data-i18n="certs.tagChallenge">Challenge</span>
             </div>
             <h3>Code Your First AI App or Agent: From Zero to Prototype 02/05</h3>
-            <p class="cert-card__meta">Team: Brendan &amp; Bruno's Team</p>
+            <p class="cert-card__meta"><span data-i18n="certs.teamLabel">Team:</span> Brendan &amp; Bruno's Team</p>
             <div class="cert-card__footer">
               <time>Issued Mar 18, 2026</time>
-              <a href="https://app.genhax.com/certificate/6f10d336-e385-4ad0-9e56-9314a423c141" target="_blank" rel="noopener" class="link-btn">View certificate →</a>
+              <a href="https://app.genhax.com/certificate/6f10d336-e385-4ad0-9e56-9314a423c141" target="_blank" rel="noopener" class="link-btn" data-i18n="certs.viewCertificate">View certificate →</a>
             </div>
           </div>
         </article>
@@ -1118,7 +1118,7 @@
         <div class="contact__info">
           <p data-i18n="contact.intro">Best reached by email. I read everything, and I answer product questions faster than sales pitches.</p>
 
-          <p class="contact__location reveal"><span data-lucide="map-pin"></span> Based in Madagascar · Open to remote work</p>
+          <p class="contact__location reveal"><span data-lucide="map-pin"></span> <span data-i18n="contact.locationLine">Based in Madagascar · Open to remote work</span></p>
 
           <ul class="contact__list">
             <li>
@@ -1159,7 +1159,7 @@
             </li>
           </ul>
 
-          <a href="assets/resume.pdf" download class="btn btn--primary btn--wide" data-i18n="contact.downloadBtn">Download résumé (PDF)</a>
+          <a href="assets/resume.pdf" download target="_blank" rel="noopener" class="btn btn--primary btn--wide" data-i18n="contact.downloadBtn">Download résumé (PDF)</a>
         </div>
 
         <form class="contact__form" id="contactForm" novalidate>
@@ -1215,7 +1215,7 @@
     <div class="footer__top reveal">
       <div class="footer__brand">
         <p class="footer__brand-name">Anthony Rasolofoarimanana</p>
-        <p class="footer__tagline">Product Owner &amp; Project Manager turning ambiguous problems into products that ship, get adopted, and get renewed.</p>
+        <p class="footer__tagline" data-i18n="footer.tagline">Product Owner &amp; Project Manager turning ambiguous problems into products that ship, get adopted, and get renewed.</p>
         <div class="footer__social">
           <a href="https://mail.google.com/mail/?view=cm&fs=1&to=tsonyraf@gmail.com" target="_blank" class="ic" aria-label="Email">
             <svg viewBox="0 0 24 24" fill="none"><path d="M3.5 6.5h17a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1h-17a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="m3.5 7 8.5 6 8.5-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -1233,24 +1233,24 @@
       </div>
 
       <div class="footer__col">
-        <h3 class="footer__col-title">Quick Links</h3>
+        <h3 class="footer__col-title" data-i18n="footer.linksTitle">Quick Links</h3>
         <ul class="footer__links">
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#lifecycle">Process</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#languages">Languages</a></li>
-          <li><a href="#certifications">Certifications</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#hero" data-i18n="nav.home">Home</a></li>
+          <li><a href="#about" data-i18n="nav.about">About</a></li>
+          <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+          <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+          <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="#lifecycle" data-i18n="nav.process">Process</a></li>
+          <li><a href="#education" data-i18n="nav.education">Education</a></li>
+          <li><a href="#languages" data-i18n="nav.language">Languages</a></li>
+          <li><a href="#certifications" data-i18n="nav.certifications">Certifications</a></li>
+          <li><a href="#testimonials" data-i18n="nav.testimonials">Testimonials</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </div>
 
       <div class="footer__col">
-        <h3 class="footer__col-title">Get in touch</h3>
+        <h3 class="footer__col-title" data-i18n="footer.contactTitle">Get in touch</h3>
         <p class="footer__contact-line">
           <span class="ic ic--sm" aria-hidden="true"><span data-lucide="mail"></span></span>
           <a href="https://mail.google.com/mail/?view=cm&fs=1&to=tsonyraf@gmail.com" target="_blank">tsonyraf@gmail.com</a>
@@ -1259,13 +1259,13 @@
           <span class="ic ic--sm" aria-hidden="true"><span data-lucide="map-pin"></span></span>
           Madagascar
         </p>
-        <a href="#contact" class="btn btn--primary footer__cta">Let's work together</a>
+        <a href="#contact" class="btn btn--primary footer__cta" data-i18n="footer.cta">Let's work together</a>
       </div>
     </div>
 
     <div class="footer__bottom">
       <p data-i18n="footer.text">© 2026 Anthony Rasolofoarimanana. Built static — no backend, no database.</p>
-      <a href="#hero" class="footer__top-link">Back to top ↑</a>
+      <a href="#hero" class="footer__top-link" data-i18n="footer.backToTop">Back to top ↑</a>
       <p class="footer__mono" data-i18n="footer.meta">v1.9.0 · last deployed June 2026</p>
     </div>
 

@@ -205,6 +205,15 @@ input,textarea{ font-family: inherit; }
 }
 .nav__name{ font-family: var(--font-display); font-weight:600; font-size: 15px; }
 .nav__dim{ color: var(--ink-dim); font-weight: 500; }
+/* Short form only on very small screens (same 600px breakpoint the
+   Hero's own mobile refinements already use) — swapping which of
+   these two spans is shown, rather than truncating with CSS, keeps
+   the full name in the DOM (and selectable/readable) everywhere else. */
+.nav__name-short{ display:none; }
+@media (max-width:600px){
+  .nav__name-full{ display:none; }
+  .nav__name-short{ display:inline; }
+}
 
 .nav__links{ display:flex; gap: 4px; }
 .nav__link{
