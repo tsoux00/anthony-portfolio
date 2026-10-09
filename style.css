@@ -475,7 +475,6 @@ html[data-language="fr"] .contact__content p{
 }
 
 html[data-language="fr"] .about__grid,
-html[data-language="fr"] .skills__grid,
 html[data-language="fr"] .changelog,
 html[data-language="fr"] .pipeline,
 html[data-language="fr"] .contact__grid{
@@ -484,7 +483,7 @@ html[data-language="fr"] .contact__grid{
 
 @media (max-width: 900px){
   html[data-language="fr"] .about__grid{ grid-template-columns: 1fr; }
-  html[data-language="fr"] .skills__grid{ grid-template-columns: 1fr; }
+  html[data-language="fr"] .skills__grid{ columns: 1; }
   html[data-language="fr"] .changelog__entry{ grid-template-columns: 1fr; }
 }
 
@@ -1366,14 +1365,18 @@ html[data-language="fr"] .contact__grid{
 
 /* ---------- Skills ---------- */
 .skills__grid{
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap:24px;
+  columns: 320px 3;
+  column-gap: 24px;
   margin-top: 24px;
 }
 
 .skill-card{
   position:relative;
+  display: inline-block;
+  width: 100%;
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  margin-bottom: 24px;
   background: var(--card-bg);
   border:1px solid rgba(88,104,150,.12);
   border-radius:28px;
@@ -1536,7 +1539,7 @@ html[data-theme="dark"] .skill-card:hover{
 }
 
 @media (max-width: 920px){
-  .skills__grid{grid-template-columns: 1fr;}
+  .skills__grid{columns: 1;}
 }
 
 /* ---------- Changelog / Experience ---------- */
