@@ -17,7 +17,7 @@ window.PORTFOLIO_TRANSLATIONS = {
 
     "hero.badge": "v1.0.0 · currently shipping",
     "hero.roleLabel": "I am a",
-    "hero.summary": "I sit between engineering, design, and the business, and I make the backlog tell the truth. Three years turning ambiguous problems into products that ship on time, get adopted, and get renewed.",
+    "hero.summary": "I sit between engineering, design, and the business, and I make the backlog tell the truth. Four-plus years turning ambiguous problems into products that ship on time, get adopted, and get renewed.",
     "hero.ctaProjects": "View case studies",
     "hero.ctaResume": "Download résumé",
     "hero.statYears": "Years in product",
